@@ -8,9 +8,6 @@ import DemographicsSurvey from './components/DemographicsSurvey';
 import Blockstart from './components/Blockstart';
 //import Instructions from './components/Instructions';
 
-
-
-
 import './preloadImages.css';
 import './App.css';
 import './selectize.css';

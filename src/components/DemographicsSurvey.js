@@ -93,7 +93,9 @@ class DemographicsSurvey extends Component{
         </select>
 
         </li>
-        <li> Sélectionnez les langues étrangères que vous avez étudiées, par ordre de compétence:
+        <li> Les langues étrangères que vous avez étudiées, par ordre de compétence:
+        </li>
+        <center>
         <MultiSelect
           placeholder="Sélectionnez"
           options={this.state.languages.map(language => ({label: language, value: language})
@@ -102,7 +104,7 @@ class DemographicsSurvey extends Component{
           label={this.state.selectedlanguages}
           onValuesChange={function(selectedlanguages){this.setState({selectedlanguages: selectedlanguages});}.bind(this)}
           />
-        </li>
+        </center>
 
     </ol>
     </div>

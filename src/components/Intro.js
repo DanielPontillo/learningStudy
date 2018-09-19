@@ -21,8 +21,9 @@ function Intro(props) {
       <text>
         <div id={"logo_img"}></div>
         <br/>
-
+        <center>
         [consent form goes here]
+        </center>
         <br/><br/>
         </text>
          </div>
