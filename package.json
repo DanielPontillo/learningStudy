@@ -1,8 +1,8 @@
 {
-  "name": "react-quiz",
+  "name": "learningStudy",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://mitchgavan.com/react-multi-choice-quiz/",
+  "homepage": "http://onlinelab.fr/dfp/learningStudy/",
   "devDependencies": {
     "react-scripts": "0.2.1"
   },
@@ -11,7 +11,8 @@
     "react-addons-css-transition-group": "^15.3.0",
     "react-addons-update": "^15.3.0",
     "react-bootstrap-validation": "^0.1.11",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "react-dom-factories":"^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
