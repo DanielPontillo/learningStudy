@@ -2,7 +2,7 @@
   "name": "learningStudy",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://onlinelab.fr/dfp/learningStudy/",
+  "homepage": "./",
   "devDependencies": {
     "react-scripts": "0.2.1"
   },
