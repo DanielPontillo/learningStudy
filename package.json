@@ -47,6 +47,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "query-string": "^6.2.0",
     "react": "^15.3.0",
     "react-addons-css-transition-group": "^15.3.0",
     "react-addons-update": "^15.3.0",

@@ -41,8 +41,9 @@ class DemographicsSurvey extends Component{
 
     //update demographics info
 
-    var demographicsInfo = [this.state.age, this.state.gender, this.state.education, this.state.selectedlanguages];
+    var demographicsInfo = [this.state.age, this.state.gender, this.state.education, [this.state.selectedlanguages.map(function(a) {return a.value;})]];
     //send to controller parent
+   
     this.props.handleDemographicsSurveyResponse(this,demographicsInfo);
   }
 
@@ -73,8 +74,8 @@ class DemographicsSurvey extends Component{
           <input onChange={this.handleChange} type="text" name="age"/>
         </li>
         <li>Genre:
-        <select onChange={this.handleChange} name="gender">
-          <option value="NA" selected></option>
+        <select defaultValue="NA" onChange={this.handleChange} name="gender">
+          <option value="NA"></option>
           <option value="Homme">Homme</option>
           <option value="Femme">Femme</option>
           <option value="Autre">Autre</option>

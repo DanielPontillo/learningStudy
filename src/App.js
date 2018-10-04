@@ -6,6 +6,10 @@ import Intro from './components/Intro';
 import Instructions from './components/Instructions';
 import DemographicsSurvey from './components/DemographicsSurvey';
 import Blockstart from './components/Blockstart';
+import { Button} from 'react-bootstrap';
+import 'whatwg-fetch';
+import queryString from 'query-string';
+
 //import Instructions from './components/Instructions';
 
 import './preloadImages.css';
@@ -41,6 +45,7 @@ class App extends Component {
       experimentStarted: false,
       showBlockstartScreen: false,
       receivedResponse: false,
+      showParamErrorMessage: false,
     
       //performance 
       lastTestBlockPerformance: 0.00,
@@ -50,6 +55,7 @@ class App extends Component {
       cumulativeTestPerformance: 0.00,
 
       //data to be collected
+      participantID: '0',
       responses: [],
       responseTimes: [],
       currentReinforcementBlockResponsesCorrect: [],
@@ -62,12 +68,15 @@ class App extends Component {
 
     var timeoutID = null;
 
+    this.sendPostToServer = this.sendPostToServer.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.handleConsentResponse = this.handleConsentResponse.bind(this)
     this.handleDemographicsSurveyResponse = this.handleDemographicsSurveyResponse.bind(this)
     this.handleInstructionsScreen = this.handleInstructionsScreen.bind(this)
     this.handleBlockstartScreen = this.handleBlockstartScreen.bind(this)
   }
+
+  
 
   componentWillMount() {
     //const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
@@ -95,7 +104,20 @@ class App extends Component {
     //get number of blocks
     //get number of trials per block
 
+    
+    var participantIDStruct = this.getParams(window.location);
+    console.log(participantIDStruct);
+    console.log(participantIDStruct.participantID)
+
+    if (participantIDStruct.participantID == 0){
+      this.setState({
+        showParamErrorMessage: true
+      })
+    }
+   else{
+
     this.setState({
+      participantID: participantIDStruct.participantID,
       totalNumTrials: this.state.totalNumBlocks*this.state.numTrialsPerBlock + this.state.numGeneralizationTrials,
       currentTarget: curTarg,
       trialnum: learningStudy[0].trialnum,
@@ -106,6 +128,23 @@ class App extends Component {
       showcell: showcell
     });
   }
+
+  }
+
+  getParams(location) {
+  
+  const searchParams = new URLSearchParams(location.search);
+  
+  if(searchParams.has("participantID")){
+    return {
+    participantID: searchParams.get('participantID') || '',
+  };
+  }
+  else{
+    return{participantID: 0}
+  }
+  
+}
 
   shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -145,8 +184,6 @@ class App extends Component {
 
 
     }
-
-    
   
 
   handleAnswerSelected(selected_id, selected_option) {
@@ -531,6 +568,7 @@ renderDemographicsSurvey() {
   }
 
 renderBlockstart() {
+
     console.log(this.state.lastTestBlockPerformance)
      console.log(this.state.lastReinforcementBlockPerformance)
      console.log(this.state.cumulativeTestPerformance)
@@ -540,6 +578,41 @@ renderBlockstart() {
     );
   }
 
+
+  sendPostToServer() {
+    console.log("test post request")
+    console.log(this.state.numImages)
+    console.log(this.state.responses)
+    console.log(this.state.responseTimes)
+
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    
+      
+
+    var bodyContents = {demographicsInfo: demographicsInfo, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, currentBlock: currentBlock}
+    console.log(queryString.stringify(bodyContents))
+
+    fetch('http://onlinelab.fr:3000/add_participant_data',{
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    method: "POST",
+    body: queryString.stringify(bodyContents)})
+      .then(resp => console.log(resp));
+      // .then(resp => {
+      //   const currentTime = resp.dateString;
+      //   this.setState({currentTime})
+      // })
+
+
+
+
+  }
 
   render() {
 
@@ -560,19 +633,23 @@ renderBlockstart() {
         <br/> currenttestblockperformance: {Number(this.state.currentTestBlockPerformance).toFixed(2)}
         <br/> cumulativeperf: {Number(this.state.cumulativeTestPerformance).toFixed(2)}
         <br/> numTestTrials: {this.state.testResponsesCorrect.length}
+         <br/><Button onClick={this.sendPostToServer}>
+      Debug Send POST
+      </Button>
+      <br/>{this.state.responses}
+      <br/>{this.state.responseTimes}
         
         </div>
 
+        {this.state.showParamErrorMessage ? <div className="participantIDError">Error accessing participantID. You must access this page with a valid participant ID.</div>
+ : this.state.noconsent ? this.renderIntro() : this.state.nodemographics ? this.renderDemographicsSurvey() : this.state.instructionsNotComplete ? this.renderInstructions() : this.state.showBlockstartScreen ? this.renderBlockstart(): this.state.experimentStarted ? this.renderExperimentTrial() : this.renderIntro() }
         
-
-        {this.state.noconsent ? this.renderIntro() : this.state.nodemographics ? this.renderDemographicsSurvey() : this.state.instructionsNotComplete ? this.renderInstructions() : this.state.showBlockstartScreen ? this.renderBlockstart(): this.state.experimentStarted ? this.renderExperimentTrial() : this.renderIntro() }
         
-
-
         <div id="preload">
           {renderedOutput}
         {/* etc... */}
         </div>
+        
         
 
       </div>
