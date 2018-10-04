@@ -633,7 +633,7 @@ renderBlockstart() {
         <br/> currenttestblockperformance: {Number(this.state.currentTestBlockPerformance).toFixed(2)}
         <br/> cumulativeperf: {Number(this.state.cumulativeTestPerformance).toFixed(2)}
         <br/> numTestTrials: {this.state.testResponsesCorrect.length}
-         <br/><Button onClick={this.sendPostToServer}>
+         <br/><br/><Button onClick={this.sendPostToServer}>
       Debug Send POST
       </Button>
       <br/>{this.state.responses}
