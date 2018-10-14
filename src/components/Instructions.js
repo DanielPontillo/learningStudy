@@ -80,10 +80,10 @@ class Instructions extends Component {
       </center>
 
 
-      <div className="instructionsText">
+      <div className="instructionsTextBox">
         
-        {this.state.currentInstructionText === 1 ? <div>Dans cette expérience, vous allez apprendre une langue étrangère. Dans certains essais, vous apprendrez à pluraliser les objets. Par example, vous allez apprendre à dire le mot 'les pommes' étant donné le mot 'le pomme'. Dans d'autres essais, vous allez apprendre comment marquer des objets de petit taille. Par exemple, vous allez apprendre à dire 'petit pomme'.</div>: null}
-        {this.state.currentInstructionText === 2 ? <div>À chaque essai, on vous présentera un mot associé avec l'image d'un objet étranger. Sur l'écran suivant, on vous demandra soit le pluriel du mot, soit la forme "petit taille" du mot. Chaque fois, on vous présentera trois options possibles et vous serez invité(e)s à sélectionner la bonne. </div>: null}
+        {this.state.currentInstructionText === 1 ? <div> Dans cette expérience, vous devrez apprendre les règles d’une langue étrangère d’une autre galaxie. Les extraterrestres utilisent des objets inconnus sur la Terre. Vous n'avez pas besoin de mémoriser leurs noms, mais vous devez apprendre les règles de grammaire.<br/><center><div id={"example_object1"}></div></center></div>: null}
+        {this.state.currentInstructionText === 2 ? <div><p>À chaque essai, on vous présentera un mot associé avec l'image d'un objet étranger.</p> <p>Dans certains tests, vous apprendrez la règle pour indiquer plusieurs objets. Par exemple, comme dans l'écran ci-dessus, vous apprendrez à dire le mot "bouteilles" à partir du mot "bouteille".</p> <center><div id={"example1_img"}></div></center><p>Dans d'autres essais, vous allez apprendre comment marquer des objets de petit taille. Par exemple, vous allez apprendre à dire 'petite pomme'.</p><center><div id={"example2_img"}></div></center></div>: null}
         {this.state.currentInstructionText === 3 ? <div>Par la suite:<br/><ol><li>Pendant les blocs d'apprentissage, dans certains essais, on vous donnera un retour par apport à votre réponse.</li><li> Dans les autres essays, vous aurez un inice indiquant que l'une des trois options possibles est correcte ou incorrecte. Vous devez sélectionner l'élément sous l'indice, même s'il est incorrect.</li><li>Pendant les blocs de test, vous n'auriez pas de retour ni d'indice.</li><li>Il y a une limite de temps pour chaque essai, donc procédez rapidement.</li></ol><br/>Maintenant, on vous montrera d'abord quelques exemples.<br/></div>: null}
       
       </div>

@@ -120,7 +120,7 @@ class ExperimentTrial extends Component {
       console.log("Answer Incorrect")
     }
 
-    if (this.props.blockType === "test"){
+    if (this.props.blockType === "test" || this.props.blockType === "generalization"){
       console.log("this is a test trial")
 
       setTimeout(() => this.passResponseAndProceed(response,selectedOption), 500);
@@ -160,6 +160,7 @@ class ExperimentTrial extends Component {
       transitionAppearTimeout={500}
     >
       <div className="experimentContainer" key={this.props.questionId}>
+
       <div className="expDebugText">
       Trial Debug: {this.props.blockType} block
       </div>

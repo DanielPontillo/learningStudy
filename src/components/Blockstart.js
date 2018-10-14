@@ -29,7 +29,7 @@ function Blockstart(props) {
         {props.blockType === "training" && props.currentMiniblock === 1 ? <div>Nous allons maintenant commencons le premier bloc.</div>  : null}
         </center>
         
-        {props.blockType === "training" && props.currentMiniblock > 1 ? <div>Ce bloc est terminé. Bon travail!<br/><br/></div>  : null}
+        {props.blockType === "training" && props.currentMiniblock > 1 ? <div>Ce bloc est terminé.<br/><br/></div>  : null}
         {props.blockType === "training" && props.currentMiniblock > 1 ? props.lastTestBlockPerformanceMessage + props.lastTestBlockPerformance : null}<br/>
         {props.blockType === "training" && props.currentMiniblock > 1 ? props.cumulativeTestPerformanceMessage + props.cumulativeTestPerformance : null}
         

@@ -5,6 +5,8 @@ import Result from './components/Result';
 import Intro from './components/Intro';
 import Instructions from './components/Instructions';
 import DemographicsSurvey from './components/DemographicsSurvey';
+import ExperimentEndSurvey from './components/ExperimentEndSurvey';
+import ExperimentEndScreen from './components/ExperimentEndScreen';
 import Blockstart from './components/Blockstart';
 import { Button} from 'react-bootstrap';
 import 'whatwg-fetch';
@@ -46,6 +48,8 @@ class App extends Component {
       showBlockstartScreen: false,
       receivedResponse: false,
       showParamErrorMessage: false,
+      showExperimentEndSurvey: false,
+      showExperimentEndScreen: false,
     
       //performance 
       lastTestBlockPerformance: 0.00,
@@ -56,19 +60,31 @@ class App extends Component {
 
       //data to be collected
       participantID: '0',
+      platformType: '',
+      condition: '',
+      conditionListID: '',
+      experimentName: '',
+      participantComments: '',
       responses: [],
       responseTimes: [],
       currentReinforcementBlockResponsesCorrect: [],
       currentTestBlockResponsesCorrect: [],
       testResponsesCorrect: [],
       responsesCorrect: [],
-      demographicsInfo: []
+      demographicsInfo: [],
+
+      showDebug: false
       
     };
 
     var timeoutID = null;
-
-    this.sendPostToServer = this.sendPostToServer.bind(this);
+    this.sendCompletionPutRequestToServer = this.sendCompletionPutRequestToServer.bind(this);
+    this.sendUpdatePutRequestToServer = this.sendUpdatePutRequestToServer.bind(this);
+    this.sendSessionStartPostRequestToServer= this.sendSessionStartPostRequestToServer.bind(this);
+    this.jumpToEnd= this.jumpToEnd.bind(this);
+    
+    this.handleExperimentEndScreen = this.handleExperimentEndScreen.bind(this);
+    this.handleExperimentEndSurvey = this.handleExperimentEndSurvey.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.handleConsentResponse = this.handleConsentResponse.bind(this)
     this.handleDemographicsSurveyResponse = this.handleDemographicsSurveyResponse.bind(this)
@@ -105,11 +121,11 @@ class App extends Component {
     //get number of trials per block
 
     
-    var participantIDStruct = this.getParams(window.location);
-    console.log(participantIDStruct);
-    console.log(participantIDStruct.participantID)
+    var urlParamStruct = this.getParams(window.location);
+    console.log(urlParamStruct);
+    console.log(urlParamStruct.participantID)
 
-    if (participantIDStruct.participantID == 0){
+    if (urlParamStruct.participantID == 0){
       this.setState({
         showParamErrorMessage: true
       })
@@ -117,7 +133,13 @@ class App extends Component {
    else{
 
     this.setState({
-      participantID: participantIDStruct.participantID,
+      participantID: urlParamStruct.participantID,
+      experimentName: urlParamStruct.experimentName,
+      conditionListID: urlParamStruct.conditionListID,
+      condition: urlParamStruct.condition,
+      platformType: urlParamStruct.platformType,
+      showDebug: urlParamStruct.debug,
+
       totalNumTrials: this.state.totalNumBlocks*this.state.numTrialsPerBlock + this.state.numGeneralizationTrials,
       currentTarget: curTarg,
       trialnum: learningStudy[0].trialnum,
@@ -132,16 +154,29 @@ class App extends Component {
   }
 
   getParams(location) {
-  
-  const searchParams = new URLSearchParams(location.search);
-  
-  if(searchParams.has("participantID")){
+   const searchParams = new URLSearchParams(location.search);
+   
+  if(searchParams.has("participantID") && 
+    searchParams.has("condition") &&
+    searchParams.has("conditionListID") &&
+    searchParams.has("expName") &&
+    searchParams.has("platformType")){
     return {
-    participantID: searchParams.get('participantID') || '',
+    participantID: searchParams.get('participantID'),
+    condition: searchParams.get('condition'),
+    conditionListID: searchParams.get('conditionListID'),
+    experimentName: searchParams.get('expName'),
+    platformType: searchParams.get('platformType'),
+    debug: searchParams.get('debug') || false
   };
   }
   else{
-    return{participantID: 0}
+    return{participantID: 0,
+      condition: '',
+    conditionListID: '',
+    experimentName: '',
+    platformType: '',
+    debug: searchParams.get('debug') || false}
   }
   
 }
@@ -166,20 +201,16 @@ class App extends Component {
   };
 
   responseTimedOut(){
-    console.log("timeout called")
       console.log("response timed out, go to next trial")
 
       var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
-      console.log("Response Time: " + responseTime )
-
+  
       this.checkResponseAndUpdate("timeout",responseTime);
-      
-    
 
       if (this.state.trialnum < this.state.totalNumTrials) {
-       setTimeout(() => this.setNextQuestion("timeout"), 0);
+       setTimeout(() => this.setNextTrial(), 0);
       } else {
-        setTimeout(() => this.setResults(this.getResults()), 0);
+        setTimeout(() => this.endTrials(), 0);
       }
 
 
@@ -202,6 +233,7 @@ class App extends Component {
       if (responseTime > 500){
         var response = selected_id
         var selectedOption = selected_option
+
         console.log("selected word: " + response)
         console.log("selected option number: " + selectedOption)
 
@@ -213,9 +245,9 @@ class App extends Component {
 
         //Set Next Question
         if (this.state.trialnum < this.state.totalNumTrials) {
-           setTimeout(() => this.setNextQuestion(response), 0);
+           setTimeout(() => this.setNextTrial(), 0);
         } else {
-            setTimeout(() => this.setResults(this.getResults()), 0);
+            setTimeout(() => this.endTrials(), 0);
         }
       }
       else{
@@ -267,10 +299,13 @@ class App extends Component {
       currentTestBlockResponsesCorrect: newCurrentTestBlockResponsesCorrect,
       testResponsesCorrect: newTestResponsesCorrect,
       responsesCorrect: newResponsesCorrect,
+
       //add response to responses array
       responses: this.state.responses.concat(response),
+
       //add response time to response time array
       responseTimes: this.state.responseTimes.concat(responseTime),
+
       //update performance metrics
       currentReinforcementBlockPerformance: currentReinforcementBlockPerformance,
       currentTestBlockPerformance: currentTestBlockPerformance,
@@ -282,19 +317,42 @@ class App extends Component {
   }
 
   handleConsentResponse(event) {
-    //e.preventDefault()
-    //consentCheckbox = true
+
     console.log("Consent Form Screen Complete")
     this.setState({
       noconsent: false
     })
   }
 
+
+handleExperimentEndScreen(event) {
+
+    console.log("Experiment Ended, submit final results")
+
+    this.sendCompletionPutRequestToServer()
+
+    //redirect if it's mechanical turk
+
+  }
+
+
+   handleExperimentEndSurvey(event,comments) {
+
+    console.log("Experiment End Survey Complete")
+
+    this.renderExperimentEndScreen()
+
+    this.setState({
+      participantComments: comments,
+      showExperimentEndSurvey: false,
+      showExperimentEndScreen: true
+    })
+  }
+
   handleDemographicsSurveyResponse(event,demographicsInfo) {
-    //e.preventDefault()
-    //consentCheckbox = true
+
     console.log("Demographics Survey Complete")
-    console.log(demographicsInfo)
+
     this.setState({
       nodemographics: false,
       demographicsInfo: demographicsInfo
@@ -302,19 +360,20 @@ class App extends Component {
   }
 
   handleInstructionsScreen(event) {
-    //e.preventDefault()
-    //consentCheckbox = true
+
     console.log("Instructions Screen Complete")
+
+    this.sendSessionStartPostRequestToServer()
+
     this.setState({
       instructionsNotComplete: false,
       showBlockstartScreen: true
     })
   }
 
-   handleBlockstartScreen(event) {
-    //e.preventDefault()
-    //consentCheckbox = true
+  handleBlockstartScreen(event) {
     console.log("Blockstart Screen Complete")
+
     this.setState({
       showBlockstartScreen: false,
       experimentStarted: true,
@@ -326,9 +385,6 @@ class App extends Component {
 
   updateResponses(response) {
 
-     // var currentResponseArray = this.state.responses
-     // var newResponseArray = currentResponseArray.push(response);
-
     this.setState({
         //answersCount: updatedAnswersCount,
         responses: this.state.responses.concat(response)
@@ -336,7 +392,17 @@ class App extends Component {
     
   }
 
-  setNextQuestion(response) {
+  endTrials() {
+
+    this.setState({
+        //answersCount: updatedAnswersCount,
+        showExperimentEndSurvey: true,
+    });
+    
+  }
+
+
+  setNextTrial() {
     
     //increment trial counter
     const counter = this.state.counter + 1;
@@ -370,6 +436,8 @@ class App extends Component {
       lastTestBlockPerformance = this.state.currentTestBlockPerformance
       currentTestBlockResponsesCorrect = []
       blockstartBoolean = true
+
+      this.sendUpdatePutRequestToServer()
     }
 
     // if it's the end of the training block
@@ -377,6 +445,12 @@ class App extends Component {
     //  flag the blockstart screen
     //  update last reinforcement block performance
     if (this.state.blockType === "training" && learningStudy[counter].blockType === "test") {
+      lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
+      currentReinforcementBlockResponsesCorrect = [];
+      blockstartBoolean = true;
+    }
+
+    if (this.state.blockType === "test" && learningStudy[counter].blockType === "generalization") {
       lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
       currentReinforcementBlockResponsesCorrect = [];
       blockstartBoolean = true;
@@ -424,37 +498,22 @@ class App extends Component {
       this.timeoutID = setTimeout(() => this.responseTimedOut(),8000);
       
     }
-    console.log(this.state.responses)
-    console.log(this.state.responseTimes)
+ 
   }
 
-  getResults() {
 
 
-    return "results"
-  }
 
-  setResults(result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
-  }
-
-//{this.state.result ? this.renderResult() : this.renderExperimentTrial()}
   renderExperimentTrial() {
 
     var teachingSignal1 = "no_signal";
     var teachingSignal2 = "no_signal";
     var teachingSignal3 = "no_signal";
 
-    console.log("current target in app: " + this.state.currentTarget)
 
     if (this.state.trialcontents[0].learningType === "supervised" && this.state.blockType === "training"){
       
       var positiveTeachingSignal = this.state.lastReinforcementBlockPerformance > Math.random();
-      console.log("positive signal position: " + positiveTeachingSignal)
 
       var targetLocation = 0;
       var nonTargetPositionArray = [1,2,3]
@@ -471,9 +530,7 @@ class App extends Component {
           targetLocation = 3;
           nonTargetPositionArray = [1,2];
       }
-      console.log(this.state.trialcontents[0].option3Type)
-      console.log(targetLocation)
-      console.log(nonTargetPositionArray)
+     
 
       if (positiveTeachingSignal){
         if (targetLocation === 1){
@@ -495,7 +552,7 @@ class App extends Component {
       else {
         
         var negativeSignalPosition = nonTargetPositionArray[Math.floor(Math.random() * nonTargetPositionArray.length)];
-        console.log("negative signal position: " + negativeSignalPosition)
+        
         if (negativeSignalPosition ===1){
           teachingSignal1 = "frown_img"
           teachingSignal2 = "nonSelectable"
@@ -519,7 +576,7 @@ class App extends Component {
     
     return (
       <ExperimentTrial
-        //response={this.state.Curesponse}
+        
         trialTarget={this.state.currentTarget}
 
         trialcontents={this.state.trialcontents}
@@ -533,6 +590,7 @@ class App extends Component {
         teachingSignal1={teachingSignal1}
         teachingSignal2={teachingSignal2}
         teachingSignal3={teachingSignal3}
+
         //questionTotal={this.state.numTrialsPerBlock}
         responseSelected={this.state.receivedResponse}
         onAnswerSelected={this.handleAnswerSelected}
@@ -540,12 +598,22 @@ class App extends Component {
     );
   }
 
-  renderResult() {
+  renderExperimentEndSurvey() {
     return (
-      <Result quizResult={this.state.result} />
+      <ExperimentEndSurvey handleExperimentEndSurvey = {this.handleExperimentEndSurvey} />
     );
   }
 
+  renderExperimentEndScreen() {
+
+    //this.sendCompletionPutRequestToServer()
+
+    // if this is a mechanical turk experiment, you'll send the post request in the next screen
+
+    return (
+      <ExperimentEndScreen handleExperimentEndScreen = {this.handleExperimentEndScreen} />
+    );
+  }
   renderIntro() {
     return (
       <Intro handleConsentResponse={this.state.noconsent,this.handleConsentResponse}/>
@@ -569,19 +637,58 @@ renderDemographicsSurvey() {
 
 renderBlockstart() {
 
-    console.log(this.state.lastTestBlockPerformance)
-     console.log(this.state.lastReinforcementBlockPerformance)
-     console.log(this.state.cumulativeTestPerformance)
     return (
       <Blockstart blockType={this.state.blockType} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
      handleBlockstartScreen={this.state.showBlockstartScreen,this.handleBlockstartScreen}/>
     );
   }
 
+  jumpToEnd() {
+    console.log("Jump to End of Experiment")
+    this.setState({
+        //update counter
+        counter: Number(this.state.totalNumTrials)-3,
+    });
+  }
 
-  sendPostToServer() {
-    console.log("test post request")
-    console.log(this.state.numImages)
+
+  sendSessionStartPostRequestToServer() {
+    console.log("Send POST request to set up a session")
+
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    
+
+    var currentCondition = this.state.condition.toString()
+    var currentConditionListID = this.state.conditionListID.toString()
+    var currentExperimentName = this.state.experimentName.toString()
+    var currentPlatformType = this.state.platformType.toString()
+
+    var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
+    console.log(queryString.stringify(bodyContents))
+
+    fetch('http://onlinelab.fr:3000/start_new_participant_session',{
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    method: "POST",
+    body: queryString.stringify(bodyContents)})
+      .then(resp => console.log(resp.json()));
+      // .then(resp => {
+      //   const currentTime = resp.dateString;
+      //   this.setState({currentTime})
+      // })
+
+  }
+
+
+  sendUpdatePutRequestToServer() {
+    console.log("Send PUT request to update the session")
+    
     console.log(this.state.responses)
     console.log(this.state.responseTimes)
 
@@ -591,28 +698,57 @@ renderBlockstart() {
     var currentBlock = this.state.miniblock.toString()
     var responsesCorrect = this.state.responsesCorrect.toString()
     var demographicsInfo = this.state.demographicsInfo.toString()
-    
-      
+    var experimentName = this.state.experimentName.toString()
 
-    var bodyContents = {demographicsInfo: demographicsInfo, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, currentBlock: currentBlock}
+    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('http://onlinelab.fr:3000/add_participant_data',{
+    fetch('http://onlinelab.fr:3000/update_participant_session',{
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    method: "POST",
+    method: "PUT",
     body: queryString.stringify(bodyContents)})
-      .then(resp => console.log(resp));
+      .then(resp => console.log(resp.json()));
       // .then(resp => {
       //   const currentTime = resp.dateString;
       //   this.setState({currentTime})
       // })
 
+  }
 
 
+  sendCompletionPutRequestToServer() {
+    console.log("Send PUT request to complete the session")
+
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    var experimentName = this.state.experimentName.toString()
+
+    var participantComments = this.state.participantComments.toString()
+
+
+    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    console.log(queryString.stringify(bodyContents))
+
+    fetch('http://onlinelab.fr:3000/complete_participant_session',{
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    method: "PUT",
+    body: queryString.stringify(bodyContents)})
+      .then(resp => console.log(resp.json()));
+      // .then(resp => {
+      //   const currentTime = resp.dateString;
+      //   this.setState({currentTime})
+      // })
 
   }
+
 
   render() {
 
@@ -624,25 +760,48 @@ renderBlockstart() {
 
     return (
       <div className="App">
-
+        {this.state.showDebug == 'true' ? 
         <div className="expDebugText">
         App Debug: 
+        
         <br/> lastreinforcementblockperformance: {Number(this.state.lastReinforcementBlockPerformance).toFixed(2)}
         <br/> currentreinforcementblockperformance: {Number(this.state.currentReinforcementBlockPerformance).toFixed(2)}
         <br/> lasttestblockperformance: {Number(this.state.lastTestBlockPerformance).toFixed(2)}
         <br/> currenttestblockperformance: {Number(this.state.currentTestBlockPerformance).toFixed(2)}
         <br/> cumulativeperf: {Number(this.state.cumulativeTestPerformance).toFixed(2)}
         <br/> numTestTrials: {this.state.testResponsesCorrect.length}
-         <br/><br/><Button onClick={this.sendPostToServer}>
-      Debug Send POST
+         <br/><Button onClick={this.sendUpdatePutRequestToServer}>
+      Debug Send PUT
       </Button>
-      <br/>{this.state.responses}
-      <br/>{this.state.responseTimes}
+
+      <br/><Button onClick={this.sendSessionStartPostRequestToServer}>
+      Debug Send Session Start
+      </Button>
+
+      <br/><Button onClick={this.jumpToEnd}>
+      Jump to End
+      </Button>
+
+      <br/><Button onClick={this.sendCompletionPutRequestToServer}>
+      Send completion request
+      </Button>
+
+      <br/>{this.state.responses.slice(this.state.responses.length-5,this.state.responses.length-1)}
+      <br/>{this.state.responseTimes.slice(this.state.responses.length-5,this.state.responses.length-1)}
         
         </div>
 
-        {this.state.showParamErrorMessage ? <div className="participantIDError">Error accessing participantID. You must access this page with a valid participant ID.</div>
- : this.state.noconsent ? this.renderIntro() : this.state.nodemographics ? this.renderDemographicsSurvey() : this.state.instructionsNotComplete ? this.renderInstructions() : this.state.showBlockstartScreen ? this.renderBlockstart(): this.state.experimentStarted ? this.renderExperimentTrial() : this.renderIntro() }
+        : ''}
+
+        {this.state.showParamErrorMessage ? <div className="participantIDError">Error accessing participantID. You must access this page with a valid participant ID.</div> : 
+        this.state.showExperimentEndScreen ? this.renderExperimentEndScreen() :
+        this.state.showExperimentEndSurvey ? this.renderExperimentEndSurvey() :
+        this.state.noconsent ? this.renderIntro() : 
+ this.state.nodemographics ? this.renderDemographicsSurvey() : 
+ this.state.instructionsNotComplete ? this.renderInstructions() : 
+ this.state.showBlockstartScreen ? this.renderBlockstart(): 
+ this.state.experimentStarted ? this.renderExperimentTrial() : 
+ this.renderIntro() }
         
         
         <div id="preload">

@@ -94,6 +94,26 @@ Demographics Screen Styles
 }
 
 /*
+Completion Screen Styles
+*/
+
+.completionSurvey  {
+  font-size: 8pt ;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  background: #eee;
+  border: 1px solid #000;
+}
+
+
+.participantCommentBox {
+  margin: 0rem 0.5rem ;
+  width: 60%;
+  height: 150px
+}
+
+
+/*
 Instructions Screen Styles
 */
 
@@ -105,13 +125,18 @@ Instructions Screen Styles
     
 }
 
-.instructionsText{
+.instructionsTextBox{
   height: 80%;
   align-content: center;
   font-size: 10pt ;
   background: #eee;
   padding: 1rem 1rem;
   border: 1px solid #000;
+}
+
+.instructionsText{
+  width: 75%;
+ 
 }
 
 .instructionsText li {
@@ -402,8 +427,7 @@ Experiment Screen Styles
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: 1px solid #999;
-    
+    border-right: 1px solid #aaa;
     
 }
 .question{
@@ -412,6 +436,7 @@ Experiment Screen Styles
   text-align: center;
   align-items: center;
   justify-content: center;
+
 }
 .experimentContentSize{
   

@@ -21,6 +21,20 @@
 	display: 'inline-block'; 
 	}
 
+#example1_img {
+	background: url(./../public/img/example1.png) no-repeat center top;
+	display: 'block'; 
+	background-size: 100%; 
+    height: 150px;
+    width: 300px;
+	}
+#example2_img {
+	background: url(./../public/img/example2.png) no-repeat center top;
+	display: 'block'; 
+	background-size: 100%; 
+    height: 150px;
+    width: 300px;
+	}
 
 #logo_img {
 	background: url(./../public/img/ENS_logoDEC.png) no-repeat center top;
@@ -34,6 +48,39 @@
 	display: 'block'; 
 	background-size:100%;
     height: 400px;
+	}
+
+#example_objects{
+	float: left;
+}
+
+#example_objects{
+width: 100%;
+}
+
+#example_object1 {
+	background: url(./../public/img/img_small/2005.jpg) no-repeat center;
+	display: 'block'; 
+	background-size: 100%; 
+    height: 80px;
+    width: 80px;
+    border: 1px solid #000;
+	}
+
+#example_object2 {
+	background: url(./../public/img/img_small/2005.jpg) no-repeat center;
+	display: 'block'; 
+	background-size: 100%; 
+
+	height: 80px;
+	width: 80px;
+	}
+#example_object3 {
+	background: url(./../public/img/img_small/2008.jpg) no-repeat center;
+	display: 'block'; 
+	background-size: 100%; 
+	height: 80px;
+	width: 15%;
 	}
 
 #image_0 {
