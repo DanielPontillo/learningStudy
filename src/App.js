@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import learningStudy from './api/learningStudy';
 import ExperimentTrial from './components/ExperimentTrial';
 import Result from './components/Result';
 import Intro from './components/Intro';
@@ -12,6 +11,19 @@ import { Button} from 'react-bootstrap';
 import 'whatwg-fetch';
 import queryString from 'query-string';
 
+let experimentLists = {
+    list_1_a:  require('./api/list_1_a.js'),
+    list_2_a:  require('./api/list_2_a.js'),
+    list_3_a:  require('./api/list_3_a.js'),
+    list_4_a:  require('./api/list_4_a.js'),
+    list_5_a:  require('./api/list_5_a.js'),
+    list_6_a:  require('./api/list_6_a.js'),
+    list_7_a:  require('./api/list_7_a.js'),
+    list_8_a:  require('./api/list_8_a.js'),
+    list_9_a:  require('./api/list_9_a.js'),
+    list_10_a:  require('./api/list_10_a.js')
+
+}
 //import Instructions from './components/Instructions';
 
 import './preloadImages.css';
@@ -25,6 +37,7 @@ class App extends Component {
     super(props);
     
     this.state = {
+      experimentContents: {},
       //parameters of experiment
       numImages: 58,
       counter: 0,
@@ -76,7 +89,7 @@ class App extends Component {
       showDebug: false
       
     };
-
+    var learningStudy = [];
     var timeoutID = null;
     this.sendCompletionPutRequestToServer = this.sendCompletionPutRequestToServer.bind(this);
     this.sendUpdatePutRequestToServer = this.sendUpdatePutRequestToServer.bind(this);
@@ -103,6 +116,24 @@ class App extends Component {
       numShown = showcell.reduce((a, b) => a + b, 0)
     }
 
+    var urlParamStruct = this.getParams(window.location);
+    console.log(urlParamStruct);
+    console.log(urlParamStruct.participantID)
+
+    //load the list
+    //var listLocation = './api/' + urlParamStruct.experimentName + '/' + urlParamStruct.conditionListID + '/' + 'learningStudy1.js';
+    
+    //var listLocation = './api/learningStudy1.js';
+    
+    console.log(experimentLists)
+    //learningStudy = require(listLocation);
+    
+    //var learningStudy = require('./api/learningStudy1.js');
+
+    //eval(const learningStudy=require('${listLocation}')
+
+    var learningStudy = experimentLists[urlParamStruct.conditionListID]['default']
+    console.log(learningStudy)
     //set the first trial's target
     var curTarg = '';
     //const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
@@ -119,11 +150,7 @@ class App extends Component {
 
     //get number of blocks
     //get number of trials per block
-
-    
-    var urlParamStruct = this.getParams(window.location);
-    console.log(urlParamStruct);
-    console.log(urlParamStruct.participantID)
+  
 
     if (urlParamStruct.participantID == 0){
       this.setState({
@@ -133,6 +160,7 @@ class App extends Component {
    else{
 
     this.setState({
+      experimentContents: learningStudy,
       participantID: urlParamStruct.participantID,
       experimentName: urlParamStruct.experimentName,
       conditionListID: urlParamStruct.conditionListID,
@@ -431,7 +459,7 @@ handleExperimentEndScreen(event) {
     //  reset the testblock responses array
     //  flag the blockstart screen
     //  update last test block performance
-    if (this.state.miniblock<learningStudy[counter].miniblock) {
+    if (this.state.miniblock<this.state.experimentContents[counter].miniblock) {
       console.log("Begin New Miniblock")
       lastTestBlockPerformance = this.state.currentTestBlockPerformance
       currentTestBlockResponsesCorrect = []
@@ -444,38 +472,38 @@ handleExperimentEndScreen(event) {
     //  reset the reinforcement responses array
     //  flag the blockstart screen
     //  update last reinforcement block performance
-    if (this.state.blockType === "training" && learningStudy[counter].blockType === "test") {
+    if (this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
       lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
       currentReinforcementBlockResponsesCorrect = [];
       blockstartBoolean = true;
     }
 
-    if (this.state.blockType === "test" && learningStudy[counter].blockType === "generalization") {
+    if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "generalization") {
       lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
       currentReinforcementBlockResponsesCorrect = [];
       blockstartBoolean = true;
     }
 
     // determine the name of the new current target
-    if (learningStudy[counter].contents[0].option1type === "target") {
-      curTarg = learningStudy[counter].contents[0].option1
+    if (this.state.experimentContents[counter].contents[0].option1type === "target") {
+      curTarg = this.state.experimentContents[counter].contents[0].option1
     }
-    else if (learningStudy[counter].contents[0].option2type === "target"){
-      curTarg = learningStudy[counter].contents[0].option2
+    else if (this.state.experimentContents[counter].contents[0].option2type === "target"){
+      curTarg = this.state.experimentContents[counter].contents[0].option2
     }
     else{
-      curTarg = learningStudy[counter].contents[0].option3
+      curTarg = this.state.experimentContents[counter].contents[0].option3
     }
 
     this.setState({
         //update all the data for the next trial
         counter: counter,
         currentTarget: curTarg,
-        trialnum: learningStudy[counter].trialnum,
-        trialcontents: learningStudy[counter].contents,
-        block: learningStudy[counter].block,
-        miniblock: learningStudy[counter].miniblock,
-        blockType: learningStudy[counter].blockType,
+        trialnum: this.state.experimentContents[counter].trialnum,
+        trialcontents: this.state.experimentContents[counter].contents,
+        block: this.state.experimentContents[counter].block,
+        miniblock: this.state.experimentContents[counter].miniblock,
+        blockType: this.state.experimentContents[counter].blockType,
         showcell: showcell,
         showBlockstartScreen: blockstartBoolean,
 
@@ -645,9 +673,11 @@ renderBlockstart() {
 
   jumpToEnd() {
     console.log("Jump to End of Experiment")
+    console.log(this.state.counter)
+    console.log(Number(this.state.totalNumTrials)+4)
     this.setState({
         //update counter
-        counter: Number(this.state.totalNumTrials)-3,
+        counter: Number(this.state.totalNumTrials)+4,
     });
   }
 
@@ -728,7 +758,6 @@ renderBlockstart() {
     var responsesCorrect = this.state.responsesCorrect.toString()
     var demographicsInfo = this.state.demographicsInfo.toString()
     var experimentName = this.state.experimentName.toString()
-
     var participantComments = this.state.participantComments.toString()
 
 
