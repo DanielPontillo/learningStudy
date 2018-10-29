@@ -77,6 +77,7 @@ class ResponseOption extends Component {
 
     {this.props.teachingSignal === 'nonSelectable' && this.props.blockType === 'training' ? 
     <div className={this.props.teachingSignal}>
+
     <input
         type="radio"
         className="radioCustomButton"
@@ -87,7 +88,7 @@ class ResponseOption extends Component {
         />
 
         <label className="radioCustomLabel" htmlFor={this.props.content}>
-
+        <br/>
         {this.props.content} 
 
         <div id={this.props.teachingSignal} style={imgDivStyle}></div>
@@ -106,6 +107,7 @@ class ResponseOption extends Component {
       />
 
       <label className="radioCustomLabel" htmlFor={this.props.content}>
+       <br/>
         {this.props.content} 
         <div id={this.props.teachingSignal} style={imgDivStyle}><div id={this.props.feedback} style={imgDivStyle}></div></div>
         

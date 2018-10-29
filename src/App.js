@@ -72,6 +72,7 @@ class App extends Component {
       cumulativeTestPerformance: 0.00,
 
       //data to be collected
+      assignmentId: '0',
       participantID: '0',
       platformType: '',
       condition: '',
@@ -161,6 +162,7 @@ class App extends Component {
 
     this.setState({
       experimentContents: learningStudy,
+      assignmentId: urlParamStruct.assignmentId,
       participantID: urlParamStruct.participantID,
       experimentName: urlParamStruct.experimentName,
       conditionListID: urlParamStruct.conditionListID,
@@ -184,12 +186,14 @@ class App extends Component {
   getParams(location) {
    const searchParams = new URLSearchParams(location.search);
    
-  if(searchParams.has("participantID") && 
+  if(searchParams.has("assignmentId") &&
+    searchParams.has("participantID") && 
     searchParams.has("condition") &&
     searchParams.has("conditionListID") &&
     searchParams.has("expName") &&
     searchParams.has("platformType")){
     return {
+    assignmentId: searchParams.get('assignmentId'),
     participantID: searchParams.get('participantID'),
     condition: searchParams.get('condition'),
     conditionListID: searchParams.get('conditionListID'),
@@ -199,7 +203,8 @@ class App extends Component {
   };
   }
   else{
-    return{participantID: 0,
+    return{assignmentId: 0,
+      participantID: 0,
       condition: '',
     conditionListID: '',
     experimentName: '',
@@ -359,6 +364,9 @@ handleExperimentEndScreen(event) {
 
     this.sendCompletionPutRequestToServer()
 
+    if(this.state.platformType === "mturk_sandbox"){
+      console.log("mechanicalTurk, so submit")
+    }
     //redirect if it's mechanical turk
 
   }
@@ -751,6 +759,36 @@ renderBlockstart() {
   sendCompletionPutRequestToServer() {
     console.log("Send PUT request to complete the session")
 
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    var experimentName = this.state.experimentName.toString()
+    var participantComments = this.state.participantComments.toString()
+
+
+    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    console.log(queryString.stringify(bodyContents))
+
+    fetch('http://onlinelab.fr:3000/complete_participant_session',{
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    method: "PUT",
+    body: queryString.stringify(bodyContents)})
+      .then(resp => console.log(resp.json()));
+      // .then(resp => {
+      //   const currentTime = resp.dateString;
+      //   this.setState({currentTime})
+      // })
+
+  }
+
+  sendMechanicalTurkExternalSubmit() {
+    console.log("Send POST to mturk")
+    var assignmentId = this.state.assignmentId.toString()
     var participantID = this.state.participantID.toString()
     var responses = this.state.responses.toString()
     var responseTimes = this.state.responseTimes.toString()

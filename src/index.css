@@ -262,7 +262,7 @@ Experiment Screen Styles
 }
 
 .answerContainer {
-  display: inline-block;
+  display: block;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -270,12 +270,13 @@ Experiment Screen Styles
   background: #eee;
   height: 100%;
   z-index: 1;
+  
 
 }
 
 /* AnswerOption Component */
 .answerOption {
-  position: relative;
+  vertical-align: top;
   display: inline-block;
   width: 30%;
   height: 70px;
@@ -285,56 +286,64 @@ Experiment Screen Styles
 }
 
 .no_signal{
+
   vertical-align: top;
-  display: table;
+  display: block;
   width: 100%;
   height: 100%;
   z-index:3;
 }
 
 .nonSelectable{
+  
   vertical-align: top;
-  display: table;
+  display: block;
   width: 100%;
   height: 100%;
   z-index:3;
 }
 
 .smiley_img {
+  
   vertical-align: top;
-  display: table;
+  display: block;
   width: 100%;
   height: 100%;
   z-index:3;
 }
 
 .frown_img {
+  
   vertical-align: top;
-  display: table;
+  display: block;
   height: 100%;
   width: 100%;
   z-index:3;
 }
 
 .no_signal:hover {
+  
   background-color: #eefbfe;
   z-index:3;
   
 }
 
 .nonSelectable:hover {
+  
   background-color: #eefbfe;
   z-index:3;
   
 }
 
 .smiley_img:hover {
+  
   background-color: #eefbfe;
   z-index:3;
   
 }
 
 .frown_img:hover {
+  
   background-color: #eefbfe;
   z-index:3;
 }
@@ -348,11 +357,11 @@ Experiment Screen Styles
 
 
 .radioCustomLabel {
-    display: table-cell;
+    display: block;
     cursor: pointer;
     width: 100%;
-    padding: 0.5rem ;
     height: 100%;
+    
     font-size: 20px;
     border: 1px solid #aaa;
 }
@@ -360,7 +369,7 @@ Experiment Screen Styles
 .radioCustomButton ~ .radioCustomLabel:before {
    
     content: '';
-    display: inline-block;
+    
     
     background: #fff;
     border: 1px solid #0f0;

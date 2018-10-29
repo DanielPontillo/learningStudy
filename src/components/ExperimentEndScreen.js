@@ -13,10 +13,8 @@ class ExperimentEndScreen extends Component{
     };
 
     this.handleExperimentEndScreenLocal = this.handleExperimentEndScreenLocal.bind(this)
-   
+    
   }
-
-  
 
 
 
@@ -59,10 +57,13 @@ class ExperimentEndScreen extends Component{
 
       <div className="buttonContainer">
       <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
-       
+      
+      
       <Button className="button" onClick={this.handleExperimentEndScreenLocal}>
       Soumettre
       </Button>
+
+
       </div>
       
     </ReactCSSTransitionGroup>
