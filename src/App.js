@@ -709,7 +709,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('http://onlinelab.fr:3000/start_new_participant_session',{
+    fetch('https://onlinelab.fr:3000/start_new_participant_session',{
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -741,7 +741,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('http://onlinelab.fr:3000/update_participant_session',{
+    fetch('https://onlinelab.fr:3000/update_participant_session',{
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -772,7 +772,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('http://onlinelab.fr:3000/complete_participant_session',{
+    fetch('https://onlinelab.fr:3000/complete_participant_session',{
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -799,15 +799,19 @@ renderBlockstart() {
     var participantComments = this.state.participantComments.toString()
 
 
-    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    var bodyContents = {assignmentId: assignmentId, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('http://onlinelab.fr:3000/complete_participant_session',{
+    var url = new URL("https://workersandbox.mturk.com/mturk/externalSubmit");
+    
+    Object.keys(bodyContents).forEach(key => url.searchParams.append(key, bodyContents[key]))
+
+    fetch(url,{
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    method: "PUT",
-    body: queryString.stringify(bodyContents)})
+    method: "POST"
+    })
       .then(resp => console.log(resp.json()));
       // .then(resp => {
       //   const currentTime = resp.dateString;
