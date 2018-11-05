@@ -126,15 +126,15 @@ class App extends Component {
     
     //var listLocation = './api/learningStudy1.js';
     
-    console.log(experimentLists)
     //learningStudy = require(listLocation);
     
     //var learningStudy = require('./api/learningStudy1.js');
 
     //eval(const learningStudy=require('${listLocation}')
-
+    
     var learningStudy = experimentLists[urlParamStruct.conditionListID]['default']
-    console.log(learningStudy)
+
+    //console.log(learningStudy['default'])
     //set the first trial's target
     var curTarg = '';
     //const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
@@ -366,6 +366,11 @@ handleExperimentEndScreen(event) {
 
     if(this.state.platformType === "mturk_sandbox"){
       console.log("mechanicalTurk, so submit")
+      sendMechanicalTurkSandboxExternalSubmit()
+    }
+    else if(this.state.platformType === "mturk"){
+      console.log("mechanicalTurk, so submit")
+      sendMechanicalTurkExternalSubmit()
     }
     //redirect if it's mechanical turk
 
@@ -787,6 +792,40 @@ renderBlockstart() {
   }
 
   sendMechanicalTurkExternalSubmit() {
+    console.log("Send POST to mturk")
+    var assignmentId = this.state.assignmentId.toString()
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    var experimentName = this.state.experimentName.toString()
+    var participantComments = this.state.participantComments.toString()
+
+
+    var bodyContents = {assignmentId: assignmentId, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    console.log(queryString.stringify(bodyContents))
+
+    var url = new URL("https://mturk.com/mturk/externalSubmit");
+    
+    Object.keys(bodyContents).forEach(key => url.searchParams.append(key, bodyContents[key]))
+
+    fetch(url,{
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    method: "POST"
+    })
+      .then(resp => console.log(resp.json()));
+      // .then(resp => {
+      //   const currentTime = resp.dateString;
+      //   this.setState({currentTime})
+      // })
+
+  }
+
+  sendMechanicalTurkSandboxExternalSubmit() {
     console.log("Send POST to mturk")
     var assignmentId = this.state.assignmentId.toString()
     var participantID = this.state.participantID.toString()

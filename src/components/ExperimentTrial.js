@@ -161,14 +161,12 @@ class ExperimentTrial extends Component {
     >
       <div className="experimentContainer" key={this.props.questionId}>
 
-      <div className="expDebugText">
-      Trial Debug: {this.props.blockType} block
-      </div>
+      
 
         {/*<QuestionCount
           counter={this.props.trialnum}
           total={this.props.numTrialsPerBlock}
-        />*/}
+        
 
         {this.props.block >0 ? 
           <BlockCount
@@ -176,7 +174,7 @@ class ExperimentTrial extends Component {
           total={this.props.totalNumBlocks}
         /> 
         : null}
-      
+      />*/}
       
         <TrialQuestionContent showcell={this.props.showcell} content={this.props.trialcontents} />
         
