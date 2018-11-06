@@ -409,12 +409,13 @@ handleExperimentEndScreen(event) {
 
   handleBlockstartScreen(event) {
     console.log("Blockstart Screen Complete")
-
+    this.arrangeExperimentTrial(this.state.counter);
     this.setState({
       showBlockstartScreen: false,
       experimentStarted: true,
       currentTrialStartTime: Date.now()
     })
+
     this.timeoutID = setTimeout(() => this.responseTimedOut(),8000);
   }
 
@@ -480,13 +481,17 @@ handleExperimentEndScreen(event) {
     //  reset the reinforcement responses array
     //  flag the blockstart screen
     //  update last reinforcement block performance
-    if (this.state.block > 0 && this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
-      lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
-      currentReinforcementBlockResponsesCorrect = [];
+    if (this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
+      console.log("Test Block Start")
+      if (this.state.block > 0){
+        lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
+        currentReinforcementBlockResponsesCorrect = [];
+      }
       blockstartBoolean = true;
     }
 
     if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "generalization") {
+      
       lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
       currentReinforcementBlockResponsesCorrect = [];
       blockstartBoolean = true;
@@ -502,6 +507,8 @@ handleExperimentEndScreen(event) {
     else{
       curTarg = this.state.experimentContents[counter].contents[0].option3
     }
+
+    this.arrangeExperimentTrial(counter);
 
     this.setState({
         //update all the data for the next trial
@@ -537,32 +544,29 @@ handleExperimentEndScreen(event) {
  
   }
 
-
-
-
-  renderExperimentTrial() {
+  arrangeExperimentTrial(counter) {
 
     var teachingSignal1 = "no_signal";
     var teachingSignal2 = "no_signal";
     var teachingSignal3 = "no_signal";
 
-
-    if (this.state.trialcontents[0].learningType === "supervised" && this.state.blockType === "training"){
+    
+    if (this.state.experimentContents[counter].contents[0].learningType === "supervised" && this.state.experimentContents[counter].blockType === "training"){
       var testRoll = Math.random();
       var positiveTeachingSignal = Number(this.state.lastReinforcementBlockPerformance) > testRoll;
-      
+      console.log(this.state.lastReinforcementBlockPerformance)
       var targetLocation = 0;
       var nonTargetPositionArray = [1,2,3]
 
-      if (this.state.trialcontents[0].option1type === "target"){
+      if (this.state.experimentContents[counter].contents[0].option1type === "target"){
           targetLocation = 1;
           nonTargetPositionArray = [2,3];
       }
-      else if (this.state.trialcontents[0].option2type === "target"){
+      else if (this.state.experimentContents[counter].contents[0].option2type === "target"){
           targetLocation = 2;
           nonTargetPositionArray = [1,3];
       }
-      else if (this.state.trialcontents[0].option3type === "target"){
+      else if (this.state.experimentContents[counter].contents[0].option3type === "target"){
           targetLocation = 3;
           nonTargetPositionArray = [1,2];
       }
@@ -609,29 +613,12 @@ handleExperimentEndScreen(event) {
 
     }
    
-    
-    return (
-      <ExperimentTrial
-        
-        trialTarget={this.state.currentTarget}
+    this.setState({
+      teachingSignal1: teachingSignal1,
+      teachingSignal2: teachingSignal2,
+      teachingSignal3: teachingSignal3,
+    });
 
-        trialcontents={this.state.trialcontents}
-        numTrialsPerBlock={this.state.totalNumTrials}
-        trialnum={this.state.trialnum}
-        block={this.state.miniblock}
-        totalNumBlocks={this.state.totalNumBlocks}
-        miniblock={this.state.miniblock}
-        blockType={this.state.blockType}
-        showcell={this.state.showcell}
-        teachingSignal1={teachingSignal1}
-        teachingSignal2={teachingSignal2}
-        teachingSignal3={teachingSignal3}
-
-        //questionTotal={this.state.numTrialsPerBlock}
-        responseSelected={this.state.receivedResponse}
-        onAnswerSelected={this.handleAnswerSelected}
-      />
-    );
   }
 
   renderExperimentEndSurvey() {
@@ -818,7 +805,7 @@ renderBlockstart() {
     var bodyContents = {assignmentId: assignmentId,participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     //console.log(queryString.stringify(bodyContents))
 
-    var url = new URL("https://mturk.com/mturk/externalSubmit");
+    var url = new URL("https://www.mturk.com/mturk/externalSubmit");
     
     Object.keys(bodyContents).forEach(key => url.searchParams.append(key, bodyContents[key]))
 
@@ -921,7 +908,26 @@ renderBlockstart() {
  this.state.nodemographics ? this.renderDemographicsSurvey() : 
  this.state.instructionsNotComplete ? this.renderInstructions() : 
  this.state.showBlockstartScreen ? this.renderBlockstart(): 
- this.state.experimentStarted ? this.renderExperimentTrial() : 
+ this.state.experimentStarted ? <ExperimentTrial
+        
+        trialTarget={this.state.currentTarget}
+
+        trialcontents={this.state.trialcontents}
+        numTrialsPerBlock={this.state.totalNumTrials}
+        trialnum={this.state.trialnum}
+        block={this.state.miniblock}
+        totalNumBlocks={this.state.totalNumBlocks}
+        miniblock={this.state.miniblock}
+        blockType={this.state.blockType}
+        showcell={this.state.showcell}
+        teachingSignal1={this.state.teachingSignal1}
+        teachingSignal2={this.state.teachingSignal2}
+        teachingSignal3={this.state.teachingSignal3}
+
+        //questionTotal={this.state.numTrialsPerBlock}
+        responseSelected={this.state.receivedResponse}
+        onAnswerSelected={this.handleAnswerSelected}
+      /> : 
  this.renderIntro() }
         
         

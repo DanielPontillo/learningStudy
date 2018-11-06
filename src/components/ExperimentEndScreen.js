@@ -72,7 +72,7 @@ class ExperimentEndScreen extends Component{
       </form>
 
       : this.props.platformType === "mturk" ?
-        <form id="hitForm" action="https://mturk.com/mturk/externalSubmit" method="POST">
+        <form id="hitForm" action="https://www.mturk.com/mturk/externalSubmit" method="POST">
         <input type="hidden" name="assignmentId" value={this.props.assignmentId} />
         <input type="hidden" name="participantID" value={this.props.participantID} />
         <input type="hidden" name="responses" value={this.props.responses} />
