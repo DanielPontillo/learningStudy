@@ -553,9 +553,9 @@ handleExperimentEndScreen(event) {
 
     if (this.state.trialcontents[0].learningType === "supervised" && this.state.blockType === "training"){
       var testRoll = Math.random();
-      var positiveTeachingSignal = this.state.lastReinforcementBlockPerformance > testRoll;
+      var positiveTeachingSignal = Number(this.state.lastReinforcementBlockPerformance) > testRoll;
       console.log(testRoll)
-      console.log(this.state.lastReinforcementBlockPerformance)
+      console.log(Number(this.state.lastReinforcementBlockPerformance))
       console.log("Positive Teaching Signal? " + positiveTeachingSignal.toString())
 
       var targetLocation = 0;
