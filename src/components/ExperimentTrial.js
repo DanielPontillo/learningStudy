@@ -27,7 +27,7 @@ class ExperimentTrial extends Component {
   }
 
   showFeedback(answerCorrect,selectedOption){
-    console.log("show feedback")
+    
     if (selectedOption === "option1"){
       if (answerCorrect){
         this.setState({
@@ -73,7 +73,7 @@ class ExperimentTrial extends Component {
     
 
   hideFeedbackAndProceed(response, selectedOption){
-    console.log("hide feedback and proceed")
+    
     
     this.setState({
       selectedResponse: false,
@@ -93,7 +93,7 @@ class ExperimentTrial extends Component {
 
 
   handleAnswerSelectedExperiment(response, selectedOption) {
-    console.log("Handle answer experiment level, selected for " + this.props.trialcontents[0].learningType + " trial.")
+   // console.log("Handle answer experiment level, selected for " + this.props.trialcontents[0].learningType + " trial.")
     if (this.props.responseSelected){
       console.log("alreadySelectedResponse")
     }
@@ -110,18 +110,12 @@ class ExperimentTrial extends Component {
   handleResponseAftermath(response,selectedOption){
 
     var answerCorrect = response === this.props.trialTarget
-    console.log(response)
-    console.log(this.props.trialTarget)
+    
 
-    if (answerCorrect){
-      console.log("Answer Correct")
-    }
-    else {
-      console.log("Answer Incorrect")
-    }
+    
 
     if (this.props.blockType === "test" || this.props.blockType === "generalization"){
-      console.log("this is a test trial")
+      //console.log("this is a test trial")
 
       setTimeout(() => this.passResponseAndProceed(response,selectedOption), 500);
     }
@@ -129,13 +123,13 @@ class ExperimentTrial extends Component {
     else if (this.props.trialcontents[0].learningType === "reinforcement"){
 
       this.showFeedback(answerCorrect,selectedOption);
-      console.log("this is a reinforcement training trial")
+      //console.log("this is a reinforcement training trial")
 
       setTimeout(() => this.hideFeedbackAndProceed(response, selectedOption), 1000);
 
     }
     else{
-      console.log("this is a supervised training trial")
+      //console.log("this is a supervised training trial")
       setTimeout(() => this.passResponseAndProceed(response,selectedOption), 500);
     }
 

@@ -120,9 +120,7 @@ class App extends Component {
     }
 
     var urlParamStruct = this.getParams(window.location);
-    console.log(urlParamStruct);
-    console.log(urlParamStruct.participantID)
-
+    
     //load the list
     //var listLocation = './api/' + urlParamStruct.experimentName + '/' + urlParamStruct.conditionListID + '/' + 'learningStudy1.js';
     
@@ -260,14 +258,12 @@ class App extends Component {
       console.log("Handle answer selected in main app")
       
       var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
-      console.log("Response Time: " + responseTime )
+      //console.log("Response Time: " + responseTime )
 
       if (responseTime > 500){
         var response = selected_id
         var selectedOption = selected_option
 
-        console.log("selected word: " + response)
-        console.log("selected option number: " + selectedOption)
 
         this.checkResponseAndUpdate(response,responseTime);
 
@@ -554,10 +550,7 @@ handleExperimentEndScreen(event) {
     if (this.state.trialcontents[0].learningType === "supervised" && this.state.blockType === "training"){
       var testRoll = Math.random();
       var positiveTeachingSignal = Number(this.state.lastReinforcementBlockPerformance) > testRoll;
-      console.log(testRoll)
-      console.log(Number(this.state.lastReinforcementBlockPerformance))
-      console.log("Positive Teaching Signal? " + positiveTeachingSignal.toString())
-
+      
       var targetLocation = 0;
       var nonTargetPositionArray = [1,2,3]
 
@@ -707,8 +700,7 @@ renderBlockstart() {
 
   jumpToEnd() {
     console.log("Jump to End of Experiment")
-    console.log(this.state.counter)
-    console.log(Number(this.state.totalNumTrials)+4)
+   
     this.setState({
         //update counter
         counter: Number(this.state.totalNumTrials)+4,
@@ -733,7 +725,7 @@ renderBlockstart() {
     var currentPlatformType = this.state.platformType.toString()
 
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
-    console.log(queryString.stringify(bodyContents))
+    
 
     fetch('https://onlinelab.fr:3000/start_new_participant_session',{mode:"cors",
     headers: {
@@ -741,7 +733,7 @@ renderBlockstart() {
     },
     method: "POST",
     body: queryString.stringify(bodyContents)})
-      .then(resp => console.log(resp.json()));
+      .then(resp => console.log("response received"));
       // .then(resp => {
       //   const currentTime = resp.dateString;
       //   this.setState({currentTime})
@@ -753,8 +745,6 @@ renderBlockstart() {
   sendUpdatePutRequestToServer() {
     console.log("Send PUT request to update the session")
     
-    console.log(this.state.responses)
-    console.log(this.state.responseTimes)
 
     var participantID = this.state.participantID.toString()
     var responses = this.state.responses.toString()
@@ -765,7 +755,7 @@ renderBlockstart() {
     var experimentName = this.state.experimentName.toString()
 
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
-    console.log(queryString.stringify(bodyContents))
+    //console.log(queryString.stringify(bodyContents))
 
     fetch('https://onlinelab.fr:3000/update_participant_session',{mode:"cors",
     headers: {
@@ -773,7 +763,7 @@ renderBlockstart() {
     },
     method: "POST",
     body: queryString.stringify(bodyContents)})
-      .then(resp => console.log(resp.json()));
+      .then(resp => console.log("response received"));
       // .then(resp => {
       //   const currentTime = resp.dateString;
       //   this.setState({currentTime})
@@ -796,7 +786,7 @@ renderBlockstart() {
 
 
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
-    console.log(queryString.stringify(bodyContents))
+    //console.log(queryString.stringify(bodyContents))
 
     fetch('https://onlinelab.fr:3000/complete_participant_session',{mode:"cors",
     headers: {
@@ -804,7 +794,7 @@ renderBlockstart() {
     },
     method: "POST",
     body: queryString.stringify(bodyContents)})
-      .then(resp => console.log(resp.json()));
+      .then(resp => console.log("response received"));
       // .then(resp => {
       //   const currentTime = resp.dateString;
       //   this.setState({currentTime})
@@ -826,7 +816,7 @@ renderBlockstart() {
 
 
     var bodyContents = {assignmentId: assignmentId,participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
-    console.log(queryString.stringify(bodyContents))
+    //console.log(queryString.stringify(bodyContents))
 
     var url = new URL("https://mturk.com/mturk/externalSubmit");
     
@@ -860,7 +850,7 @@ renderBlockstart() {
 
 
     var bodyContents = {assignmentId: assignmentId, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
-    console.log(queryString.stringify(bodyContents))
+    //console.log(queryString.stringify(bodyContents))
 
     var url = new URL("https://workersandbox.mturk.com/mturk/externalSubmit");
     

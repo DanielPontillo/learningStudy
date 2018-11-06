@@ -18,14 +18,12 @@ class Instructions extends Component {
     handleInstructionsLocal(event){
     var curText = this.state.currentInstructionText;
     var whichButton = event.currentTarget.id;
-    console.log(curText)
-    console.log(curText < 3)
-    console.log(whichButton)
+    
     if(whichButton == "left" && curText > 1){
       this.setState({currentInstructionText: curText-1});
     }
     else if(whichButton ==="right" && curText < 3){
-      console.log("should transition")
+      
       this.setState({currentInstructionText: curText+1});
     }
     if(whichButton ==="right" && curText === 2){

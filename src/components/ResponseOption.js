@@ -29,7 +29,7 @@ class ResponseOption extends Component {
   }
 
   showFeedback(answerCorrect){
-    console.log("show feedback")
+    //console.log("show feedback")
 
     if (answerCorrect){
       this.setState({
@@ -46,10 +46,7 @@ class ResponseOption extends Component {
   }
 
   hideFeedbackAndProceed(response, selectedOption){
-    console.log("hide feedback and proceed")
-    console.log(response)
-    console.log(selectedOption)
-    console.log(this.state.feedback)
+   
     this.setState({
       feedback: 'no_signal'
     })
@@ -58,13 +55,9 @@ class ResponseOption extends Component {
   
   handleAnswerSelectedLocal(event) {
 
-
-    console.log("Handle answer local selected for " + this.props.learningType + " trial.")
     var response = event.currentTarget.id
     var selectedOption = event.currentTarget.value
-    console.log("selected word: " + response)
-    console.log("selected option number: " + selectedOption)
-    console.log("trial target: " + this.props.trialTarget)
+    
 
     this.props.handleAnswerSelectedExperiment(response, selectedOption)
 
