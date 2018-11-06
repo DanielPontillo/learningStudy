@@ -56,13 +56,38 @@ class ExperimentEndScreen extends Component{
        
 
       <div className="buttonContainer">
+
+
       <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
-      
-      
+      {this.props.platformType === "mturk_sandbox" ?
+      <form id="hitForm" action="https://workersandbox.mturk.com/mturk/externalSubmit" method="POST">
+        <input type="hidden" name="assignmentId" value={this.props.assignmentId} />
+        <input type="hidden" name="participantID" value={this.props.participantID} />
+        <input type="hidden" name="responses" value={this.props.responses} />
+        <input type="hidden" name="responseTimes" value={this.props.responseTimes} />
+        <input type="hidden" name="responsesCorrect" value={this.props.responsesCorrect} />
+        <input type="hidden" name="demographicsInfo" value={this.props.demographicsInfo} />
+        <input type="hidden" name="participantComments" value={this.props.participantComments} />
+        <input type="submit" className="button" />
+      </form>
+
+      : this.props.platformType === "mturk" ?
+        <form id="hitForm" action="https://mturk.com/mturk/externalSubmit" method="POST">
+        <input type="hidden" name="assignmentId" value={this.props.assignmentId} />
+        <input type="hidden" name="participantID" value={this.props.participantID} />
+        <input type="hidden" name="responses" value={this.props.responses} />
+        <input type="hidden" name="responseTimes" value={this.props.responseTimes} />
+        <input type="hidden" name="responsesCorrect" value={this.props.responsesCorrect} />
+        <input type="hidden" name="demographicsInfo" value={this.props.demographicsInfo} />
+        <input type="hidden" name="participantComments" value={this.props.participantComments} />
+        <input type="submit" className="button" />
+      </form>
+      :
       <Button className="button" onClick={this.handleExperimentEndScreenLocal}>
+      
       Soumettre
       </Button>
-
+      }
 
       </div>
       

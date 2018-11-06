@@ -92,6 +92,8 @@ class App extends Component {
     };
     var learningStudy = [];
     var timeoutID = null;
+    this.sendMechanicalTurkExternalSubmit = this.sendMechanicalTurkExternalSubmit.bind(this);
+    this.sendMechanicalTurkSandboxExternalSubmit = this.sendMechanicalTurkSandboxExternalSubmit.bind(this);
     this.sendCompletionPutRequestToServer = this.sendCompletionPutRequestToServer.bind(this);
     this.sendUpdatePutRequestToServer = this.sendUpdatePutRequestToServer.bind(this);
     this.sendSessionStartPostRequestToServer= this.sendSessionStartPostRequestToServer.bind(this);
@@ -366,11 +368,11 @@ handleExperimentEndScreen(event) {
 
     if(this.state.platformType === "mturk_sandbox"){
       console.log("mechanicalTurk, so submit")
-      sendMechanicalTurkSandboxExternalSubmit()
+      this.sendMechanicalTurkSandboxExternalSubmit()
     }
     else if(this.state.platformType === "mturk"){
       console.log("mechanicalTurk, so submit")
-      sendMechanicalTurkExternalSubmit()
+      this.sendMechanicalTurkExternalSubmit()
     }
     //redirect if it's mechanical turk
 
@@ -650,9 +652,28 @@ handleExperimentEndScreen(event) {
     //this.sendCompletionPutRequestToServer()
 
     // if this is a mechanical turk experiment, you'll send the post request in the next screen
+    var assignmentId = this.state.assignmentId.toString()
+
+    var participantID = this.state.participantID.toString()
+    var responses = this.state.responses.toString()
+    var responseTimes = this.state.responseTimes.toString()
+    var currentBlock = this.state.miniblock.toString()
+    var responsesCorrect = this.state.responsesCorrect.toString()
+    var demographicsInfo = this.state.demographicsInfo.toString()
+    var experimentName = this.state.experimentName.toString()
+    var participantComments = this.state.participantComments.toString()
+
 
     return (
-      <ExperimentEndScreen handleExperimentEndScreen = {this.handleExperimentEndScreen} />
+      <ExperimentEndScreen platformType = {this.state.platformType}
+      assignmentId = {assignmentId} 
+      participantID = {participantID} 
+      responses = {responses} 
+      responseTimes = {responseTimes}
+      responsesCorrect = {responsesCorrect}
+      demographicsInfo = {demographicsInfo}
+      participantComments = {participantComments}
+      handleExperimentEndScreen = {this.handleExperimentEndScreen} />
     );
   }
   renderIntro() {
@@ -804,7 +825,7 @@ renderBlockstart() {
     var participantComments = this.state.participantComments.toString()
 
 
-    var bodyContents = {assignmentId: assignmentId, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    var bodyContents = {participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     console.log(queryString.stringify(bodyContents))
 
     var url = new URL("https://mturk.com/mturk/externalSubmit");
