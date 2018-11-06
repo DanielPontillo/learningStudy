@@ -255,10 +255,7 @@ class App extends Component {
   handleAnswerSelected(selected_id, selected_option) {
     clearTimeout(this.timeoutID);
 
-    if (this.state.receivedResponse){
-      console.log("Handle double-click")
-    }
-    else{  
+    
 
       console.log("Handle answer selected in main app")
       
@@ -274,9 +271,9 @@ class App extends Component {
 
         this.checkResponseAndUpdate(response,responseTime);
 
-        this.setState({
-          receivedResponse: true
-        });
+        //this.setState({
+        //  receivedResponse: true
+        //});
 
         //Set Next Question
         if (this.state.trialnum < this.state.totalNumTrials) {
@@ -289,7 +286,7 @@ class App extends Component {
         console.log("Response Too Fast")
       }
 
-  }
+  
 }
 
   checkResponseAndUpdate(response,responseTime){
@@ -364,16 +361,16 @@ handleExperimentEndScreen(event) {
 
     console.log("Experiment Ended, submit final results")
 
-    this.sendCompletionPutRequestToServer()
+    this.sendCompletionPutRequestToServer("from debug")
 
-    if(this.state.platformType === "mturk_sandbox"){
-      console.log("mechanicalTurk, so submit")
-      this.sendMechanicalTurkSandboxExternalSubmit()
-    }
-    else if(this.state.platformType === "mturk"){
-      console.log("mechanicalTurk, so submit")
-      this.sendMechanicalTurkExternalSubmit()
-    }
+    //if(this.state.platformType === "mturk_sandbox"){
+    //  console.log("mechanicalTurk, so submit")
+    //  this.sendMechanicalTurkSandboxExternalSubmit()
+    //}
+    //else if(this.state.platformType === "mturk"){
+    //  console.log("mechanicalTurk, so submit")
+    //  this.sendMechanicalTurkExternalSubmit()
+    //}
     //redirect if it's mechanical turk
 
   }
@@ -384,9 +381,9 @@ handleExperimentEndScreen(event) {
     console.log("Experiment End Survey Complete")
 
     this.renderExperimentEndScreen()
-
+    this.sendCompletionPutRequestToServer(comments)
     this.setState({
-      participantComments: comments,
+      //participantComments: comments,
       showExperimentEndSurvey: false,
       showExperimentEndScreen: true
     })
@@ -531,7 +528,7 @@ handleExperimentEndScreen(event) {
         lastTestBlockPerformance: lastTestBlockPerformance,
 
         //refresh response recieved flag
-        receivedResponse: false
+        //receivedResponse: false
         
     });
 
@@ -555,8 +552,11 @@ handleExperimentEndScreen(event) {
 
 
     if (this.state.trialcontents[0].learningType === "supervised" && this.state.blockType === "training"){
-      
-      var positiveTeachingSignal = this.state.lastReinforcementBlockPerformance > Math.random();
+      var testRoll = Math.random();
+      var positiveTeachingSignal = this.state.lastReinforcementBlockPerformance > testRoll;
+      console.log(testRoll)
+      console.log(this.state.lastReinforcementBlockPerformance)
+      console.log("Positive Teaching Signal? " + positiveTeachingSignal.toString())
 
       var targetLocation = 0;
       var nonTargetPositionArray = [1,2,3]
@@ -735,7 +735,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr:3000/start_new_participant_session',{
+    fetch('https://onlinelab.fr:3000/start_new_participant_session',{mode: 'cors',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -767,7 +767,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr:3000/update_participant_session',{
+    fetch('https://onlinelab.fr:3000/update_participant_session',{mode: 'cors',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -782,7 +782,7 @@ renderBlockstart() {
   }
 
 
-  sendCompletionPutRequestToServer() {
+  sendCompletionPutRequestToServer(comments) {
     console.log("Send PUT request to complete the session")
 
     var participantID = this.state.participantID.toString()
@@ -792,13 +792,13 @@ renderBlockstart() {
     var responsesCorrect = this.state.responsesCorrect.toString()
     var demographicsInfo = this.state.demographicsInfo.toString()
     var experimentName = this.state.experimentName.toString()
-    var participantComments = this.state.participantComments.toString()
+    var participantComments = comments
 
 
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr:3000/complete_participant_session',{
+    fetch('https://onlinelab.fr:3000/complete_participant_session',{mode: 'cors',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
