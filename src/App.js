@@ -484,7 +484,7 @@ handleExperimentEndScreen(event) {
     //  reset the reinforcement responses array
     //  flag the blockstart screen
     //  update last reinforcement block performance
-    if (this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
+    if (this.state.block > 0 && this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
       lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
       currentReinforcementBlockResponsesCorrect = [];
       blockstartBoolean = true;
