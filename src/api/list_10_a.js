@@ -119,16 +119,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "pib",
-option1: "pipi",
-option2: "pib\u00e9",
-option3: "pip\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "guinch",
+option1: "duguinch",
+option2: "diguinch",
+option3: "doguinch",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2034}]
+image: 2023}]
 }
 ,
 
@@ -138,16 +138,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chanf",
-option1: "dichanf",
-option2: "dochanf",
-option3: "duchanf",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2001}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "geub",
+option1: "geupi",
+option2: "geup\u00e9",
+option3: "geub\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2040}]
 }
 ,
 
@@ -157,16 +157,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cap",
-option1: "cap\u00e9",
-option2: "cab\u00e9",
-option3: "capi",
-option1type: "foil",
-option2type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chanf",
+option1: "dochanf",
+option2: "dichanf",
+option3: "duchanf",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2022}]
+image: 2001}]
 }
 ,
 
@@ -176,16 +176,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gonch",
-option1: "gong\u00e9",
-option2: "gonchi",
-option3: "gonch\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "feum",
+option1: "dofeum",
+option2: "dufeum",
+option3: "difeum",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2010}]
+image: 2037}]
 }
 ,
 
@@ -195,16 +195,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "souv",
-option1: "souv\u00e9",
-option2: "soufi",
-option3: "souf\u00e9",
-option1type: "target",
-option2type: "distractor",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "minb",
+option1: "duminb",
+option2: "diminb",
+option3: "dominb",
+option1type: "distractor",
+option2type: "target",
 option3type: "foil",
-image: 2012}]
+image: 2029}]
 }
 ,
 
@@ -214,16 +214,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "coun",
-option1: "coumi",
-option2: "coum\u00e9",
-option3: "coun\u00e9",
-option1type: "distractor",
-option2type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cun",
+option1: "dicun",
+option2: "ducun",
+option3: "docun",
+option1type: "foil",
+option2type: "distractor",
 option3type: "target",
-image: 2020}]
+image: 2013}]
 }
 ,
 
@@ -235,14 +235,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "gam",
-option1: "gam\u00e9",
-option2: "gani",
-option3: "gan\u00e9",
+rootWord: "cam",
+option1: "cam\u00e9",
+option2: "cani",
+option3: "can\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2036}]
+image: 2032}]
 }
 ,
 
@@ -254,14 +254,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "guinch",
-option1: "doguinch",
-option2: "diguinch",
-option3: "duguinch",
+rootWord: "voun",
+option1: "divoun",
+option2: "dovoun",
+option3: "duvoun",
 option1type: "foil",
 option2type: "target",
 option3type: "distractor",
-image: 2023}]
+image: 2021}]
 }
 ,
 
@@ -271,16 +271,16 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gup",
-option1: "gup\u00e9",
-option2: "gupi",
-option3: "guz\u00e9",
-option1type: "foil",
-option2type: "distractor",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "suf",
+option1: "dusuf",
+option2: "disuf",
+option3: "dosuf",
+option1type: "distractor",
+option2type: "foil",
 option3type: "target",
-image: 2018}]
+image: 2007}]
 }
 ,
 
@@ -290,59 +290,21 @@ block: 1,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cun",
-option1: "docun",
-option2: "dicun",
-option3: "ducun",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2013}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "panp",
+option1: "panpi",
+option2: "panb\u00e9",
+option3: "panp\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2016}]
 }
 ,
 
 {
 trialnum: 11,
-block: 1,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "tinch",
-option1: "ting\u00e9",
-option2: "tinchi",
-option3: "tinch\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2024}]
-}
-,
-
-{
-trialnum: 12,
-block: 1,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "suf",
-option1: "disuf",
-option2: "dusuf",
-option3: "dosuf",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2007}]
-}
-,
-
-{
-trialnum: 13,
 block: 1,
 miniblock: 1,
 blockType: "test",
@@ -361,21 +323,59 @@ image: 2004}]
 ,
 
 {
-trialnum: 14,
+trialnum: 12,
 block: 1,
 miniblock: 1,
 blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "feum",
-option1: "dofeum",
-option2: "difeum",
-option3: "dufeum",
+rootWord: "gouf",
+option1: "dogouf",
+option2: "dugouf",
+option3: "digouf",
 option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2003}]
+}
+,
+
+{
+trialnum: 13,
+block: 1,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "tinch",
+option1: "tinchi",
+option2: "tinch\u00e9",
+option3: "ting\u00e9",
+option1type: "distractor",
 option2type: "foil",
+option3type: "target",
+image: 2024}]
+}
+,
+
+{
+trialnum: 14,
+block: 1,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "pib",
+option1: "pip\u00e9",
+option2: "pib\u00e9",
+option3: "pipi",
+option1type: "foil",
+option2type: "target",
 option3type: "distractor",
-image: 2037}]
+image: 2034}]
 }
 ,
 
@@ -384,481 +384,6 @@ trialnum: 15,
 block: 1,
 miniblock: 1,
 blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "manp",
-option1: "dimanp",
-option2: "dumanp",
-option3: "domanp",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2009}]
-}
-,
-
-{
-trialnum: 16,
-block: 1,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "nif",
-option1: "nif\u00e9",
-option2: "niv\u00e9",
-option3: "nivi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2030}]
-}
-,
-
-{
-trialnum: 17,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "bip",
-option1: "dobip",
-option2: "dibip",
-option3: "dubip",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2025}]
-}
-,
-
-{
-trialnum: 18,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "feum",
-option1: "difeum",
-option2: "dufeum",
-option3: "dofeum",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2037}]
-}
-,
-
-{
-trialnum: 19,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "geub",
-option1: "geup\u00e9",
-option2: "geupi",
-option3: "geub\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2040}]
-}
-,
-
-{
-trialnum: 20,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "doum",
-option1: "doum\u00e9",
-option2: "doun\u00e9",
-option3: "douni",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2004}]
-}
-,
-
-{
-trialnum: 21,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "monch",
-option1: "dimonch",
-option2: "dumonch",
-option3: "domonch",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2017}]
-}
-,
-
-{
-trialnum: 22,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gonb",
-option1: "gonpi",
-option2: "gonb\u00e9",
-option3: "gonp\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2008}]
-}
-,
-
-{
-trialnum: 23,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "nif",
-option1: "niv\u00e9",
-option2: "nivi",
-option3: "nif\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2030}]
-}
-,
-
-{
-trialnum: 24,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jonp",
-option1: "dojonp",
-option2: "dujonp",
-option3: "dijonp",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2005}]
-}
-,
-
-{
-trialnum: 25,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "chanv",
-option1: "chanfi",
-option2: "chanf\u00e9",
-option3: "chanv\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2014}]
-}
-,
-
-{
-trialnum: 26,
-block: 1,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "suf",
-option1: "dusuf",
-option2: "dosuf",
-option3: "disuf",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2007}]
-}
-,
-
-{
-trialnum: 27,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cuch",
-option1: "dicuch",
-option2: "docuch",
-option3: "ducuch",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2011}]
-}
-,
-
-{
-trialnum: 28,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gup",
-option1: "guz\u00e9",
-option2: "gupi",
-option3: "gup\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2018}]
-}
-,
-
-{
-trialnum: 29,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cap",
-option1: "cab\u00e9",
-option2: "capi",
-option3: "cap\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2022}]
-}
-,
-
-{
-trialnum: 30,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "dib",
-option1: "dodib",
-option2: "dudib",
-option3: "didib",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2027}]
-}
-,
-
-{
-trialnum: 31,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "fim",
-option1: "dofim",
-option2: "difim",
-option3: "dufim",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2031}]
-}
-,
-
-{
-trialnum: 32,
-block: 1,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "boup",
-option1: "boupi",
-option2: "boup\u00e9",
-option3: "boub\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2002}]
-}
-,
-
-{
-trialnum: 33,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "voun",
-option1: "divoun",
-option2: "duvoun",
-option3: "dovoun",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2021}]
-}
-,
-
-{
-trialnum: 34,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "vam",
-option1: "van\u00e9",
-option2: "vani",
-option3: "vam\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2026}]
-}
-,
-
-{
-trialnum: 35,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "panp",
-option1: "panpi",
-option2: "panb\u00e9",
-option3: "panp\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2016}]
-}
-,
-
-{
-trialnum: 36,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "finch",
-option1: "finch\u00e9",
-option2: "fing\u00e9",
-option3: "finchi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2038}]
-}
-,
-
-{
-trialnum: 37,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cam",
-option1: "cani",
-option2: "cam\u00e9",
-option3: "can\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2032}]
-}
-,
-
-{
-trialnum: 38,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chinp",
-option1: "dichinp",
-option2: "duchinp",
-option3: "dochinp",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2039}]
-}
-,
-
-{
-trialnum: 39,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "dib",
-option1: "dodib",
-option2: "dudib",
-option3: "didib",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2027}]
-}
-,
-
-{
-trialnum: 40,
-block: 1,
-miniblock: 3,
-blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
@@ -874,180 +399,47 @@ image: 2019}]
 ,
 
 {
-trialnum: 41,
+trialnum: 16,
 block: 1,
-miniblock: 3,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "dib",
+option1: "didib",
+option2: "dodib",
+option3: "dudib",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2027}]
+}
+,
+
+{
+trialnum: 17,
+block: 1,
+miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "vouv",
-option1: "dovouv",
-option2: "divouv",
-option3: "duvouv",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2015}]
-}
-,
-
-{
-trialnum: 42,
-block: 1,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "fim",
-option1: "difim",
-option2: "dofim",
-option3: "dufim",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2031}]
-}
-,
-
-{
-trialnum: 43,
-block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gouf",
-option1: "dugouf",
-option2: "digouf",
-option3: "dogouf",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2003}]
-}
-,
-
-{
-trialnum: 44,
-block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "coun",
-option1: "coun\u00e9",
-option2: "coumi",
-option3: "coum\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2020}]
-}
-,
-
-{
-trialnum: 45,
-block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "guv",
-option1: "guf\u00e9",
-option2: "guv\u00e9",
-option3: "gufi",
+rootWord: "jonp",
+option1: "dijonp",
+option2: "dojonp",
+option3: "dujonp",
 option1type: "foil",
 option2type: "target",
 option3type: "distractor",
-image: 2006}]
+image: 2005}]
 }
 ,
 
 {
-trialnum: 46,
+trialnum: 18,
 block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gonch",
-option1: "gonch\u00e9",
-option2: "gong\u00e9",
-option3: "gonchi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2010}]
-}
-,
-
-{
-trialnum: 47,
-block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "bip",
-option1: "dibip",
-option2: "dubip",
-option3: "dobip",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2025}]
-}
-,
-
-{
-trialnum: 48,
-block: 1,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cun",
-option1: "dicun",
-option2: "ducun",
-option3: "docun",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2013}]
-}
-,
-
-{
-trialnum: 49,
-block: 1,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "manp",
-option1: "dimanp",
-option2: "dumanp",
-option3: "domanp",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2009}]
-}
-,
-
-{
-trialnum: 50,
-block: 1,
-miniblock: 4,
+miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "size",
@@ -1064,47 +456,351 @@ image: 2003}]
 ,
 
 {
-trialnum: 51,
+trialnum: 19,
 block: 1,
-miniblock: 4,
+miniblock: 2,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "fip",
-option1: "difip",
-option2: "dofip",
-option3: "dufip",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2035}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "coun",
+option1: "coumi",
+option2: "coun\u00e9",
+option3: "coum\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2020}]
 }
 ,
 
 {
-trialnum: 52,
+trialnum: 20,
 block: 1,
-miniblock: 4,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chinp",
+option1: "dichinp",
+option2: "duchinp",
+option3: "dochinp",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2039}]
+}
+,
+
+{
+trialnum: 21,
+block: 1,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "boup",
+option1: "boup\u00e9",
+option2: "boub\u00e9",
+option3: "boupi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2002}]
+}
+,
+
+{
+trialnum: 22,
+block: 1,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "tinch",
+option1: "tinch\u00e9",
+option2: "ting\u00e9",
+option3: "tinchi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2024}]
+}
+,
+
+{
+trialnum: 23,
+block: 1,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "beun",
+option1: "beumi",
+option2: "beum\u00e9",
+option3: "beun\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2028}]
+}
+,
+
+{
+trialnum: 24,
+block: 1,
+miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
 rootWord: "cuch",
 option1: "ducuch",
-option2: "dicuch",
-option3: "docuch",
+option2: "docuch",
+option3: "dicuch",
 option1type: "distractor",
-option2type: "foil",
-option3type: "target",
+option2type: "target",
+option3type: "foil",
 image: 2011}]
 }
 ,
 
 {
-trialnum: 53,
+trialnum: 25,
 block: 1,
-miniblock: 4,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "pib",
+option1: "pib\u00e9",
+option2: "pipi",
+option3: "pip\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2034}]
+}
+,
+
+{
+trialnum: 26,
+block: 1,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "finch",
+option1: "fing\u00e9",
+option2: "finch\u00e9",
+option3: "finchi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2038}]
+}
+,
+
+{
+trialnum: 27,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cam",
+option1: "cani",
+option2: "can\u00e9",
+option3: "cam\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2032}]
+}
+,
+
+{
+trialnum: 28,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "chanv",
+option1: "chanv\u00e9",
+option2: "chanf\u00e9",
+option3: "chanfi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2014}]
+}
+,
+
+{
+trialnum: 29,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cun",
+option1: "ducun",
+option2: "dicun",
+option3: "docun",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2013}]
+}
+,
+
+{
+trialnum: 30,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "voun",
+option1: "dovoun",
+option2: "divoun",
+option3: "duvoun",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2021}]
+}
+,
+
+{
+trialnum: 31,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "suf",
+option1: "dosuf",
+option2: "dusuf",
+option3: "disuf",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2007}]
+}
+,
+
+{
+trialnum: 32,
+block: 1,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "panp",
+option1: "panb\u00e9",
+option2: "panp\u00e9",
+option3: "panpi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2016}]
+}
+,
+
+{
+trialnum: 33,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gonch",
+option1: "gonchi",
+option2: "gong\u00e9",
+option3: "gonch\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2010}]
+}
+,
+
+{
+trialnum: 34,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "nif",
+option1: "nivi",
+option2: "niv\u00e9",
+option3: "nif\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2030}]
+}
+,
+
+{
+trialnum: 35,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "souv",
+option1: "souf\u00e9",
+option2: "souv\u00e9",
+option3: "soufi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2012}]
+}
+,
+
+{
+trialnum: 36,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vouv",
+option1: "divouv",
+option2: "dovouv",
+option3: "duvouv",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2015}]
+}
+,
+
+{
+trialnum: 37,
+block: 1,
+miniblock: 3,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
@@ -1121,7 +817,216 @@ image: 2006}]
 ,
 
 {
-trialnum: 54,
+trialnum: 38,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cap",
+option1: "capi",
+option2: "cap\u00e9",
+option3: "cab\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2022}]
+}
+,
+
+{
+trialnum: 39,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "doum",
+option1: "doun\u00e9",
+option2: "douni",
+option3: "doum\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2004}]
+}
+,
+
+{
+trialnum: 40,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gup",
+option1: "gup\u00e9",
+option2: "gub\u00e9",
+option3: "gupi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2018}]
+}
+,
+
+{
+trialnum: 41,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gam",
+option1: "gam\u00e9",
+option2: "gani",
+option3: "gan\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2036}]
+}
+,
+
+{
+trialnum: 42,
+block: 1,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "chanv",
+option1: "chanfi",
+option2: "chanv\u00e9",
+option3: "chanf\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2014}]
+}
+,
+
+{
+trialnum: 43,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "geub",
+option1: "geup\u00e9",
+option2: "geupi",
+option3: "geub\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2040}]
+}
+,
+
+{
+trialnum: 44,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "fim",
+option1: "difim",
+option2: "dofim",
+option3: "dufim",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2031}]
+}
+,
+
+{
+trialnum: 45,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chinp",
+option1: "duchinp",
+option2: "dichinp",
+option3: "dochinp",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2039}]
+}
+,
+
+{
+trialnum: 46,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "siv",
+option1: "disiv",
+option2: "dusiv",
+option3: "dosiv",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2033}]
+}
+,
+
+{
+trialnum: 47,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gonb",
+option1: "gonb\u00e9",
+option2: "gonp\u00e9",
+option3: "gonpi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2008}]
+}
+,
+
+{
+trialnum: 48,
+block: 1,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "finch",
+option1: "finch\u00e9",
+option2: "finchi",
+option3: "fing\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2038}]
+}
+,
+
+{
+trialnum: 49,
 block: 1,
 miniblock: 4,
 blockType: "training",
@@ -1140,21 +1045,116 @@ image: 2033}]
 ,
 
 {
-trialnum: 55,
+trialnum: 50,
+block: 1,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "manp",
+option1: "dimanp",
+option2: "domanp",
+option3: "dumanp",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2009}]
+}
+,
+
+{
+trialnum: 51,
+block: 1,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "coub",
+option1: "ducoub",
+option2: "dicoub",
+option3: "docoub",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2019}]
+}
+,
+
+{
+trialnum: 52,
 block: 1,
 miniblock: 4,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "tinch",
-option1: "tinch\u00e9",
-option2: "ting\u00e9",
-option3: "tinchi",
+rootWord: "vam",
+option1: "van\u00e9",
+option2: "vani",
+option3: "vam\u00e9",
 option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2026}]
+}
+,
+
+{
+trialnum: 53,
+block: 1,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "dib",
+option1: "dudib",
+option2: "didib",
+option3: "dodib",
+option1type: "distractor",
 option2type: "target",
-option3type: "distractor",
-image: 2024}]
+option3type: "foil",
+image: 2027}]
+}
+,
+
+{
+trialnum: 54,
+block: 1,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "fim",
+option1: "dofim",
+option2: "dufim",
+option3: "difim",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2031}]
+}
+,
+
+{
+trialnum: 55,
+block: 1,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "fip",
+option1: "dofip",
+option2: "dufip",
+option3: "difip",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2035}]
 }
 ,
 
@@ -1166,14 +1166,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "beun",
-option1: "beun\u00e9",
-option2: "beumi",
-option3: "beum\u00e9",
+rootWord: "gonb",
+option1: "gonb\u00e9",
+option2: "gonpi",
+option3: "gonp\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2028}]
+image: 2008}]
 }
 ,
 
@@ -1183,16 +1183,16 @@ block: 1,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "boup",
-option1: "boupi",
-option2: "boup\u00e9",
-option3: "boub\u00e9",
-option1type: "distractor",
-option2type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "monch",
+option1: "dimonch",
+option2: "dumonch",
+option3: "domonch",
+option1type: "foil",
+option2type: "distractor",
 option3type: "target",
-image: 2002}]
+image: 2017}]
 }
 ,
 
@@ -1204,14 +1204,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "minb",
-option1: "duminb",
-option2: "diminb",
-option3: "dominb",
+rootWord: "bip",
+option1: "dubip",
+option2: "dobip",
+option3: "dibip",
 option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2029}]
+option2type: "foil",
+option3type: "target",
+image: 2025}]
 }
 ,
 
@@ -1221,16 +1221,16 @@ block: 1,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jonp",
-option1: "dojonp",
-option2: "dujonp",
-option3: "dijonp",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gup",
+option1: "gub\u00e9",
+option2: "gupi",
+option3: "gup\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2005}]
+image: 2018}]
 }
 ,
 
@@ -1242,14 +1242,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "pib",
-option1: "pib\u00e9",
-option2: "pipi",
-option3: "pip\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2034}]
+rootWord: "vam",
+option1: "van\u00e9",
+option2: "vam\u00e9",
+option3: "vani",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2026}]
 }
 ,
 
@@ -1259,16 +1259,16 @@ block: 1,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "fip",
-option1: "difip",
-option2: "dofip",
-option3: "dufip",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2035}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "souv",
+option1: "souf\u00e9",
+option2: "soufi",
+option3: "souv\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2012}]
 }
 ,
 
@@ -1278,16 +1278,16 @@ block: 1,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "souv",
-option1: "soufi",
-option2: "souf\u00e9",
-option3: "souv\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2012}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chanf",
+option1: "dichanf",
+option2: "dochanf",
+option3: "duchanf",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2001}]
 }
 ,
 
@@ -1297,16 +1297,16 @@ block: 1,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "chanv",
-option1: "chanv\u00e9",
-option2: "chanfi",
-option3: "chanf\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2014}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vouv",
+option1: "divouv",
+option2: "dovouv",
+option3: "duvouv",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2015}]
 }
 ,
 
@@ -1318,14 +1318,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "voun",
-option1: "dovoun",
-option2: "divoun",
-option3: "duvoun",
-option1type: "target",
+rootWord: "cuch",
+option1: "ducuch",
+option2: "dicuch",
+option3: "docuch",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2021}]
+option3type: "target",
+image: 2011}]
 }
 ,
 
@@ -1335,16 +1335,16 @@ block: 2,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "coun",
-option1: "dicoun",
-option2: "docoun",
-option3: "ducoun",
-option1type: "foil",
-option2type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "minb",
+option1: "minb\u00e9",
+option2: "minp\u00e9",
+option3: "minbi",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2020}]
+image: 2029}]
 }
 ,
 
@@ -1354,16 +1354,16 @@ block: 2,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "guv",
-option1: "doguv",
-option2: "diguv",
-option3: "duguv",
-option1type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "manp",
+option1: "manbi",
+option2: "manp\u00e9",
+option3: "manb\u00e9",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2006}]
+option3type: "target",
+image: 2009}]
 }
 ,
 
@@ -1373,16 +1373,16 @@ block: 2,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "monch",
-option1: "monch\u00e9",
-option2: "mong\u00e9",
-option3: "mongi",
-option1type: "foil",
-option2type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "coun",
+option1: "docoun",
+option2: "dicoun",
+option3: "ducoun",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2017}]
+image: 2020}]
 }
 ,
 
@@ -1394,14 +1394,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "nif",
-option1: "donif",
-option2: "dinif",
-option3: "dunif",
+rootWord: "beun",
+option1: "dibeun",
+option2: "dobeun",
+option3: "dubeun",
 option1type: "foil",
 option2type: "target",
 option3type: "distractor",
-image: 2030}]
+image: 2028}]
 }
 ,
 
@@ -1413,14 +1413,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "dib",
-option1: "dib\u00e9",
-option2: "dib\u00e9",
-option3: "dibi",
+rootWord: "voun",
+option1: "voun\u00e9",
+option2: "voum\u00e9",
+option3: "vouni",
 option1type: "target",
 option2type: "foil",
 option3type: "distractor",
-image: 2027}]
+image: 2021}]
 }
 ,
 
@@ -1430,16 +1430,16 @@ block: 2,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "chinp",
-option1: "chinbi",
-option2: "chinp\u00e9",
-option3: "chinb\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2039}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "tinch",
+option1: "ditinch",
+option2: "dutinch",
+option3: "dotinch",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2024}]
 }
 ,
 
@@ -1449,16 +1449,16 @@ block: 2,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "vam",
-option1: "dovam",
-option2: "divam",
-option3: "duvam",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2026}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "siv",
+option1: "siv\u00e9",
+option2: "sivi",
+option3: "siv\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2033}]
 }
 ,
 
@@ -1466,310 +1466,6 @@ image: 2026}]
 trialnum: 72,
 block: 2,
 miniblock: 1,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cap",
-option1: "dicap",
-option2: "docap",
-option3: "ducap",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2022}]
-}
-,
-
-{
-trialnum: 73,
-block: 2,
-miniblock: 1,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "pib",
-option1: "dipib",
-option2: "dopib",
-option3: "dupib",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2034}]
-}
-,
-
-{
-trialnum: 74,
-block: 2,
-miniblock: 1,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gonch",
-option1: "dogonch",
-option2: "dugonch",
-option3: "digonch",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2010}]
-}
-,
-
-{
-trialnum: 75,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "fip",
-option1: "fip\u00e9",
-option2: "fibi",
-option3: "fib\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2035}]
-}
-,
-
-{
-trialnum: 76,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gup",
-option1: "dogup",
-option2: "digup",
-option3: "dugup",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2018}]
-}
-,
-
-{
-trialnum: 77,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gonb",
-option1: "digonb",
-option2: "dugonb",
-option3: "dogonb",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2008}]
-}
-,
-
-{
-trialnum: 78,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "doum",
-option1: "didoum",
-option2: "dudoum",
-option3: "dodoum",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2004}]
-}
-,
-
-{
-trialnum: 79,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "guinch",
-option1: "guingi",
-option2: "guing\u00e9",
-option3: "guinch\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2023}]
-}
-,
-
-{
-trialnum: 80,
-block: 2,
-miniblock: 1,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "manp",
-option1: "manb\u00e9",
-option2: "manbi",
-option3: "manp\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2009}]
-}
-,
-
-{
-trialnum: 81,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "souv",
-option1: "disouv",
-option2: "dosouv",
-option3: "dusouv",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2012}]
-}
-,
-
-{
-trialnum: 82,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cuch",
-option1: "cug\u00e9",
-option2: "cuch\u00e9",
-option3: "cugi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2011}]
-}
-,
-
-{
-trialnum: 83,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "doum",
-option1: "dodoum",
-option2: "didoum",
-option3: "dudoum",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2004}]
-}
-,
-
-{
-trialnum: 84,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "minb",
-option1: "minbi",
-option2: "minp\u00e9",
-option3: "minb\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2029}]
-}
-,
-
-{
-trialnum: 85,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gonb",
-option1: "dogonb",
-option2: "digonb",
-option3: "dugonb",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2008}]
-}
-,
-
-{
-trialnum: 86,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "suf",
-option1: "suf\u00e9",
-option2: "sufi",
-option3: "suv\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2007}]
-}
-,
-
-{
-trialnum: 87,
-block: 2,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cam",
-option1: "ducam",
-option2: "dicam",
-option3: "docam",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2032}]
-}
-,
-
-{
-trialnum: 88,
-block: 2,
-miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "size",
@@ -1786,67 +1482,200 @@ image: 2038}]
 ,
 
 {
-trialnum: 89,
+trialnum: 73,
+block: 2,
+miniblock: 1,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "dib",
+option1: "dibi",
+option2: "dib\u00e9",
+option3: "dib\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2027}]
+}
+,
+
+{
+trialnum: 74,
+block: 2,
+miniblock: 1,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "feum",
+option1: "feun\u00e9",
+option2: "feumi",
+option3: "feum\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2037}]
+}
+,
+
+{
+trialnum: 75,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "suf",
+option1: "suf\u00e9",
+option2: "suv\u00e9",
+option3: "sufi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2007}]
+}
+,
+
+{
+trialnum: 76,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gonch",
+option1: "digonch",
+option2: "dogonch",
+option3: "dugonch",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2010}]
+}
+,
+
+{
+trialnum: 77,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vam",
+option1: "dovam",
+option2: "divam",
+option3: "duvam",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2026}]
+}
+,
+
+{
+trialnum: 78,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fip",
+option1: "fip\u00e9",
+option2: "fib\u00e9",
+option3: "fibi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2035}]
+}
+,
+
+{
+trialnum: 79,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gup",
+option1: "digup",
+option2: "dogup",
+option3: "dugup",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2018}]
+}
+,
+
+{
+trialnum: 80,
+block: 2,
+miniblock: 1,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "vouv",
+option1: "vouvi",
+option2: "vouf\u00e9",
+option3: "vouv\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2015}]
+}
+,
+
+{
+trialnum: 81,
 block: 2,
 miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "gouf",
-option1: "goufi",
-option2: "gouv\u00e9",
-option3: "gouf\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2003}]
+rootWord: "monch",
+option1: "monch\u00e9",
+option2: "mong\u00e9",
+option3: "mongi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2017}]
 }
 ,
 
 {
-trialnum: 90,
+trialnum: 82,
 block: 2,
 miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "beun",
-option1: "dibeun",
-option2: "dubeun",
-option3: "dobeun",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2028}]
-}
-,
-
-{
-trialnum: 91,
-block: 2,
-miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "vouv",
-option1: "vouv\u00e9",
-option2: "vouf\u00e9",
-option3: "vouvi",
+rootWord: "chanv",
+option1: "dochanv",
+option2: "duchanv",
+option3: "dichanv",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2015}]
+option2type: "distractor",
+option3type: "foil",
+image: 2014}]
 }
 ,
 
 {
-trialnum: 92,
+trialnum: 83,
 block: 2,
 miniblock: 2,
-blockType: "test",
+blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
@@ -1862,64 +1691,140 @@ image: 2026}]
 ,
 
 {
-trialnum: 93,
+trialnum: 84,
 block: 2,
 miniblock: 2,
-blockType: "test",
+blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "fim",
-option1: "fim\u00e9",
-option2: "fimi",
-option3: "fin\u00e9",
+rootWord: "vouv",
+option1: "vouv\u00e9",
+option2: "vouvi",
+option3: "vouf\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2031}]
+image: 2015}]
 }
 ,
 
 {
-trialnum: 94,
+trialnum: 85,
 block: 2,
 miniblock: 2,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "voun",
-option1: "voum\u00e9",
-option2: "voun\u00e9",
-option3: "vouni",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2021}]
-}
-,
-
-{
-trialnum: 95,
-block: 2,
-miniblock: 2,
-blockType: "test",
+blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "guv",
-option1: "diguv",
-option2: "duguv",
-option3: "doguv",
+rootWord: "doum",
+option1: "didoum",
+option2: "dodoum",
+option3: "dudoum",
 option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2006}]
+option2type: "target",
+option3type: "distractor",
+image: 2004}]
 }
 ,
 
 {
-trialnum: 96,
+trialnum: 86,
+block: 2,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "bip",
+option1: "bip\u00e9",
+option2: "bib\u00e9",
+option3: "bibi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2025}]
+}
+,
+
+{
+trialnum: 87,
+block: 2,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "geub",
+option1: "dugeub",
+option2: "digeub",
+option3: "dogeub",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2040}]
+}
+,
+
+{
+trialnum: 88,
+block: 2,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "pib",
+option1: "dipib",
+option2: "dupib",
+option3: "dopib",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2034}]
+}
+,
+
+{
+trialnum: 89,
+block: 2,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cap",
+option1: "docap",
+option2: "ducap",
+option3: "dicap",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2022}]
+}
+,
+
+{
+trialnum: 90,
+block: 2,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "souv",
+option1: "dusouv",
+option2: "dosouv",
+option3: "disouv",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2012}]
+}
+,
+
+{
+trialnum: 91,
 block: 2,
 miniblock: 2,
 blockType: "test",
@@ -1938,21 +1843,116 @@ image: 2024}]
 ,
 
 {
+trialnum: 92,
+block: 2,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "nif",
+option1: "donif",
+option2: "dunif",
+option3: "dinif",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2030}]
+}
+,
+
+{
+trialnum: 93,
+block: 2,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "manp",
+option1: "manp\u00e9",
+option2: "manb\u00e9",
+option3: "manbi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2009}]
+}
+,
+
+{
+trialnum: 94,
+block: 2,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "guinch",
+option1: "guing\u00e9",
+option2: "guingi",
+option3: "guinch\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2023}]
+}
+,
+
+{
+trialnum: 95,
+block: 2,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cuch",
+option1: "cugi",
+option2: "cuch\u00e9",
+option3: "cug\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2011}]
+}
+,
+
+{
+trialnum: 96,
+block: 2,
+miniblock: 2,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "coun",
+option1: "dicoun",
+option2: "docoun",
+option3: "ducoun",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2020}]
+}
+,
+
+{
 trialnum: 97,
 block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chanv",
-option1: "dochanv",
-option2: "dichanv",
-option3: "duchanv",
-option1type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fip",
+option1: "fibi",
+option2: "fip\u00e9",
+option3: "fib\u00e9",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2014}]
+option3type: "target",
+image: 2035}]
 }
 ,
 
@@ -1962,16 +1962,16 @@ block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "coub",
-option1: "coub\u00e9",
-option2: "coup\u00e9",
-option3: "coubi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2019}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cam",
+option1: "ducam",
+option2: "dicam",
+option3: "docam",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2032}]
 }
 ,
 
@@ -1981,16 +1981,16 @@ block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "guinch",
-option1: "guing\u00e9",
-option2: "guinch\u00e9",
-option3: "guingi",
-option1type: "target",
-option2type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "boup",
+option1: "diboup",
+option2: "doboup",
+option3: "duboup",
+option1type: "foil",
+option2type: "target",
 option3type: "distractor",
-image: 2023}]
+image: 2002}]
 }
 ,
 
@@ -2000,16 +2000,16 @@ block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "tinch",
-option1: "dotinch",
-option2: "dutinch",
-option3: "ditinch",
-option1type: "foil",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "suf",
+option1: "suf\u00e9",
+option2: "sufi",
+option3: "suv\u00e9",
+option1type: "target",
 option2type: "distractor",
-option3type: "target",
-image: 2024}]
+option3type: "foil",
+image: 2007}]
 }
 ,
 
@@ -2019,16 +2019,16 @@ block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "panp",
-option1: "dupanp",
-option2: "dopanp",
-option3: "dipanp",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "chinp",
+option1: "chinbi",
+option2: "chinb\u00e9",
+option3: "chinp\u00e9",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2016}]
+image: 2039}]
 }
 ,
 
@@ -2038,16 +2038,16 @@ block: 2,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "boup",
-option1: "doboup",
-option2: "diboup",
-option3: "duboup",
-option1type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cun",
+option1: "cuni",
+option2: "cum\u00e9",
+option3: "cun\u00e9",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2002}]
+option3type: "target",
+image: 2013}]
 }
 ,
 
@@ -2056,139 +2056,6 @@ trialnum: 103,
 block: 2,
 miniblock: 3,
 blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "manp",
-option1: "manb\u00e9",
-option2: "manbi",
-option3: "manp\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2009}]
-}
-,
-
-{
-trialnum: 104,
-block: 2,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "jonp",
-option1: "jonbi",
-option2: "jonp\u00e9",
-option3: "jonb\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2005}]
-}
-,
-
-{
-trialnum: 105,
-block: 2,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "bip",
-option1: "bip\u00e9",
-option2: "bibi",
-option3: "bib\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2025}]
-}
-,
-
-{
-trialnum: 106,
-block: 2,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cun",
-option1: "cun\u00e9",
-option2: "cum\u00e9",
-option3: "cuni",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2013}]
-}
-,
-
-{
-trialnum: 107,
-block: 2,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "feum",
-option1: "feumi",
-option2: "feum\u00e9",
-option3: "feun\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2037}]
-}
-,
-
-{
-trialnum: 108,
-block: 2,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "siv",
-option1: "siv\u00e9",
-option2: "siv\u00e9",
-option3: "sivi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2033}]
-}
-,
-
-{
-trialnum: 109,
-block: 2,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "monch",
-option1: "monch\u00e9",
-option2: "mongi",
-option3: "mong\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2017}]
-}
-,
-
-{
-trialnum: 110,
-block: 2,
-miniblock: 3,
-blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
@@ -2204,7 +2071,121 @@ image: 2030}]
 ,
 
 {
-trialnum: 111,
+trialnum: 104,
+block: 2,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "guv",
+option1: "diguv",
+option2: "doguv",
+option3: "duguv",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2006}]
+}
+,
+
+{
+trialnum: 105,
+block: 2,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fim",
+option1: "fin\u00e9",
+option2: "fimi",
+option3: "fim\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2031}]
+}
+,
+
+{
+trialnum: 106,
+block: 2,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "coub",
+option1: "coubi",
+option2: "coub\u00e9",
+option3: "coup\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2019}]
+}
+,
+
+{
+trialnum: 107,
+block: 2,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "feum",
+option1: "feum\u00e9",
+option2: "feumi",
+option3: "feun\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2037}]
+}
+,
+
+{
+trialnum: 108,
+block: 2,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "monch",
+option1: "monch\u00e9",
+option2: "mong\u00e9",
+option3: "mongi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2017}]
+}
+,
+
+{
+trialnum: 109,
+block: 2,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "chanf",
+option1: "chanv\u00e9",
+option2: "chanfi",
+option3: "chanf\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2001}]
+}
+,
+
+{
+trialnum: 110,
 block: 2,
 miniblock: 3,
 blockType: "test",
@@ -2213,17 +2194,17 @@ grammarType: "size",
 learningType: "supervised",
 rootWord: "gam",
 option1: "digam",
-option2: "dugam",
-option3: "dogam",
+option2: "dogam",
+option3: "dugam",
 option1type: "target",
-option2type: "distractor",
-option3type: "foil",
+option2type: "foil",
+option3type: "distractor",
 image: 2036}]
 }
 ,
 
 {
-trialnum: 112,
+trialnum: 111,
 block: 2,
 miniblock: 3,
 blockType: "test",
@@ -2242,21 +2223,40 @@ image: 2034}]
 ,
 
 {
+trialnum: 112,
+block: 2,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chanv",
+option1: "dochanv",
+option2: "duchanv",
+option3: "dichanv",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2014}]
+}
+,
+
+{
 trialnum: 113,
 block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gup",
-option1: "dogup",
-option2: "digup",
-option3: "dugup",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2018}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gouf",
+option1: "gouv\u00e9",
+option2: "goufi",
+option3: "gouf\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2003}]
 }
 ,
 
@@ -2266,16 +2266,16 @@ block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "vouv",
-option1: "vouv\u00e9",
-option2: "vouvi",
-option3: "vouf\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2015}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gonch",
+option1: "dugonch",
+option2: "digonch",
+option3: "dogonch",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2010}]
 }
 ,
 
@@ -2287,14 +2287,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "geub",
-option1: "dugeub",
-option2: "digeub",
-option3: "dogeub",
+rootWord: "gup",
+option1: "dugup",
+option2: "digup",
+option3: "dogup",
 option1type: "distractor",
 option2type: "foil",
 option3type: "target",
-image: 2040}]
+image: 2018}]
 }
 ,
 
@@ -2304,16 +2304,16 @@ block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gam",
-option1: "digam",
-option2: "dugam",
-option3: "dogam",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "jonp",
+option1: "jonb\u00e9",
+option2: "jonbi",
+option3: "jonp\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2036}]
+image: 2005}]
 }
 ,
 
@@ -2323,21 +2323,40 @@ block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "voun",
-option1: "vouni",
-option2: "voun\u00e9",
-option3: "voum\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gam",
+option1: "dugam",
+option2: "dogam",
+option3: "digam",
 option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2021}]
+option2type: "foil",
+option3type: "target",
+image: 2036}]
 }
 ,
 
 {
 trialnum: 118,
+block: 2,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cuch",
+option1: "cuch\u00e9",
+option2: "cug\u00e9",
+option3: "cugi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2011}]
+}
+,
+
+{
+trialnum: 119,
 block: 2,
 miniblock: 4,
 blockType: "training",
@@ -2356,40 +2375,21 @@ image: 2001}]
 ,
 
 {
-trialnum: 119,
-block: 2,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "fip",
-option1: "fibi",
-option2: "fip\u00e9",
-option3: "fib\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2035}]
-}
-,
-
-{
 trialnum: 120,
 block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "siv",
-option1: "siv\u00e9",
-option2: "siv\u00e9",
-option3: "sivi",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gonb",
+option1: "digonb",
+option2: "dogonb",
+option3: "dugonb",
 option1type: "foil",
 option2type: "target",
 option3type: "distractor",
-image: 2033}]
+image: 2008}]
 }
 ,
 
@@ -2401,14 +2401,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "fim",
-option1: "fim\u00e9",
-option2: "fin\u00e9",
-option3: "fimi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2031}]
+rootWord: "guinch",
+option1: "guingi",
+option2: "guing\u00e9",
+option3: "guinch\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2023}]
 }
 ,
 
@@ -2418,16 +2418,16 @@ block: 2,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "feum",
-option1: "feun\u00e9",
-option2: "feumi",
-option3: "feum\u00e9",
-option1type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "panp",
+option1: "dopanp",
+option2: "dupanp",
+option3: "dipanp",
+option1type: "target",
 option2type: "distractor",
-option3type: "target",
-image: 2037}]
+option3type: "foil",
+image: 2016}]
 }
 ,
 
@@ -2437,16 +2437,16 @@ block: 2,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "chanf",
-option1: "chanfi",
-option2: "chanv\u00e9",
-option3: "chanf\u00e9",
-option1type: "distractor",
-option2type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "guv",
+option1: "diguv",
+option2: "duguv",
+option3: "doguv",
+option1type: "foil",
+option2type: "distractor",
 option3type: "target",
-image: 2001}]
+image: 2006}]
 }
 ,
 
@@ -2458,14 +2458,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "souv",
-option1: "dusouv",
-option2: "dosouv",
-option3: "disouv",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2012}]
+rootWord: "finch",
+option1: "difinch",
+option2: "dofinch",
+option3: "dufinch",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2038}]
 }
 ,
 
@@ -2475,16 +2475,16 @@ block: 2,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "bip",
-option1: "bibi",
-option2: "bip\u00e9",
-option3: "bib\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2025}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cam",
+option1: "docam",
+option2: "dicam",
+option3: "ducam",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2032}]
 }
 ,
 
@@ -2494,16 +2494,16 @@ block: 2,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "coun",
-option1: "dicoun",
-option2: "docoun",
-option3: "ducoun",
-option1type: "foil",
-option2type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "minb",
+option1: "minb\u00e9",
+option2: "minp\u00e9",
+option3: "minbi",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2020}]
+image: 2029}]
 }
 ,
 
@@ -2515,14 +2515,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "dib",
-option1: "dibi",
-option2: "dib\u00e9",
-option3: "dib\u00e9",
+rootWord: "gouf",
+option1: "goufi",
+option2: "gouf\u00e9",
+option3: "gouv\u00e9",
 option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2027}]
+option2type: "target",
+option3type: "foil",
+image: 2003}]
 }
 ,
 
@@ -2532,16 +2532,16 @@ block: 2,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "panp",
-option1: "dupanp",
-option2: "dopanp",
-option3: "dipanp",
-option1type: "distractor",
-option2type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "dib",
+option1: "dib\u00e9",
+option2: "dibi",
+option3: "dib\u00e9",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
-image: 2016}]
+image: 2027}]
 }
 ,
 
@@ -2554,12 +2554,12 @@ contents:  [{
 grammarType: "size",
 learningType: "supervised",
 rootWord: "fip",
-option1: "difip",
-option2: "dofip",
-option3: "dufip",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
+option1: "dofip",
+option2: "dufip",
+option3: "difip",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
 image: 2035}]
 }
 ,
@@ -2570,16 +2570,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "coun",
-option1: "coumi",
-option2: "coum\u00e9",
-option3: "coun\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2020}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gouf",
+option1: "digouf",
+option2: "dogouf",
+option3: "dugouf",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2003}]
 }
 ,
 
@@ -2589,16 +2589,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "bip",
-option1: "dibip",
-option2: "dubip",
-option3: "dobip",
-option1type: "target",
-option2type: "distractor",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "boup",
+option1: "boupi",
+option2: "boub\u00e9",
+option3: "boup\u00e9",
+option1type: "distractor",
+option2type: "target",
 option3type: "foil",
-image: 2025}]
+image: 2002}]
 }
 ,
 
@@ -2608,16 +2608,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "siv",
-option1: "dosiv",
-option2: "disiv",
-option3: "dusiv",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2033}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "souv",
+option1: "soufi",
+option2: "souf\u00e9",
+option3: "souv\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2012}]
 }
 ,
 
@@ -2629,14 +2629,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "finch",
-option1: "finch\u00e9",
-option2: "finchi",
-option3: "fing\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2038}]
+rootWord: "panp",
+option1: "panb\u00e9",
+option2: "panp\u00e9",
+option3: "panpi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2016}]
 }
 ,
 
@@ -2646,16 +2646,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "suf",
-option1: "dosuf",
-option2: "disuf",
-option3: "dusuf",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cap",
+option1: "cab\u00e9",
+option2: "capi",
+option3: "cap\u00e9",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2007}]
+option2type: "distractor",
+option3type: "foil",
+image: 2022}]
 }
 ,
 
@@ -2665,16 +2665,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "manp",
-option1: "dumanp",
-option2: "dimanp",
-option3: "domanp",
-option1type: "distractor",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "tinch",
+option1: "ting\u00e9",
+option2: "tinch\u00e9",
+option3: "tinchi",
+option1type: "target",
 option2type: "foil",
-option3type: "target",
-image: 2009}]
+option3type: "distractor",
+image: 2024}]
 }
 ,
 
@@ -2687,11 +2687,11 @@ contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
 rootWord: "gonb",
-option1: "gonpi",
-option2: "gonb\u00e9",
+option1: "gonb\u00e9",
+option2: "gonpi",
 option3: "gonp\u00e9",
-option1type: "distractor",
-option2type: "target",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
 image: 2008}]
 }
@@ -2703,16 +2703,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gup",
-option1: "gupi",
-option2: "guz\u00e9",
-option3: "gup\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2018}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "voun",
+option1: "divoun",
+option2: "duvoun",
+option3: "dovoun",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2021}]
 }
 ,
 
@@ -2722,16 +2722,16 @@ block: 3,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "tinch",
-option1: "tinch\u00e9",
-option2: "ting\u00e9",
-option3: "tinchi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2024}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "jonp",
+option1: "dujonp",
+option2: "dijonp",
+option3: "dojonp",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2005}]
 }
 ,
 
@@ -2743,14 +2743,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "feum",
-option1: "dofeum",
-option2: "dufeum",
-option3: "difeum",
-option1type: "target",
-option2type: "distractor",
+rootWord: "suf",
+option1: "dusuf",
+option2: "dosuf",
+option3: "disuf",
+option1type: "distractor",
+option2type: "target",
 option3type: "foil",
-image: 2037}]
+image: 2007}]
 }
 ,
 
@@ -2762,14 +2762,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "souv",
-option1: "soufi",
-option2: "souv\u00e9",
-option3: "souf\u00e9",
+rootWord: "guv",
+option1: "gufi",
+option2: "guv\u00e9",
+option3: "guf\u00e9",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2012}]
+image: 2006}]
 }
 ,
 
@@ -2779,16 +2779,16 @@ block: 3,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "pib",
-option1: "pip\u00e9",
-option2: "pipi",
-option3: "pib\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2034}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "minb",
+option1: "diminb",
+option2: "dominb",
+option3: "duminb",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2029}]
 }
 ,
 
@@ -2798,16 +2798,16 @@ block: 3,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gouf",
-option1: "dugouf",
-option2: "dogouf",
-option3: "digouf",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2003}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "doum",
+option1: "doun\u00e9",
+option2: "douni",
+option3: "doum\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2004}]
 }
 ,
 
@@ -2817,16 +2817,16 @@ block: 3,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "vam",
-option1: "vam\u00e9",
-option2: "van\u00e9",
-option3: "vani",
-option1type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vouv",
+option1: "duvouv",
+option2: "divouv",
+option3: "dovouv",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2026}]
+option3type: "target",
+image: 2015}]
 }
 ,
 
@@ -2835,101 +2835,6 @@ trialnum: 144,
 block: 3,
 miniblock: 1,
 blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "coub",
-option1: "ducoub",
-option2: "docoub",
-option3: "dicoub",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2019}]
-}
-,
-
-{
-trialnum: 145,
-block: 3,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chinp",
-option1: "duchinp",
-option2: "dochinp",
-option3: "dichinp",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2039}]
-}
-,
-
-{
-trialnum: 146,
-block: 3,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "pib",
-option1: "pipi",
-option2: "pip\u00e9",
-option3: "pib\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2034}]
-}
-,
-
-{
-trialnum: 147,
-block: 3,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "geub",
-option1: "geub\u00e9",
-option2: "geupi",
-option3: "geup\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2040}]
-}
-,
-
-{
-trialnum: 148,
-block: 3,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cuch",
-option1: "dicuch",
-option2: "docuch",
-option3: "ducuch",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2011}]
-}
-,
-
-{
-trialnum: 149,
-block: 3,
-miniblock: 2,
-blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
@@ -2945,7 +2850,26 @@ image: 2010}]
 ,
 
 {
-trialnum: 150,
+trialnum: 145,
+block: 3,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chanf",
+option1: "duchanf",
+option2: "dichanf",
+option3: "dochanf",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2001}]
+}
+,
+
+{
+trialnum: 146,
 block: 3,
 miniblock: 2,
 blockType: "training",
@@ -2953,37 +2877,94 @@ contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
 rootWord: "doum",
-option1: "doun\u00e9",
+option1: "douni",
 option2: "doum\u00e9",
-option3: "douni",
-option1type: "foil",
+option3: "doun\u00e9",
+option1type: "distractor",
 option2type: "target",
-option3type: "distractor",
+option3type: "foil",
 image: 2004}]
 }
 ,
 
 {
-trialnum: 151,
+trialnum: 147,
+block: 3,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vouv",
+option1: "duvouv",
+option2: "dovouv",
+option3: "divouv",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2015}]
+}
+,
+
+{
+trialnum: 148,
 block: 3,
 miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "chanv",
-option1: "chanv\u00e9",
-option2: "chanfi",
-option3: "chanf\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2014}]
+rootWord: "vam",
+option1: "vani",
+option2: "van\u00e9",
+option3: "vam\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2026}]
 }
 ,
 
 {
-trialnum: 152,
+trialnum: 149,
+block: 3,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "feum",
+option1: "dofeum",
+option2: "dufeum",
+option3: "difeum",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2037}]
+}
+,
+
+{
+trialnum: 150,
+block: 3,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "siv",
+option1: "disiv",
+option2: "dosiv",
+option3: "dusiv",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2033}]
+}
+,
+
+{
+trialnum: 151,
 block: 3,
 miniblock: 2,
 blockType: "training",
@@ -3002,21 +2983,40 @@ image: 2027}]
 ,
 
 {
+trialnum: 152,
+block: 3,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "beun",
+option1: "beum\u00e9",
+option2: "beun\u00e9",
+option3: "beumi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2028}]
+}
+,
+
+{
 trialnum: 153,
 block: 3,
 miniblock: 2,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "monch",
-option1: "dumonch",
-option2: "domonch",
-option3: "dimonch",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2017}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "finch",
+option1: "fing\u00e9",
+option2: "finch\u00e9",
+option3: "finchi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2038}]
 }
 ,
 
@@ -3028,14 +3028,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "souv",
-option1: "soufi",
-option2: "souv\u00e9",
-option3: "souf\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2012}]
+rootWord: "coun",
+option1: "coum\u00e9",
+option2: "coumi",
+option3: "coun\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2020}]
 }
 ,
 
@@ -3047,14 +3047,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "cap",
-option1: "cap\u00e9",
-option2: "cab\u00e9",
-option3: "capi",
+rootWord: "pib",
+option1: "pip\u00e9",
+option2: "pipi",
+option3: "pib\u00e9",
 option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2022}]
+option2type: "distractor",
+option3type: "target",
+image: 2034}]
 }
 ,
 
@@ -3066,14 +3066,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "tinch",
-option1: "tinch\u00e9",
-option2: "ting\u00e9",
-option3: "tinchi",
+rootWord: "gam",
+option1: "gan\u00e9",
+option2: "gani",
+option3: "gam\u00e9",
 option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2024}]
+option2type: "distractor",
+option3type: "target",
+image: 2036}]
 }
 ,
 
@@ -3083,16 +3083,16 @@ block: 3,
 miniblock: 2,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "finch",
-option1: "finch\u00e9",
-option2: "fing\u00e9",
-option3: "finchi",
-option1type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "fip",
+option1: "dufip",
+option2: "difip",
+option3: "dofip",
+option1type: "distractor",
 option2type: "target",
-option3type: "distractor",
-image: 2038}]
+option3type: "foil",
+image: 2035}]
 }
 ,
 
@@ -3104,14 +3104,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "manp",
-option1: "dumanp",
-option2: "domanp",
-option3: "dimanp",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2009}]
+rootWord: "chinp",
+option1: "dochinp",
+option2: "duchinp",
+option3: "dichinp",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2039}]
 }
 ,
 
@@ -3123,14 +3123,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "chanf",
-option1: "duchanf",
-option2: "dochanf",
-option3: "dichanf",
-option1type: "distractor",
-option2type: "target",
+rootWord: "cun",
+option1: "docun",
+option2: "ducun",
+option3: "dicun",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
-image: 2001}]
+image: 2013}]
 }
 ,
 
@@ -3140,16 +3140,16 @@ block: 3,
 miniblock: 2,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "siv",
-option1: "dosiv",
-option2: "disiv",
-option3: "dusiv",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2033}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gup",
+option1: "gub\u00e9",
+option2: "gupi",
+option3: "gup\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2018}]
 }
 ,
 
@@ -3159,16 +3159,16 @@ block: 3,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "vam",
-option1: "van\u00e9",
-option2: "vani",
-option3: "vam\u00e9",
-option1type: "foil",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "monch",
+option1: "domonch",
+option2: "dumonch",
+option3: "dimonch",
+option1type: "target",
 option2type: "distractor",
-option3type: "target",
-image: 2026}]
+option3type: "foil",
+image: 2017}]
 }
 ,
 
@@ -3199,14 +3199,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "boup",
-option1: "boup\u00e9",
-option2: "boupi",
-option3: "boub\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2002}]
+rootWord: "geub",
+option1: "geupi",
+option2: "geub\u00e9",
+option3: "geup\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2040}]
 }
 ,
 
@@ -3218,14 +3218,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "cam",
-option1: "cam\u00e9",
-option2: "can\u00e9",
-option3: "cani",
+rootWord: "guv",
+option1: "guv\u00e9",
+option2: "gufi",
+option3: "guf\u00e9",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2032}]
+option2type: "distractor",
+option3type: "foil",
+image: 2006}]
 }
 ,
 
@@ -3237,14 +3237,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "beun",
-option1: "beumi",
-option2: "beum\u00e9",
-option3: "beun\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2028}]
+rootWord: "cam",
+option1: "can\u00e9",
+option2: "cam\u00e9",
+option3: "cani",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2032}]
 }
 ,
 
@@ -3256,14 +3256,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "guv",
-option1: "guv\u00e9",
-option2: "guf\u00e9",
-option3: "gufi",
+rootWord: "pib",
+option1: "pib\u00e9",
+option2: "pipi",
+option3: "pip\u00e9",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2006}]
+option2type: "distractor",
+option3type: "foil",
+image: 2034}]
 }
 ,
 
@@ -3275,14 +3275,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "panp",
-option1: "panb\u00e9",
-option2: "panp\u00e9",
-option3: "panpi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2016}]
+rootWord: "chanv",
+option1: "chanf\u00e9",
+option2: "chanfi",
+option3: "chanv\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2014}]
 }
 ,
 
@@ -3294,14 +3294,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "vouv",
-option1: "dovouv",
-option2: "divouv",
-option3: "duvouv",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2015}]
+rootWord: "bip",
+option1: "dobip",
+option2: "dubip",
+option3: "dibip",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2025}]
 }
 ,
 
@@ -3311,16 +3311,16 @@ block: 3,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "voun",
-option1: "duvoun",
-option2: "dovoun",
-option3: "divoun",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2021}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "nif",
+option1: "niv\u00e9",
+option2: "nivi",
+option3: "nif\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2030}]
 }
 ,
 
@@ -3330,16 +3330,16 @@ block: 3,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cap",
-option1: "cab\u00e9",
-option2: "cap\u00e9",
-option3: "capi",
-option1type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "manp",
+option1: "dumanp",
+option2: "dimanp",
+option3: "domanp",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2022}]
+option3type: "target",
+image: 2009}]
 }
 ,
 
@@ -3351,14 +3351,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "fim",
-option1: "dofim",
-option2: "dufim",
-option3: "difim",
+rootWord: "siv",
+option1: "dosiv",
+option2: "dusiv",
+option3: "disiv",
 option1type: "foil",
 option2type: "distractor",
 option3type: "target",
-image: 2031}]
+image: 2033}]
 }
 ,
 
@@ -3370,14 +3370,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "gonch",
-option1: "gonchi",
-option2: "gong\u00e9",
-option3: "gonch\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2010}]
+rootWord: "finch",
+option1: "finch\u00e9",
+option2: "finchi",
+option3: "fing\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2038}]
 }
 ,
 
@@ -3386,158 +3386,6 @@ trialnum: 173,
 block: 3,
 miniblock: 3,
 blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "guinch",
-option1: "doguinch",
-option2: "diguinch",
-option3: "duguinch",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2023}]
-}
-,
-
-{
-trialnum: 174,
-block: 3,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gam",
-option1: "gan\u00e9",
-option2: "gani",
-option3: "gam\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2036}]
-}
-,
-
-{
-trialnum: 175,
-block: 3,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "suf",
-option1: "dusuf",
-option2: "dosuf",
-option3: "disuf",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2007}]
-}
-,
-
-{
-trialnum: 176,
-block: 3,
-miniblock: 3,
-blockType: "test",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "doum",
-option1: "douni",
-option2: "doum\u00e9",
-option3: "doun\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2004}]
-}
-,
-
-{
-trialnum: 177,
-block: 3,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "feum",
-option1: "dofeum",
-option2: "dufeum",
-option3: "difeum",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2037}]
-}
-,
-
-{
-trialnum: 178,
-block: 3,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cun",
-option1: "dicun",
-option2: "docun",
-option3: "ducun",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2013}]
-}
-,
-
-{
-trialnum: 179,
-block: 3,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jonp",
-option1: "dojonp",
-option2: "dujonp",
-option3: "dijonp",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2005}]
-}
-,
-
-{
-trialnum: 180,
-block: 3,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "guinch",
-option1: "doguinch",
-option2: "duguinch",
-option3: "diguinch",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2023}]
-}
-,
-
-{
-trialnum: 181,
-block: 3,
-miniblock: 4,
-blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
@@ -3553,6 +3401,158 @@ image: 2019}]
 ,
 
 {
+trialnum: 174,
+block: 3,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "vam",
+option1: "vani",
+option2: "vam\u00e9",
+option3: "van\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2026}]
+}
+,
+
+{
+trialnum: 175,
+block: 3,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "coun",
+option1: "coum\u00e9",
+option2: "coun\u00e9",
+option3: "coumi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2020}]
+}
+,
+
+{
+trialnum: 176,
+block: 3,
+miniblock: 3,
+blockType: "test",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "dib",
+option1: "didib",
+option2: "dodib",
+option3: "dudib",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2027}]
+}
+,
+
+{
+trialnum: 177,
+block: 3,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "fim",
+option1: "dofim",
+option2: "difim",
+option3: "dufim",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2031}]
+}
+,
+
+{
+trialnum: 178,
+block: 3,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "suf",
+option1: "dusuf",
+option2: "dosuf",
+option3: "disuf",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2007}]
+}
+,
+
+{
+trialnum: 179,
+block: 3,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "guinch",
+option1: "duguinch",
+option2: "diguinch",
+option3: "doguinch",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2023}]
+}
+,
+
+{
+trialnum: 180,
+block: 3,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gonch",
+option1: "gong\u00e9",
+option2: "gonchi",
+option3: "gonch\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2010}]
+}
+,
+
+{
+trialnum: 181,
+block: 3,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cun",
+option1: "docun",
+option2: "ducun",
+option3: "dicun",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2013}]
+}
+,
+
+{
 trialnum: 182,
 block: 3,
 miniblock: 4,
@@ -3561,12 +3561,12 @@ contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
 rootWord: "gam",
-option1: "gani",
+option1: "gan\u00e9",
 option2: "gam\u00e9",
-option3: "gan\u00e9",
-option1type: "distractor",
+option3: "gani",
+option1type: "foil",
 option2type: "target",
-option3type: "foil",
+option3type: "distractor",
 image: 2036}]
 }
 ,
@@ -3577,16 +3577,16 @@ block: 3,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "fim",
-option1: "difim",
-option2: "dufim",
-option3: "dofim",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2031}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gup",
+option1: "gupi",
+option2: "gup\u00e9",
+option3: "gub\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2018}]
 }
 ,
 
@@ -3598,14 +3598,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "chanf",
-option1: "dichanf",
-option2: "dochanf",
-option3: "duchanf",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2001}]
+rootWord: "coub",
+option1: "ducoub",
+option2: "dicoub",
+option3: "docoub",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2019}]
 }
 ,
 
@@ -3615,16 +3615,16 @@ block: 3,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "nif",
-option1: "nivi",
-option2: "nif\u00e9",
-option3: "niv\u00e9",
-option1type: "distractor",
-option2type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cuch",
+option1: "docuch",
+option2: "ducuch",
+option3: "dicuch",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
-image: 2030}]
+image: 2011}]
 }
 ,
 
@@ -3636,14 +3636,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "gouf",
-option1: "dogouf",
-option2: "dugouf",
-option3: "digouf",
+rootWord: "chinp",
+option1: "dichinp",
+option2: "duchinp",
+option3: "dochinp",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2003}]
+image: 2039}]
 }
 ,
 
@@ -3653,16 +3653,16 @@ block: 3,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jonp",
-option1: "dojonp",
-option2: "dijonp",
-option3: "dujonp",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cap",
+option1: "cab\u00e9",
+option2: "cap\u00e9",
+option3: "capi",
 option1type: "target",
 option2type: "foil",
 option3type: "distractor",
-image: 2005}]
+image: 2022}]
 }
 ,
 
@@ -3672,16 +3672,16 @@ block: 3,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "boup",
-option1: "boub\u00e9",
-option2: "boupi",
-option3: "boup\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gouf",
+option1: "dogouf",
+option2: "digouf",
+option3: "dugouf",
 option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2002}]
+option2type: "foil",
+option3type: "distractor",
+image: 2003}]
 }
 ,
 
@@ -3693,14 +3693,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "monch",
-option1: "dumonch",
-option2: "domonch",
-option3: "dimonch",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2017}]
+rootWord: "feum",
+option1: "dofeum",
+option2: "difeum",
+option3: "dufeum",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2037}]
 }
 ,
 
@@ -3710,16 +3710,16 @@ block: 3,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "vouv",
-option1: "divouv",
-option2: "dovouv",
-option3: "duvouv",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "nif",
+option1: "niv\u00e9",
+option2: "nivi",
+option3: "nif\u00e9",
 option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2015}]
+option2type: "distractor",
+option3type: "target",
+image: 2030}]
 }
 ,
 
@@ -3729,16 +3729,16 @@ block: 3,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "panp",
-option1: "panp\u00e9",
-option2: "panb\u00e9",
-option3: "panpi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2016}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "guinch",
+option1: "duguinch",
+option2: "doguinch",
+option3: "diguinch",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2023}]
 }
 ,
 
@@ -3750,14 +3750,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "gup",
-option1: "guz\u00e9",
-option2: "gupi",
-option3: "gup\u00e9",
+rootWord: "cam",
+option1: "cam\u00e9",
+option2: "cani",
+option3: "can\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2018}]
+image: 2032}]
 }
 ,
 
@@ -3769,14 +3769,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "gam",
-option1: "dogam",
-option2: "dugam",
-option3: "digam",
-option1type: "foil",
-option2type: "distractor",
+rootWord: "pib",
+option1: "dupib",
+option2: "dopib",
+option3: "dipib",
+option1type: "distractor",
+option2type: "foil",
 option3type: "target",
-image: 2036}]
+image: 2034}]
 }
 ,
 
@@ -3786,16 +3786,16 @@ block: 4,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "pib",
-option1: "dipib",
-option2: "dopib",
-option3: "dupib",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "dib",
+option1: "dib\u00e9",
+option2: "dibi",
+option3: "dib\u00e9",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2034}]
+option2type: "distractor",
+option3type: "foil",
+image: 2027}]
 }
 ,
 
@@ -3807,14 +3807,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "souv",
-option1: "dosouv",
-option2: "dusouv",
-option3: "disouv",
+rootWord: "gonch",
+option1: "dogonch",
+option2: "dugonch",
+option3: "digonch",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2012}]
+image: 2010}]
 }
 ,
 
@@ -3826,14 +3826,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "chanf",
-option1: "chanf\u00e9",
-option2: "chanfi",
-option3: "chanv\u00e9",
-option1type: "target",
+rootWord: "jonp",
+option1: "jonp\u00e9",
+option2: "jonbi",
+option3: "jonb\u00e9",
+option1type: "foil",
 option2type: "distractor",
-option3type: "foil",
-image: 2001}]
+option3type: "target",
+image: 2005}]
 }
 ,
 
@@ -3843,16 +3843,16 @@ block: 4,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "doum",
-option1: "dodoum",
-option2: "dudoum",
-option3: "didoum",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "coub",
+option1: "coub\u00e9",
+option2: "coubi",
+option3: "coup\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2004}]
+image: 2019}]
 }
 ,
 
@@ -3864,14 +3864,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "finch",
-option1: "difinch",
-option2: "dufinch",
-option3: "dofinch",
-option1type: "target",
+rootWord: "nif",
+option1: "donif",
+option2: "dunif",
+option3: "dinif",
+option1type: "foil",
 option2type: "distractor",
-option3type: "foil",
-image: 2038}]
+option3type: "target",
+image: 2030}]
 }
 ,
 
@@ -3881,16 +3881,16 @@ block: 4,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gonb",
-option1: "digonb",
-option2: "dugonb",
-option3: "dogonb",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2008}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "bip",
+option1: "bib\u00e9",
+option2: "bip\u00e9",
+option3: "bibi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2025}]
 }
 ,
 
@@ -3902,14 +3902,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "nif",
-option1: "donif",
-option2: "dinif",
-option3: "dunif",
-option1type: "foil",
-option2type: "target",
+rootWord: "beun",
+option1: "dobeun",
+option2: "dibeun",
+option3: "dubeun",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2030}]
+image: 2028}]
 }
 ,
 
@@ -3919,16 +3919,16 @@ block: 4,
 miniblock: 1,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "manp",
-option1: "manbi",
-option2: "manb\u00e9",
-option3: "manp\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "vam",
+option1: "duvam",
+option2: "divam",
+option3: "dovam",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2009}]
+image: 2026}]
 }
 ,
 
@@ -3940,14 +3940,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "voun",
-option1: "voun\u00e9",
-option2: "voum\u00e9",
-option3: "vouni",
+rootWord: "gouf",
+option1: "gouf\u00e9",
+option2: "gouv\u00e9",
+option3: "goufi",
 option1type: "target",
 option2type: "foil",
 option3type: "distractor",
-image: 2021}]
+image: 2003}]
 }
 ,
 
@@ -3957,16 +3957,16 @@ block: 4,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "vam",
-option1: "duvam",
-option2: "dovam",
-option3: "divam",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cuch",
+option1: "cugi",
+option2: "cuch\u00e9",
+option3: "cug\u00e9",
 option1type: "distractor",
 option2type: "foil",
 option3type: "target",
-image: 2026}]
+image: 2011}]
 }
 ,
 
@@ -3978,14 +3978,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "chinp",
-option1: "chinbi",
-option2: "chinp\u00e9",
-option3: "chinb\u00e9",
+rootWord: "cun",
+option1: "cuni",
+option2: "cum\u00e9",
+option3: "cun\u00e9",
 option1type: "distractor",
 option2type: "foil",
 option3type: "target",
-image: 2039}]
+image: 2013}]
 }
 ,
 
@@ -3997,14 +3997,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "panp",
-option1: "dopanp",
-option2: "dupanp",
-option3: "dipanp",
+rootWord: "gam",
+option1: "digam",
+option2: "dugam",
+option3: "dogam",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2016}]
+image: 2036}]
 }
 ,
 
@@ -4014,16 +4014,16 @@ block: 4,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "suf",
-option1: "suv\u00e9",
-option2: "sufi",
-option3: "suf\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cam",
+option1: "docam",
+option2: "ducam",
+option3: "dicam",
 option1type: "foil",
 option2type: "distractor",
 option3type: "target",
-image: 2007}]
+image: 2032}]
 }
 ,
 
@@ -4033,16 +4033,16 @@ block: 4,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "bip",
-option1: "bibi",
-option2: "bib\u00e9",
-option3: "bip\u00e9",
-option1type: "distractor",
-option2type: "target",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "geub",
+option1: "dogeub",
+option2: "dugeub",
+option3: "digeub",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
-image: 2025}]
+image: 2040}]
 }
 ,
 
@@ -4052,16 +4052,16 @@ block: 4,
 miniblock: 1,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "tinch",
-option1: "dutinch",
-option2: "dotinch",
-option3: "ditinch",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "chinp",
+option1: "chinbi",
+option2: "chinb\u00e9",
+option3: "chinp\u00e9",
 option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2024}]
+option2type: "target",
+option3type: "foil",
+image: 2039}]
 }
 ,
 
@@ -4071,16 +4071,16 @@ block: 4,
 miniblock: 2,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gup",
-option1: "digup",
-option2: "dogup",
-option3: "dugup",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2018}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "manp",
+option1: "manb\u00e9",
+option2: "manbi",
+option3: "manp\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2009}]
 }
 ,
 
@@ -4092,14 +4092,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "guinch",
-option1: "guing\u00e9",
-option2: "guingi",
-option3: "guinch\u00e9",
+rootWord: "chinp",
+option1: "chinb\u00e9",
+option2: "chinbi",
+option3: "chinp\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2023}]
+image: 2039}]
 }
 ,
 
@@ -4111,14 +4111,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "geub",
-option1: "digeub",
-option2: "dogeub",
-option3: "dugeub",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2040}]
+rootWord: "cap",
+option1: "ducap",
+option2: "docap",
+option3: "dicap",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2022}]
 }
 ,
 
@@ -4128,78 +4128,21 @@ block: 4,
 miniblock: 2,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "suf",
-option1: "suf\u00e9",
-option2: "sufi",
-option3: "suv\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gup",
+option1: "dogup",
+option2: "dugup",
+option3: "digup",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2007}]
+image: 2018}]
 }
 ,
 
 {
 trialnum: 213,
-block: 4,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "coun",
-option1: "docoun",
-option2: "ducoun",
-option3: "dicoun",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2020}]
-}
-,
-
-{
-trialnum: 214,
-block: 4,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cam",
-option1: "ducam",
-option2: "dicam",
-option3: "docam",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2032}]
-}
-,
-
-{
-trialnum: 215,
-block: 4,
-miniblock: 2,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cuch",
-option1: "cugi",
-option2: "cug\u00e9",
-option3: "cuch\u00e9",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2011}]
-}
-,
-
-{
-trialnum: 216,
 block: 4,
 miniblock: 2,
 blockType: "training",
@@ -4218,21 +4161,78 @@ image: 2031}]
 ,
 
 {
-trialnum: 217,
+trialnum: 214,
 block: 4,
 miniblock: 2,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "monch",
-option1: "monch\u00e9",
-option2: "mong\u00e9",
-option3: "mongi",
+rootWord: "chanf",
+option1: "chanfi",
+option2: "chanf\u00e9",
+option3: "chanv\u00e9",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2001}]
+}
+,
+
+{
+trialnum: 215,
+block: 4,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gonb",
+option1: "digonb",
+option2: "dogonb",
+option3: "dugonb",
 option1type: "foil",
 option2type: "target",
 option3type: "distractor",
-image: 2017}]
+image: 2008}]
+}
+,
+
+{
+trialnum: 216,
+block: 4,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "coun",
+option1: "dicoun",
+option2: "docoun",
+option3: "ducoun",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2020}]
+}
+,
+
+{
+trialnum: 217,
+block: 4,
+miniblock: 2,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cam",
+option1: "ducam",
+option2: "dicam",
+option3: "docam",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2032}]
 }
 ,
 
@@ -4244,14 +4244,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "gouf",
-option1: "gouf\u00e9",
-option2: "goufi",
-option3: "gouv\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2003}]
+rootWord: "minb",
+option1: "minp\u00e9",
+option2: "minb\u00e9",
+option3: "minbi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2029}]
 }
 ,
 
@@ -4263,14 +4263,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "souv",
-option1: "dosouv",
-option2: "disouv",
-option3: "dusouv",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2012}]
+rootWord: "pib",
+option1: "dupib",
+option2: "dipib",
+option3: "dopib",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2034}]
 }
 ,
 
@@ -4280,16 +4280,16 @@ block: 4,
 miniblock: 2,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "boup",
-option1: "duboup",
-option2: "diboup",
-option3: "doboup",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "gouf",
+option1: "goufi",
+option2: "gouf\u00e9",
+option3: "gouv\u00e9",
 option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2002}]
+option2type: "target",
+option3type: "foil",
+image: 2003}]
 }
 ,
 
@@ -4301,14 +4301,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "gam",
-option1: "dogam",
-option2: "dugam",
-option3: "digam",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2036}]
+rootWord: "beun",
+option1: "dobeun",
+option2: "dibeun",
+option3: "dubeun",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2028}]
 }
 ,
 
@@ -4320,14 +4320,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "jonp",
-option1: "jonp\u00e9",
-option2: "jonb\u00e9",
-option3: "jonbi",
-option1type: "foil",
+rootWord: "guinch",
+option1: "guingi",
+option2: "guing\u00e9",
+option3: "guinch\u00e9",
+option1type: "distractor",
 option2type: "target",
-option3type: "distractor",
-image: 2005}]
+option3type: "foil",
+image: 2023}]
 }
 ,
 
@@ -4337,16 +4337,16 @@ block: 4,
 miniblock: 2,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "fip",
-option1: "fib\u00e9",
-option2: "fibi",
-option3: "fip\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "doum",
+option1: "dodoum",
+option2: "dudoum",
+option3: "didoum",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2035}]
+image: 2004}]
 }
 ,
 
@@ -4358,14 +4358,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "voun",
-option1: "voum\u00e9",
-option2: "vouni",
-option3: "voun\u00e9",
-option1type: "foil",
+rootWord: "dib",
+option1: "dib\u00e9",
+option2: "dibi",
+option3: "dib\u00e9",
+option1type: "target",
 option2type: "distractor",
-option3type: "target",
-image: 2021}]
+option3type: "foil",
+image: 2027}]
 }
 ,
 
@@ -4375,16 +4375,16 @@ block: 4,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "vam",
-option1: "divam",
-option2: "dovam",
-option3: "duvam",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "guinch",
+option1: "guing\u00e9",
+option2: "guinch\u00e9",
+option3: "guingi",
 option1type: "target",
 option2type: "foil",
 option3type: "distractor",
-image: 2026}]
+image: 2023}]
 }
 ,
 
@@ -4396,14 +4396,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "cap",
-option1: "dicap",
-option2: "ducap",
-option3: "docap",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2022}]
+rootWord: "gam",
+option1: "dugam",
+option2: "dogam",
+option3: "digam",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2036}]
 }
 ,
 
@@ -4413,16 +4413,16 @@ block: 4,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gonch",
-option1: "dugonch",
-option2: "digonch",
-option3: "dogonch",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "voun",
+option1: "vouni",
+option2: "voum\u00e9",
+option3: "voun\u00e9",
 option1type: "distractor",
 option2type: "foil",
 option3type: "target",
-image: 2010}]
+image: 2021}]
 }
 ,
 
@@ -4432,40 +4432,21 @@ block: 4,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "dib",
-option1: "dib\u00e9",
-option2: "dib\u00e9",
-option3: "dibi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2027}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "souv",
+option1: "disouv",
+option2: "dusouv",
+option3: "dosouv",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2012}]
 }
 ,
 
 {
 trialnum: 229,
-block: 4,
-miniblock: 3,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "coub",
-option1: "coubi",
-option2: "coup\u00e9",
-option3: "coub\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2019}]
-}
-,
-
-{
-trialnum: 230,
 block: 4,
 miniblock: 3,
 blockType: "training",
@@ -4484,21 +4465,40 @@ image: 2016}]
 ,
 
 {
-trialnum: 231,
+trialnum: 230,
 block: 4,
 miniblock: 3,
 blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "vouv",
-option1: "vouf\u00e9",
-option2: "vouv\u00e9",
-option3: "vouvi",
-option1type: "foil",
-option2type: "target",
+rootWord: "feum",
+option1: "feum\u00e9",
+option2: "feun\u00e9",
+option3: "feumi",
+option1type: "target",
+option2type: "foil",
 option3type: "distractor",
-image: 2015}]
+image: 2037}]
+}
+,
+
+{
+trialnum: 231,
+block: 4,
+miniblock: 3,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "chanv",
+option1: "dochanv",
+option2: "dichanv",
+option3: "duchanv",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2014}]
 }
 ,
 
@@ -4510,14 +4510,14 @@ blockType: "training",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "beun",
-option1: "dobeun",
-option2: "dibeun",
-option3: "dubeun",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2028}]
+rootWord: "boup",
+option1: "duboup",
+option2: "doboup",
+option3: "diboup",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2002}]
 }
 ,
 
@@ -4527,16 +4527,16 @@ block: 4,
 miniblock: 3,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "boup",
-option1: "doboup",
-option2: "duboup",
-option3: "diboup",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "cun",
+option1: "cun\u00e9",
+option2: "cuni",
+option3: "cum\u00e9",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2002}]
+image: 2013}]
 }
 ,
 
@@ -4548,14 +4548,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "feum",
-option1: "feumi",
-option2: "feum\u00e9",
-option3: "feun\u00e9",
-option1type: "distractor",
-option2type: "target",
+rootWord: "monch",
+option1: "mong\u00e9",
+option2: "mongi",
+option3: "monch\u00e9",
+option1type: "target",
+option2type: "distractor",
 option3type: "foil",
-image: 2037}]
+image: 2017}]
 }
 ,
 
@@ -4565,16 +4565,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "gouf",
-option1: "goufi",
-option2: "gouv\u00e9",
-option3: "gouf\u00e9",
-option1type: "distractor",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "cap",
+option1: "dicap",
+option2: "docap",
+option3: "ducap",
+option1type: "target",
 option2type: "foil",
-option3type: "target",
-image: 2003}]
+option3type: "distractor",
+image: 2022}]
 }
 ,
 
@@ -4584,16 +4584,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "finch",
-option1: "difinch",
-option2: "dofinch",
-option3: "dufinch",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2038}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "manp",
+option1: "manp\u00e9",
+option2: "manbi",
+option3: "manb\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2009}]
 }
 ,
 
@@ -4603,16 +4603,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cun",
-option1: "cun\u00e9",
-option2: "cum\u00e9",
-option3: "cuni",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2013}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "finch",
+option1: "dofinch",
+option2: "dufinch",
+option3: "difinch",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2038}]
 }
 ,
 
@@ -4622,16 +4622,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "monch",
-option1: "mongi",
-option2: "monch\u00e9",
-option3: "mong\u00e9",
-option1type: "distractor",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "tinch",
+option1: "ditinch",
+option2: "dotinch",
+option3: "dutinch",
+option1type: "target",
 option2type: "foil",
-option3type: "target",
-image: 2017}]
+option3type: "distractor",
+image: 2024}]
 }
 ,
 
@@ -4641,16 +4641,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "cam",
-option1: "ducam",
-option2: "dicam",
-option3: "docam",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "bip",
+option1: "bibi",
+option2: "bib\u00e9",
+option3: "bip\u00e9",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2032}]
+image: 2025}]
 }
 ,
 
@@ -4660,16 +4660,16 @@ block: 4,
 miniblock: 3,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chanv",
-option1: "dochanv",
-option2: "duchanv",
-option3: "dichanv",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fim",
+option1: "fim\u00e9",
+option2: "fin\u00e9",
+option3: "fimi",
 option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2014}]
+option2type: "foil",
+option3type: "distractor",
+image: 2031}]
 }
 ,
 
@@ -4679,16 +4679,16 @@ block: 4,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "bip",
-option1: "bib\u00e9",
-option2: "bibi",
-option3: "bip\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2025}]
+grammarType: "size",
+learningType: "supervised",
+rootWord: "geub",
+option1: "dugeub",
+option2: "digeub",
+option3: "dogeub",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2040}]
 }
 ,
 
@@ -4700,14 +4700,14 @@ blockType: "training",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "fip",
-option1: "fibi",
-option2: "fib\u00e9",
-option3: "fip\u00e9",
+rootWord: "cuch",
+option1: "cugi",
+option2: "cug\u00e9",
+option3: "cuch\u00e9",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
-image: 2035}]
+image: 2011}]
 }
 ,
 
@@ -4717,16 +4717,16 @@ block: 4,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "tinch",
-option1: "ditinch",
-option2: "dutinch",
-option3: "dotinch",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "vouv",
+option1: "vouv\u00e9",
+option2: "vouf\u00e9",
+option3: "vouvi",
 option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2024}]
+option2type: "foil",
+option3type: "distractor",
+image: 2015}]
 }
 ,
 
@@ -4736,21 +4736,78 @@ block: 4,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "chanv",
-option1: "dichanv",
-option2: "dochanv",
-option3: "duchanv",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2014}]
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "suf",
+option1: "suf\u00e9",
+option2: "sufi",
+option3: "suv\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2007}]
 }
 ,
 
 {
 trialnum: 245,
+block: 4,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fip",
+option1: "fip\u00e9",
+option2: "fib\u00e9",
+option3: "fibi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2035}]
+}
+,
+
+{
+trialnum: 246,
+block: 4,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "finch",
+option1: "difinch",
+option2: "dufinch",
+option3: "dofinch",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2038}]
+}
+,
+
+{
+trialnum: 247,
+block: 4,
+miniblock: 4,
+blockType: "training",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "doum",
+option1: "dodoum",
+option2: "didoum",
+option3: "dudoum",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2004}]
+}
+,
+
+{
+trialnum: 248,
 block: 4,
 miniblock: 4,
 blockType: "training",
@@ -4769,45 +4826,26 @@ image: 2033}]
 ,
 
 {
-trialnum: 246,
+trialnum: 249,
 block: 4,
 miniblock: 4,
 blockType: "training",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cun",
-option1: "cun\u00e9",
-option2: "cuni",
-option3: "cum\u00e9",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "tinch",
+option1: "ditinch",
+option2: "dutinch",
+option3: "dotinch",
 option1type: "target",
 option2type: "distractor",
 option3type: "foil",
-image: 2013}]
+image: 2024}]
 }
 ,
 
 {
-trialnum: 247,
-block: 4,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "minb",
-option1: "minb\u00e9",
-option2: "minbi",
-option3: "minp\u00e9",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2029}]
-}
-,
-
-{
-trialnum: 248,
+trialnum: 250,
 block: 4,
 miniblock: 4,
 blockType: "training",
@@ -4826,44 +4864,6 @@ image: 2006}]
 ,
 
 {
-trialnum: 249,
-block: 4,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "chinp",
-option1: "chinp\u00e9",
-option2: "chinb\u00e9",
-option3: "chinbi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2039}]
-}
-,
-
-{
-trialnum: 250,
-block: 4,
-miniblock: 4,
-blockType: "training",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "jonp",
-option1: "jonp\u00e9",
-option2: "jonb\u00e9",
-option3: "jonbi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2005}]
-}
-,
-
-{
 trialnum: 251,
 block: 4,
 miniblock: 4,
@@ -4871,14 +4871,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "coub",
-option1: "coup\u00e9",
-option2: "coubi",
-option3: "coub\u00e9",
-option1type: "foil",
-option2type: "distractor",
+rootWord: "voun",
+option1: "vouni",
+option2: "voum\u00e9",
+option3: "voun\u00e9",
+option1type: "distractor",
+option2type: "foil",
 option3type: "target",
-image: 2019}]
+image: 2021}]
 }
 ,
 
@@ -4888,16 +4888,16 @@ block: 4,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "doum",
-option1: "dodoum",
-option2: "didoum",
-option3: "dudoum",
-option1type: "target",
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "suf",
+option1: "sufi",
+option2: "suv\u00e9",
+option3: "suf\u00e9",
+option1type: "distractor",
 option2type: "foil",
-option3type: "distractor",
-image: 2004}]
+option3type: "target",
+image: 2007}]
 }
 ,
 
@@ -4909,14 +4909,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "gonb",
-option1: "digonb",
-option2: "dogonb",
-option3: "dugonb",
-option1type: "foil",
+rootWord: "chanv",
+option1: "duchanv",
+option2: "dochanv",
+option3: "dichanv",
+option1type: "distractor",
 option2type: "target",
-option3type: "distractor",
-image: 2008}]
+option3type: "foil",
+image: 2014}]
 }
 ,
 
@@ -4928,14 +4928,14 @@ blockType: "test",
 contents:  [{
 grammarType: "size",
 learningType: "supervised",
-rootWord: "nif",
-option1: "dunif",
-option2: "donif",
-option3: "dinif",
+rootWord: "guv",
+option1: "duguv",
+option2: "diguv",
+option3: "doguv",
 option1type: "distractor",
 option2type: "foil",
 option3type: "target",
-image: 2030}]
+image: 2006}]
 }
 ,
 
@@ -4947,14 +4947,14 @@ blockType: "test",
 contents:  [{
 grammarType: "plural",
 learningType: "reinforcement",
-rootWord: "fim",
-option1: "fimi",
-option2: "fim\u00e9",
-option3: "fin\u00e9",
+rootWord: "chanf",
+option1: "chanfi",
+option2: "chanv\u00e9",
+option3: "chanf\u00e9",
 option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2031}]
+option2type: "foil",
+option3type: "target",
+image: 2001}]
 }
 ,
 
@@ -4964,363 +4964,21 @@ block: 4,
 miniblock: 4,
 blockType: "test",
 contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "cuch",
-option1: "cug\u00e9",
-option2: "cuch\u00e9",
-option3: "cugi",
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gonb",
+option1: "dogonb",
+option2: "dugonb",
+option3: "digonb",
 option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2011}]
+option2type: "distractor",
+option3type: "foil",
+image: 2008}]
 }
 ,
 
 {
 trialnum: 257,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "tait",
-option1: "tait\u00e9",
-option2: "taidi",
-option3: "taid\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2047}]
-}
-,
-
-{
-trialnum: 258,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "fiv",
-option1: "fif\u00e9",
-option2: "fivi",
-option3: "fiv\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2049}]
-}
-,
-
-{
-trialnum: 259,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "kaid",
-option1: "kaidi",
-option2: "kait\u00e9",
-option3: "kaid\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2043}]
-}
-,
-
-{
-trialnum: 260,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "mait",
-option1: "dumait",
-option2: "domait",
-option3: "dimait",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2048}]
-}
-,
-
-{
-trialnum: 261,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "kaud",
-option1: "kaudi",
-option2: "kaut\u00e9",
-option3: "kaud\u00e9",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2045}]
-}
-,
-
-{
-trialnum: 262,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "gaut",
-option1: "dogaut",
-option2: "dugaut",
-option3: "digaut",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2046}]
-}
-,
-
-{
-trialnum: 263,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jaut",
-option1: "dujaut",
-option2: "dojaut",
-option3: "dijaut",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2042}]
-}
-,
-
-{
-trialnum: 264,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "bap",
-option1: "dobap",
-option2: "dubap",
-option3: "dibap",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2050}]
-}
-,
-
-{
-trialnum: 265,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "baud",
-option1: "baut\u00e9",
-option2: "baud\u00e9",
-option3: "baudi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2041}]
-}
-,
-
-{
-trialnum: 266,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "daid",
-option1: "didaid",
-option2: "dudaid",
-option3: "dodaid",
-option1type: "target",
-option2type: "distractor",
-option3type: "foil",
-image: 2044}]
-}
-,
-
-{
-trialnum: 267,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "baud",
-option1: "baut\u00e9",
-option2: "baudi",
-option3: "baud\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2041}]
-}
-,
-
-{
-trialnum: 268,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "jaut",
-option1: "dujaut",
-option2: "dojaut",
-option3: "dijaut",
-option1type: "distractor",
-option2type: "target",
-option3type: "foil",
-image: 2042}]
-}
-,
-
-{
-trialnum: 269,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "tait",
-option1: "tait\u00e9",
-option2: "taid\u00e9",
-option3: "taidi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2047}]
-}
-,
-
-{
-trialnum: 270,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "bap",
-option1: "dubap",
-option2: "dobap",
-option3: "dibap",
-option1type: "distractor",
-option2type: "foil",
-option3type: "target",
-image: 2050}]
-}
-,
-
-{
-trialnum: 271,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "kaid",
-option1: "kait\u00e9",
-option2: "kaidi",
-option3: "kaid\u00e9",
-option1type: "foil",
-option2type: "distractor",
-option3type: "target",
-image: 2043}]
-}
-,
-
-{
-trialnum: 272,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "kaud",
-option1: "kaud\u00e9",
-option2: "kaut\u00e9",
-option3: "kaudi",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2045}]
-}
-,
-
-{
-trialnum: 273,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "size",
-learningType: "supervised",
-rootWord: "daid",
-option1: "didaid",
-option2: "dodaid",
-option3: "dudaid",
-option1type: "target",
-option2type: "foil",
-option3type: "distractor",
-image: 2044}]
-}
-,
-
-{
-trialnum: 274,
-block: 5,
-miniblock: 5,
-blockType: "generalization",
-contents:  [{
-grammarType: "plural",
-learningType: "reinforcement",
-rootWord: "fiv",
-option1: "fif\u00e9",
-option2: "fiv\u00e9",
-option3: "fivi",
-option1type: "foil",
-option2type: "target",
-option3type: "distractor",
-image: 2049}]
-}
-,
-
-{
-trialnum: 275,
 block: 5,
 miniblock: 5,
 blockType: "generalization",
@@ -5339,7 +4997,26 @@ image: 2046}]
 ,
 
 {
-trialnum: 276,
+trialnum: 258,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fiv",
+option1: "fiv\u00e9",
+option2: "fivi",
+option3: "fif\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2049}]
+}
+,
+
+{
+trialnum: 259,
 block: 5,
 miniblock: 5,
 blockType: "generalization",
@@ -5347,13 +5024,336 @@ contents:  [{
 grammarType: "size",
 learningType: "supervised",
 rootWord: "mait",
-option1: "dumait",
-option2: "dimait",
+option1: "dimait",
+option2: "dumait",
 option3: "domait",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2048}]
+}
+,
+
+{
+trialnum: 260,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "bap",
+option1: "dibap",
+option2: "dubap",
+option3: "dobap",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2050}]
+}
+,
+
+{
+trialnum: 261,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "daid",
+option1: "dodaid",
+option2: "dudaid",
+option3: "didaid",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2044}]
+}
+,
+
+{
+trialnum: 262,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "baud",
+option1: "baut\u00e9",
+option2: "baud\u00e9",
+option3: "baudi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2041}]
+}
+,
+
+{
+trialnum: 263,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "kaud",
+option1: "kaut\u00e9",
+option2: "kaudi",
+option3: "kaud\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2045}]
+}
+,
+
+{
+trialnum: 264,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "kaid",
+option1: "kaidi",
+option2: "kait\u00e9",
+option3: "kaid\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2043}]
+}
+,
+
+{
+trialnum: 265,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "tait",
+option1: "taidi",
+option2: "taid\u00e9",
+option3: "tait\u00e9",
 option1type: "distractor",
 option2type: "target",
 option3type: "foil",
+image: 2047}]
+}
+,
+
+{
+trialnum: 266,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "jaut",
+option1: "dijaut",
+option2: "dujaut",
+option3: "dojaut",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2042}]
+}
+,
+
+{
+trialnum: 267,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "kaud",
+option1: "kaut\u00e9",
+option2: "kaud\u00e9",
+option3: "kaudi",
+option1type: "foil",
+option2type: "target",
+option3type: "distractor",
+image: 2045}]
+}
+,
+
+{
+trialnum: 268,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "mait",
+option1: "dimait",
+option2: "dumait",
+option3: "domait",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
 image: 2048}]
+}
+,
+
+{
+trialnum: 269,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "bap",
+option1: "dibap",
+option2: "dubap",
+option3: "dobap",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2050}]
+}
+,
+
+{
+trialnum: 270,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "baud",
+option1: "baut\u00e9",
+option2: "baudi",
+option3: "baud\u00e9",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2041}]
+}
+,
+
+{
+trialnum: 271,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "jaut",
+option1: "dijaut",
+option2: "dujaut",
+option3: "dojaut",
+option1type: "foil",
+option2type: "distractor",
+option3type: "target",
+image: 2042}]
+}
+,
+
+{
+trialnum: 272,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "tait",
+option1: "taid\u00e9",
+option2: "tait\u00e9",
+option3: "taidi",
+option1type: "target",
+option2type: "foil",
+option3type: "distractor",
+image: 2047}]
+}
+,
+
+{
+trialnum: 273,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "kaid",
+option1: "kaid\u00e9",
+option2: "kaidi",
+option3: "kait\u00e9",
+option1type: "target",
+option2type: "distractor",
+option3type: "foil",
+image: 2043}]
+}
+,
+
+{
+trialnum: 274,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "plural",
+learningType: "reinforcement",
+rootWord: "fiv",
+option1: "fivi",
+option2: "fif\u00e9",
+option3: "fiv\u00e9",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2049}]
+}
+,
+
+{
+trialnum: 275,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "gaut",
+option1: "dugaut",
+option2: "digaut",
+option3: "dogaut",
+option1type: "distractor",
+option2type: "foil",
+option3type: "target",
+image: 2046}]
+}
+,
+
+{
+trialnum: 276,
+block: 5,
+miniblock: 5,
+blockType: "generalization",
+contents:  [{
+grammarType: "size",
+learningType: "supervised",
+rootWord: "daid",
+option1: "dudaid",
+option2: "didaid",
+option3: "dodaid",
+option1type: "distractor",
+option2type: "target",
+option3type: "foil",
+image: 2044}]
 }
 ,
 ];export default learningStudy

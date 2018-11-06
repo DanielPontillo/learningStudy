@@ -29,6 +29,10 @@ function Intro(props) {
       </p>
 
       <p>
+      Vous devez être un francophone pour faire cette tâche! 
+      </p>
+
+      <p>
       Cela fait partie d'une étude de recherche sur l'apprentissage. Au cours de cette expérience, vous devrez apprendre les règles d’une langue étrangère d’une autre galaxie.
       </p>
 
