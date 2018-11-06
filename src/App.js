@@ -913,7 +913,7 @@ renderBlockstart() {
       Jump to End
       </Button>
 
-      <br/><Button onClick={this.sendCompletionPutRequestToServer("from debug")}>
+      <br/><Button onClick={this.sendCompletionPutRequestToServer}>
       Send completion request
       </Button>
 
