@@ -714,7 +714,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
     
 
-    fetch('https://onlinelab.fr:3000/start_new_participant_session',{mode:"cors",
+    fetch('https://onlinelab.fr/exp_db/start_new_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -744,7 +744,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
     //console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr:3000/update_participant_session',{mode:"cors",
+    fetch('https://onlinelab.fr/exp_db/update_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -775,7 +775,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     //console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr:3000/complete_participant_session',{mode:"cors",
+    fetch('https://onlinelab.fr/exp_db/complete_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
