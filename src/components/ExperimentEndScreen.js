@@ -9,7 +9,7 @@ class ExperimentEndScreen extends Component{
     super(props);
 
     this.state = {
-      
+    
     };
 
     this.handleExperimentEndScreenLocal = this.handleExperimentEndScreenLocal.bind(this)
@@ -42,7 +42,23 @@ class ExperimentEndScreen extends Component{
       transitionAppear
       transitionAppearTimeout={500}
     >
+
+    {this.props.platformType === "local" ?
       <div>
+      <text>
+        <div id={"logo_img"}></div>
+       
+      Merci pour votre participation!<br/><br/>
+    <br/>
+    <br/>
+        
+        
+        </text>
+         </div>
+
+         :
+
+        <div>
       <text>
         <div id={"logo_img"}></div>
        
@@ -53,6 +69,8 @@ class ExperimentEndScreen extends Component{
         
         </text>
          </div>
+
+       }
        
 
       <div className="buttonContainer">
@@ -83,10 +101,8 @@ class ExperimentEndScreen extends Component{
         <input type="submit" className="button" />
       </form>
       :
-      <Button className="button" onClick={this.handleExperimentEndScreenLocal}>
+      <div></div>
       
-      Soumettre
-      </Button>
       }
 
       </div>
