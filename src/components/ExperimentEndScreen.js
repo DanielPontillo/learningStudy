@@ -76,8 +76,10 @@ class ExperimentEndScreen extends Component{
       <div className="buttonContainer">
 
 
-      <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
       {this.props.platformType === "mturk_sandbox" ?
+      <div>
+      <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
+      
       <form id="hitForm" action="https://workersandbox.mturk.com/mturk/externalSubmit" method="POST">
         <input type="hidden" name="assignmentId" value={this.props.assignmentId} />
         <input type="hidden" name="participantID" value={this.props.participantID} />
@@ -88,8 +90,12 @@ class ExperimentEndScreen extends Component{
         <input type="hidden" name="participantComments" value={this.props.participantComments} />
         <input type="submit" className="button" />
       </form>
+      </div>
 
       : this.props.platformType === "mturk" ?
+      <div>
+      <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
+      
         <form id="hitForm" action="https://www.mturk.com/mturk/externalSubmit" method="POST">
         <input type="hidden" name="assignmentId" value={this.props.assignmentId} />
         <input type="hidden" name="participantID" value={this.props.participantID} />
@@ -100,6 +106,7 @@ class ExperimentEndScreen extends Component{
         <input type="hidden" name="participantComments" value={this.props.participantComments} />
         <input type="submit" className="button" />
       </form>
+      </div>
       :
       <div></div>
       
