@@ -45,7 +45,7 @@ function Intro(props) {
       </p>
 
       <p>
-      Il n'y a aucun risque connu et vous ne recevrez aucun avantage pour participer à cette étude. Si vous avez des questions ou des préoccupations, vous pouvez nous contacter à [daniel.pontillo@ens.fr].  
+      Il n'y a aucun risque connu et vous ne recevrez aucun avantage pour participer à cette étude. Si vous avez des questions ou des préoccupations, vous pouvez nous contacter à [artificial.grammar.study@gmail.com].  
       </p>
 
       <p>
