@@ -809,6 +809,10 @@ renderBlockstart() {
     var experimentName = this.state.experimentName.toString()
     var participantComments = comments
 
+    var currentCondition = this.state.condition.toString()
+    var currentConditionListID = this.state.conditionListID.toString()
+    var currentExperimentName = this.state.experimentName.toString()
+    var currentPlatformType = this.state.platformType.toString()
 
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     //console.log(queryString.stringify(bodyContents))
