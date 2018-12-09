@@ -43,7 +43,9 @@ class ExperimentEndScreen extends Component{
       transitionAppearTimeout={500}
     >
 
-    {this.props.platformType === "local" ?
+    {this.props.platformType === "server" ?
+
+
       <div>
       <text>
         <div id={"logo_img"}></div>
@@ -55,6 +57,20 @@ class ExperimentEndScreen extends Component{
         
         </text>
          </div>
+     : this.props.platformType === "local" ?
+
+     <div>
+      <text>
+        <div id={"logo_img"}></div>
+       
+      Merci pour votre participation! S'il vous plaît informer l'expérimentateur et <b>ne fermez pas </b> la fenêtre du navigateur.<br/><br/>
+    <br/>
+    <br/>
+        
+        
+        </text>
+         </div>
+
 
          :
 
@@ -77,6 +93,7 @@ class ExperimentEndScreen extends Component{
 
 
       {this.props.platformType === "mturk_sandbox" ?
+
       <div>
       <label>Appuyez sur le bouton pour soumettre et finir l'expérience</label><br/>
       

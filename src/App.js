@@ -813,12 +813,20 @@ renderBlockstart() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
     //console.log(queryString.stringify(bodyContents))
 
+    var bodyContentsLocal = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    
+    console.log("Results")
+
+    console.log(queryString.stringify(bodyContentsLocal))
+
+    console.log(this.state.cumulativeTestPerformance)
+
     fetch('https://onlinelab.fr/exp_db/complete_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     method: "POST",
-    body: queryString.stringify(bodyContents)})
+    body: queryString.stringify(bodyContentsLocal)})
       .then(resp => console.log("response received"));
       // .then(resp => {
       //   const currentTime = resp.dateString;
