@@ -718,7 +718,7 @@ renderDemographicsSurvey() {
 renderBlockstart() {
 
     return (
-      <Blockstart blockType={this.state.blockType} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
+      <Blockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
      handleBlockstartScreen={this.state.showBlockstartScreen,this.handleBlockstartScreen}/>
     );
   }
