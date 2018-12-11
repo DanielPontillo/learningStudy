@@ -506,7 +506,7 @@ handleExperimentEndScreen(event) {
     //  reset the testblock responses array
     //  flag the blockstart screen
     //  update last test block performance
-    if (this.state.miniblock<this.state.experimentContents[counter].miniblock) {
+    if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "training") {
       console.log("Begin New Miniblock")
       lastTestBlockPerformance = this.state.currentTestBlockPerformance
       currentTestBlockResponsesCorrect = []
