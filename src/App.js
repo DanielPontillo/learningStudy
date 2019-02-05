@@ -11,6 +11,9 @@ import { Button} from 'react-bootstrap';
 import 'whatwg-fetch';
 import queryString from 'query-string';
 
+import KeyHandler, { KEYPRESS } from 'react-key-handler';
+
+
 let experimentLists = {
     list_1_a:  require('./api/list_1_a.js'),
     list_2_a:  require('./api/list_2_a.js'),
@@ -92,6 +95,7 @@ class App extends Component {
       currentTarget: '',
 
       //flags for controlling screen
+      paused: false,
       noconsent: true,
       nodemographics: true,
       instructionsNotComplete: true,
@@ -124,8 +128,12 @@ class App extends Component {
       testResponsesCorrect: [],
       responsesCorrect: [],
       demographicsInfo: [],
+      triggerEvents: [],
+      escapeEvents: [],
+      trialStartTimes: [],
 
-      showDebug: false
+      showDebug: false,
+      fmriMode: false
       
     };
     var learningStudy = [];
@@ -137,6 +145,15 @@ class App extends Component {
     this.sendSessionStartPostRequestToServer= this.sendSessionStartPostRequestToServer.bind(this);
     this.jumpToEnd= this.jumpToEnd.bind(this);
     
+    this.myKeyHandler = this.myKeyHandler.bind(this);
+    this.keyHandlerAppLevel = this.keyHandlerAppLevel.bind(this);
+
+    
+
+    this.handleEsc = this.handleEsc.bind(this);
+    this.handleTrigger = this.handleTrigger.bind(this);
+    this.restartThisMiniblock =  this.restartThisMiniblock.bind(this);
+
     this.handleExperimentEndScreen = this.handleExperimentEndScreen.bind(this);
     this.handleExperimentEndSurvey = this.handleExperimentEndSurvey.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -207,6 +224,7 @@ class App extends Component {
       condition: urlParamStruct.condition,
       platformType: urlParamStruct.platformType,
       showDebug: urlParamStruct.debug,
+      fmriMode: urlParamStruct.fmriMode,
 
       totalNumTrials: this.state.totalNumBlocks*this.state.numTrialsPerBlock + this.state.numGeneralizationTrials,
       currentTarget: curTarg,
@@ -220,6 +238,15 @@ class App extends Component {
   }
 
   }
+
+  //KEY HANDLING
+
+  componentDidMount(){
+    //document.addEventListener("keydown", this.keyHandlerApp);
+  }
+
+  
+
 
   getParams(location) {
    const searchParams = new URLSearchParams(location.search);
@@ -271,17 +298,98 @@ class App extends Component {
     return array;
   };
 
+
+handleEsc(event){
+  console.log("Esc Pressed")
+
+  this.restartThisMiniblock()
+
+  //if experiment started, return to beginning of miniblock
+}
+
+handleTrigger(event){
+
+  console.log("trigger event")
+
+  this.setState({
+    triggerEvents: this.state.triggerEvents.concat(Date.now())
+  });
+
+  console.log(this.state.triggerEvents)
+
+}
+
+
+  myKeyHandler(event){
+
+    console.log("app key handler")
+    console.log(keyPressed)
+
+    var keyPressed = event.key;
+
+    if (keyPressed === "b" || keyPressed === "y" || keyPressed === "g" ){
+
+      if (this.state.showBlockstartScreen ){
+
+        this.handleBlockstartScreen(null)
+        
+      }
+
+    }
+
+  }
+
+
+  keyHandlerAppLevel(keyPressed){
+
+    if(this.state.paused === false && keyPressed === "p"){
+      console.log("Pause")
+      clearTimeout(this.timeoutID);
+      this.setState({
+         paused: true
+        })
+    }
+    else if(this.state.paused == true && keyPressed === "r"){
+      console.log("Resume")
+
+      clearTimeout(this.timeoutID);
+
+      this.setState({
+         paused: false
+        })
+
+      if (this.state.trialnum < this.state.totalNumTrials) {
+         setTimeout(() => this.setNextTrial(), 0);
+        } else {
+         setTimeout(() => this.endTrials(), 0);
+        }
+      
+    }
+
+    
+  };
+
+
+
   responseTimedOut(){
       console.log("response timed out, go to next trial")
 
-      var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
-  
-      this.checkResponseAndUpdate("timeout",responseTime);
+      if (this.state.paused === true){
+        console.log("experiment is paused, restart trial")
 
-      if (this.state.trialnum < this.state.totalNumTrials) {
-       setTimeout(() => this.setNextTrial(), 0);
-      } else {
-        setTimeout(() => this.endTrials(), 0);
+        
+      }
+      else {
+        var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
+  
+        this.checkResponseAndUpdate("timeout",responseTime);
+
+       if (this.state.trialnum < this.state.totalNumTrials) {
+         setTimeout(() => this.setNextTrial(), 0);
+        } else {
+         setTimeout(() => this.endTrials(), 0);
+        }
+
       }
 
 
@@ -289,6 +397,10 @@ class App extends Component {
   
 
   handleAnswerSelected(selected_id, selected_option) {
+
+    console.log("handle Answer Selected")
+    console.log(selected_id)
+    console.log(selected_option)
     clearTimeout(this.timeoutID);
 
     
@@ -298,7 +410,10 @@ class App extends Component {
       var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
       //console.log("Response Time: " + responseTime )
 
+      console.log("response time: " + String(responseTime))
+
       if (responseTime > 500){
+
         var response = selected_id
         var selectedOption = selected_option
 
@@ -371,6 +486,8 @@ class App extends Component {
 
       //add response time to response time array
       responseTimes: this.state.responseTimes.concat(responseTime),
+
+      trialStartTimes: this.state.trialStartTimes.concat(this.state.currentTrialStartTime),
 
       //update performance metrics
       currentReinforcementBlockPerformance: currentReinforcementBlockPerformance,
@@ -454,18 +571,13 @@ handleExperimentEndScreen(event) {
       currentTrialStartTime: Date.now()
     })
 
-    this.timeoutID = setTimeout(() => this.responseTimedOut(),8000);
+    if (this.state.paused === false){
+      this.timeoutID = setTimeout(() => this.responseTimedOut(),10000);
+    }
   }
 
 
-  updateResponses(response) {
-
-    this.setState({
-        //answersCount: updatedAnswersCount,
-        responses: this.state.responses.concat(response)
-    });
-    
-  }
+  
 
   endTrials() {
 
@@ -474,6 +586,120 @@ handleExperimentEndScreen(event) {
         showExperimentEndSurvey: true,
     });
     
+  }
+
+  restartThisMiniblock() {
+
+
+    if (this.state.showBlockstartScreen === false && this.state.block >= 1){
+
+      clearTimeout(this.timeoutID);
+
+      console.log(this.state.counter-6)
+
+      var counterDistanceFromStart = (this.state.counter-6) % 16
+
+      console.log(counterDistanceFromStart)
+
+      console.log(this.state.counter - counterDistanceFromStart)
+    
+
+
+      this.setState({
+        counter: (this.state.counter - counterDistanceFromStart),
+        escapeEvents: this.state.escapeEvents.concat(Date.now())
+      })
+
+      console.log(this.state.escapeEvents)
+
+      this.setupTrialAfterRestart()
+
+    }
+
+    //if this isn't the first trial of the block, start the timeout counter
+
+
+    //if (!blockstartBoolean){
+      
+    //  if (this.state.paused === false){
+
+    //    this.setState({
+
+     //     currentTrialStartTime: Date.now()
+
+
+     //   });
+
+    //    this.timeoutID = setTimeout(() => this.responseTimedOut(),10000);
+     // }
+      
+ //   }
+ 
+  }
+
+
+  setupTrialAfterRestart(){
+
+    //trial variables to be updated for next trial
+    var showcell = [0];
+    var numShown = 0;
+    var curTarg = '';
+    var counter = this.state.counter
+    //determine how many plural objects to show (must be done at top level because of rerendering)
+    while (numShown < 3){
+      showcell = Array.from({length: 9}, () => Math.round(Math.random() * 1));
+      numShown = showcell.reduce((a, b) => a + b, 0)
+    }
+    
+    var currentTestBlockResponsesCorrect = []
+    var blockstartBoolean = true
+
+    this.sendUpdatePutRequestToServer()
+    
+    var lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
+    var currentReinforcementBlockResponsesCorrect = [];
+    
+    
+
+    // determine the name of the new current target
+    if (this.state.experimentContents[counter].contents[0].option1type === "target") {
+      curTarg = this.state.experimentContents[counter].contents[0].option1
+    }
+    else if (this.state.experimentContents[counter].contents[0].option2type === "target"){
+      curTarg = this.state.experimentContents[counter].contents[0].option2
+    }
+    else{
+      curTarg = this.state.experimentContents[counter].contents[0].option3
+    }
+
+    this.arrangeExperimentTrial(counter);
+
+    this.setState({
+        //update all the data for the next trial
+      
+        currentTarget: curTarg,
+        trialnum: this.state.experimentContents[counter].trialnum,
+        trialcontents: this.state.experimentContents[counter].contents,
+        block: this.state.experimentContents[counter].block,
+        miniblock: this.state.experimentContents[counter].miniblock,
+        blockType: this.state.experimentContents[counter].blockType,
+        showcell: showcell,
+        showBlockstartScreen: blockstartBoolean,
+
+        // new empty arrays for the previous blocks
+        currentTestBlockResponsesCorrect: currentTestBlockResponsesCorrect,
+        currentReinforcementBlockResponsesCorrect: currentReinforcementBlockResponsesCorrect,
+
+        //update block-level performance metrics
+        lastReinforcementBlockPerformance: lastReinforcementBlockPerformance,
+        
+        //refresh response recieved flag
+        //receivedResponse: false
+        
+    });
+
+
+
   }
 
 
@@ -575,8 +801,11 @@ handleExperimentEndScreen(event) {
 
     //if this isn't the first trial of the block, start the timeout counter
     if (!blockstartBoolean){
-      this.setState({currentTrialStartTime: Date.now()});
-      this.timeoutID = setTimeout(() => this.responseTimedOut(),8000);
+      
+      if (this.state.paused === false){
+        this.setState({currentTrialStartTime: Date.now()});
+        this.timeoutID = setTimeout(() => this.responseTimedOut(),10000);
+      }
       
     }
  
@@ -657,6 +886,15 @@ handleExperimentEndScreen(event) {
       teachingSignal3: teachingSignal3,
     });
 
+
+    console.log("ArrangeExperimentTrial: " + String(counter))
+    console.log(this.state.experimentContents[counter])
+    console.log(this.state.experimentContents[counter].contents[0])
+    console.log(this.state.experimentContents[counter].contents[0].learningType)
+    console.log(teachingSignal3)
+    console.log(teachingSignal2)
+    console.log(teachingSignal1)
+
   }
 
   renderExperimentEndSurvey() {
@@ -718,7 +956,7 @@ renderDemographicsSurvey() {
 renderBlockstart() {
 
     return (
-      <Blockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
+      <Blockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} fmriMode = {this.state.fmriMode} fmriTestBlockButtonLabel = "Appuyez sur un bouton pour démarrer le bloc de test" fmriTrainingBlockButtonLabel = "Appuyez sur un bouton pour démarrer le bloc d'apprentissage" testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
      handleBlockstartScreen={this.state.showBlockstartScreen,this.handleBlockstartScreen}/>
     );
   }
@@ -752,7 +990,7 @@ renderBlockstart() {
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
     
 
-    fetch('https://onlinelab.fr/exp_db/start_new_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233:8080/start_new_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -774,15 +1012,20 @@ renderBlockstart() {
     var participantID = this.state.participantID.toString()
     var responses = this.state.responses.toString()
     var responseTimes = this.state.responseTimes.toString()
+    var trialStartTimes = this.state.trialStartTimes.toString()
+
     var currentBlock = this.state.miniblock.toString()
     var responsesCorrect = this.state.responsesCorrect.toString()
     var demographicsInfo = this.state.demographicsInfo.toString()
     var experimentName = this.state.experimentName.toString()
 
-    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes}
+    var triggerEvents = this.state.triggerEvents.toString()
+    var escapeEvents = this.state.escapeEvents.toString()
+
+    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, trialStartTimes: trialStartTimes, triggerEvents: triggerEvents, escapeEvents: escapeEvents}
     //console.log(queryString.stringify(bodyContents))
 
-    fetch('https://onlinelab.fr/exp_db/update_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233:8080/update_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -803,21 +1046,25 @@ renderBlockstart() {
     var participantID = this.state.participantID.toString()
     var responses = this.state.responses.toString()
     var responseTimes = this.state.responseTimes.toString()
+    var trialStartTimes = this.state.trialStartTimes.toString()
     var currentBlock = this.state.miniblock.toString()
     var responsesCorrect = this.state.responsesCorrect.toString()
     var demographicsInfo = this.state.demographicsInfo.toString()
     var experimentName = this.state.experimentName.toString()
     var participantComments = comments
 
+    var triggerEvents = this.state.triggerEvents.toString()
+    var escapeEvents = this.state.escapeEvents.toString()
+
     var currentCondition = this.state.condition.toString()
     var currentConditionListID = this.state.conditionListID.toString()
     var currentExperimentName = this.state.experimentName.toString()
     var currentPlatformType = this.state.platformType.toString()
 
-    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, trialStartTimes: trialStartTimes, participantComments: participantComments,triggerEvents: triggerEvents, escapeEvents: escapeEvents, cumulativeTestPerformance: this.state.cumulativeTestPerformance}
     //console.log(queryString.stringify(bodyContents))
 
-    var bodyContentsLocal = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, participantComments: participantComments}
+    var bodyContentsLocal = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, trialStartTimes: trialStartTimes, participantComments: participantComments,triggerEvents: triggerEvents, escapeEvents: escapeEvents, cumulativeTestPerformance: this.state.cumulativeTestPerformance}
     
     console.log("Results")
 
@@ -825,7 +1072,7 @@ renderBlockstart() {
 
     console.log(this.state.cumulativeTestPerformance)
 
-    fetch('https://onlinelab.fr/exp_db/complete_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233:8080/complete_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -918,10 +1165,42 @@ renderBlockstart() {
 
     return (
       <div className="App">
+
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="t"
+          onKeyHandle={this.handleTrigger}
+        />
+
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="Escape"
+          onKeyHandle={this.handleEsc}
+        />
+
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="b"
+          onKeyHandle={this.myKeyHandler}
+        />
+
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="g"
+          onKeyHandle={this.myKeyHandler}
+        />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="r"
+          onKeyHandle={this.myKeyHandler}
+        />
+
+
+
         {this.state.showDebug == 'true' ? 
         <div className="expDebugText">
         App Debug: 
-        
+        <br/> counter: {this.state.counter}
         <br/> lastreinforcementblockperformance: {Number(this.state.lastReinforcementBlockPerformance).toFixed(2)}
         <br/> currentreinforcementblockperformance: {Number(this.state.currentReinforcementBlockPerformance).toFixed(2)}
         <br/> lasttestblockperformance: {Number(this.state.lastTestBlockPerformance).toFixed(2)}
@@ -950,7 +1229,7 @@ renderBlockstart() {
         </div>
 
         : ''}
-
+        
         {this.state.showParamErrorMessage ? <div className="participantIDError">Error accessing participantID. You must access this page with a valid participant ID.</div> : 
         this.state.showExperimentEndScreen ? this.renderExperimentEndScreen() :
         this.state.showExperimentEndSurvey ? this.renderExperimentEndSurvey() :
@@ -975,8 +1254,10 @@ renderBlockstart() {
         teachingSignal3={this.state.teachingSignal3}
 
         //questionTotal={this.state.numTrialsPerBlock}
+        keyHandlerAppLevel = {this.keyHandlerAppLevel}
         responseSelected={this.state.receivedResponse}
         onAnswerSelected={this.handleAnswerSelected}
+        
       /> : 
  this.renderIntro() }
         

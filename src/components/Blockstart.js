@@ -39,10 +39,12 @@ function Blockstart(props) {
 
       <div className="buttonContainer">
       
-      <label>{props.blockType === "training" ? props.trainingBlockButtonLabel : props.testBlockButtonLabel }</label><br/>
+      <label>{props.fmriMode && props.blockType === "training" ? props.fmriTrainingBlockButtonLabel : props.fmriMode && props.blockType === "test" ? props.fmriTestBlockButtonLabel : props.blockType === "training" ? props.trainingBlockButtonLabel : props.testBlockButtonLabel }</label><br/>
       <Button className="button" onClick={props.handleBlockstartScreen.bind(this)}>
       Démarrer
       </Button>
+
+      
       </div>
 
 

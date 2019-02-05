@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import KeyHandler, { KEYPRESS } from 'react-key-handler';
+
 
 const imgDivStyle = {
     
@@ -21,6 +23,10 @@ class ResponseOption extends Component {
 
   this.handleAnswerSelectedLocal = this.handleAnswerSelectedLocal.bind(this);
 
+  this.handleGreen = this.handleGreen.bind(this);
+  this.handleYellow = this.handleYellow.bind(this);
+  this.handleBlue = this.handleBlue.bind(this);
+
   }
 
   componentWillMount() {
@@ -28,22 +34,52 @@ class ResponseOption extends Component {
 
   }
 
-  showFeedback(answerCorrect){
-    //console.log("show feedback")
-
-    if (answerCorrect){
-      this.setState({
-      feedback: 'smiley_img'
-    });
+  handleBlue(event){
+    console.log("handle Blue")
+    console.log("option1")
+    console.log(this.props.content)
+    
+    if (this.props.optionID == "option1"){
+      var response = this.props.content
+      var selectedOption = "option1"
+        this.props.handleAnswerSelectedExperiment(response, selectedOption)
     }
-    else{
-      this.setState({
-      feedback: 'frown_img'
-    })
+
+
+  }
+
+  handleYellow(event){
+    console.log(event)
+    console.log("handle Yellow")
+    console.log("option2")
+    console.log(this.props.content)
+    
+    
+    if (this.props.optionID == "option2"){
+      var response = this.props.content
+      var selectedOption = "option2"
+        this.props.handleAnswerSelectedExperiment(response, selectedOption)
+    }
+
+
+  }
+
+  handleGreen(event){
+    console.log(event.id)
+    console.log("handle Green")
+    console.log("option3")
+    console.log(this.props.content)
+
+    if (this.props.optionID == "option3"){
+      var response = this.props.content
+      var selectedOption = "option3"
+        this.props.handleAnswerSelectedExperiment(response, selectedOption)
     }
 
     
   }
+
+  
 
   hideFeedbackAndProceed(response, selectedOption){
    
@@ -53,6 +89,8 @@ class ResponseOption extends Component {
     this.props.handleAnswerSelectedExperiment(response, selectedOption)
   }
   
+  
+
   handleAnswerSelectedLocal(event) {
 
     var response = event.currentTarget.id
@@ -69,7 +107,11 @@ class ResponseOption extends Component {
   <div className="answerOption">
 
     {this.props.teachingSignal === 'nonSelectable' && this.props.blockType === 'training' ? 
+
+    
+
     <div className={this.props.teachingSignal}>
+    
 
     <input
         type="radio"
@@ -88,7 +130,8 @@ class ResponseOption extends Component {
       </label>
       </div>
       : 
-      <div className={this.props.teachingSignal} >
+      <div className={this.props.teachingSignal}>
+      
       <input
         type="radio"
         className="radioCustomButton"
@@ -97,7 +140,24 @@ class ResponseOption extends Component {
         id={this.props.content}
         value={this.props.whichOption}
         onChange={this.handleAnswerSelectedLocal}
+        
       />
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="b"
+          onKeyHandle={this.handleBlue}
+        />
+
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="y"
+          onKeyHandle={this.handleYellow}
+        />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="g"
+          onKeyHandle={this.handleGreen}
+        />
 
       <label className="radioCustomLabel" htmlFor={this.props.content}>
        <br/>
