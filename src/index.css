@@ -258,7 +258,7 @@ Experiment Screen Styles
   height: 100%;
   opacity: 0;
   z-index: 15;
-  border: 1px solid #f00;
+  border: 5px solid #f00;
 }
 
 .answerContainer {

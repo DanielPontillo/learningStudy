@@ -7,6 +7,7 @@ import DemographicsSurvey from './components/DemographicsSurvey';
 import ExperimentEndSurvey from './components/ExperimentEndSurvey';
 import ExperimentEndScreen from './components/ExperimentEndScreen';
 import Blockstart from './components/Blockstart';
+import TriggerWaitScreen from './components/TriggerWaitScreen';
 import { Button} from 'react-bootstrap';
 import 'whatwg-fetch';
 import queryString from 'query-string';
@@ -101,6 +102,7 @@ class App extends Component {
       instructionsNotComplete: true,
       experimentStarted: false,
       showBlockstartScreen: false,
+      showTriggerWaitScreen: false,
       receivedResponse: false,
       showParamErrorMessage: false,
       showExperimentEndSurvey: false,
@@ -161,6 +163,7 @@ class App extends Component {
     this.handleDemographicsSurveyResponse = this.handleDemographicsSurveyResponse.bind(this)
     this.handleInstructionsScreen = this.handleInstructionsScreen.bind(this)
     this.handleBlockstartScreen = this.handleBlockstartScreen.bind(this)
+    this.handleTriggerWaitScreen = this.handleTriggerWaitScreen.bind(this)
   }
 
   
@@ -311,11 +314,20 @@ handleTrigger(event){
 
   console.log("trigger event")
 
+
+  if (this.state.showTriggerWaitScreen ){
+
+        this.handleTriggerWaitScreen(null)
+        
+  }
+
+  
   this.setState({
     triggerEvents: this.state.triggerEvents.concat(Date.now())
   });
+  
 
-  console.log(this.state.triggerEvents)
+  
 
 }
 
@@ -567,6 +579,17 @@ handleExperimentEndScreen(event) {
     this.arrangeExperimentTrial(this.state.counter);
     this.setState({
       showBlockstartScreen: false,
+      showTriggerWaitScreen: true
+    })
+
+    
+  }
+
+  handleTriggerWaitScreen(event) {
+    //console.log("Trigger Wait Screen Complete")
+    this.arrangeExperimentTrial(this.state.counter);
+    this.setState({
+      showTriggerWaitScreen: false,
       experimentStarted: true,
       currentTrialStartTime: Date.now()
     })
@@ -961,6 +984,14 @@ renderBlockstart() {
     );
   }
 
+
+renderTriggerWaitScreen() {
+
+    return (
+      <TriggerWaitScreen triggerWaitScreenMessage="Bon Travail!" handleTriggerWaitScreen={this.state.showTriggerWaitScreen,this.handleTriggerWaitScreen}/>
+    );
+  }
+
   jumpToEnd() {
     console.log("Jump to End of Experiment")
    
@@ -1237,6 +1268,7 @@ renderBlockstart() {
  this.state.nodemographics ? this.renderDemographicsSurvey() : 
  this.state.instructionsNotComplete ? this.renderInstructions() : 
  this.state.showBlockstartScreen ? this.renderBlockstart(): 
+ this.state.showTriggerWaitScreen ? this.renderTriggerWaitScreen(): 
  this.state.experimentStarted ? <ExperimentTrial
         
         trialTarget={this.state.currentTarget}
