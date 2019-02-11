@@ -255,8 +255,8 @@ Experiment Screen Styles
   justify-content: center;
   width: 100%;
   background: #e1e;
-  height: 100%;
-  opacity: 0;
+  height: 30%;
+  opacity: 50;
   z-index: 15;
   border: 5px solid #f00;
 }
@@ -281,7 +281,7 @@ Experiment Screen Styles
   width: 30%;
   height: 70px;
   border: 1px solid #000;
-  background: #fff;
+  background: #eee;
   z-index:5;
 }
 
@@ -371,7 +371,7 @@ Experiment Screen Styles
     content: '';
     
     
-    background: #fff;
+    background: #ddd;
     border: 1px solid #0f0;
     height: 100%;
     transition: all 0.3s;

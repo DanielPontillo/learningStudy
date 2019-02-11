@@ -10,14 +10,20 @@
 	display: 'block'; 
 	}
 
+#confirmation_arrow{
+	background: url(./../public/img/confirmation_arrow.png) no-repeat center;
+	display: 'inline-block';
+	
+	}
+
 #smiley_img {
-	background: url(./../public/img/smiley.jpg) no-repeat center;
+	background: url(./../public/img/smiley.png) no-repeat center;
 	display: 'inline-block';
 	
 	}
 
 #frown_img {
-	background: url(./../public/img/frown.jpg) no-repeat center;
+	background: url(./../public/img/frown.png) no-repeat center;
 	display: 'inline-block'; 
 	}
 

@@ -21,13 +21,8 @@ class ExperimentTrial extends Component {
       feedback2: 'no_signal',
       feedback3: 'no_signal',
       paused: false,
-
       blockType:null,
       trialcontents: null,
-      teachingSignal1: null,
-      teachingSignal2: null,
-      teachingSignal3: null
-
 
     };
     var timeoutID = null
@@ -39,7 +34,6 @@ class ExperimentTrial extends Component {
 
   this.handlePause = this.handlePause.bind(this);
 
-  this.keyHandlerExperiment = this.keyHandlerExperiment.bind(this);
 
   }
 
@@ -48,10 +42,7 @@ class ExperimentTrial extends Component {
     console.log(this.props.trialContents)
 
     this.setState({blockType:this.props.blockType,
-      trialcontents: this.props.trialContents,
-      teachingSignal1: this.props.teachingSignal1,
-      teachingSignal2: this.props.teachingSignal2,
-      teachingSignal3: this.props.teachingSignal3})
+      trialcontents: this.props.trialContents})
   }
 
   componentDidMount(){
@@ -59,26 +50,24 @@ class ExperimentTrial extends Component {
 
   }
   
-  componentWillUpdate(){
-    
+  componentWillUpdate(){ 
     //document.removeEventListener("keydown", this.keyHandlerExperiment);
   }
 
-  componentDidUpdate(oldProps) {
+  componentDidUpdate() {
 
-  //const newProps = this.props
-  //if(oldProps.field !== newProps.field) {
-  //  this.setState({ ...something based on newProps.field... })
+   //console.log("component did update")
+    //console.log(this.state.selectedResponse)
+    //console.log(Date.now())
 
-  //}
 }
 
+componentWillReceiveProps(){
 
-
-  //componentDidUpdate(){
-    //console.log("componentDidUpdate")
-   //document.addEventListener("keydown", this.keyHandlerExperiment);
-  //}
+  //console.log("component willreceive props")
+  //console.log(this.state.selectedResponse)
+  //console.log(Date.now())
+}
 
   showFeedback(answerCorrect,selectedOption){
     
@@ -124,9 +113,40 @@ class ExperimentTrial extends Component {
 
     }
   }
+
+
+  showConfirmation(selectedOption){
+
+    console.log("show confirmation")
+    
+    
+    if (selectedOption === "option1"){
+      
+        this.setState({
+        feedback1: 'confirmation_arrow'
+        });
+      
+
+    }
+    else if (selectedOption === "option2"){
+      this.setState({
+        feedback2: 'confirmation_arrow'
+        });
+      
+
+
+    }
+    else if (selectedOption === "option3"){
+      this.setState({
+        feedback3: 'confirmation_arrow'
+        });
+      
+
+    }
+  }
     
 
-  hideFeedbackAndProceed(response, selectedOption){
+  hideFeedbackAndProceed(response, selectedOption,selectionTime){
     console.log("hide feedback and proceed")
 
     this.setState({
@@ -135,19 +155,22 @@ class ExperimentTrial extends Component {
       feedback2: 'no_signal',
       feedback3: 'no_signal'
     })
-    this.props.onAnswerSelected(response, selectedOption)
+    this.props.onAnswerSelected(response, selectedOption, selectionTime)
 
   }
 
-  passResponseAndProceed(response,selectedOption){
+  passResponseAndProceed(response,selectedOption,selectionTime){
 
-    console.log("pass response and proceed, call parent class")
+    console.log("pass response and proceed, hide feedback, call parent class")
 
     this.setState({
       selectedResponse: false,
+      feedback1: 'no_signal',
+      feedback2: 'no_signal',
+      feedback3: 'no_signal'
     })
 
-    this.props.onAnswerSelected(response, selectedOption)
+    this.props.onAnswerSelected(response, selectedOption, selectionTime)
   }
 
   handlePause(event){
@@ -184,129 +207,18 @@ class ExperimentTrial extends Component {
 
   }
 
-  keyHandlerExperiment(event) {
-    console.log("key handler experiment called")
-    
-    var keyPressed = String(event.keyCode);
-
-    if(this.state.paused === false && keyPressed === "66" ){
-      console.log(this.props.teachingSignal1)
-      console.log(this.props.blockType)
-
-      if(this.props.teachingSignal1 === 'nonSelectable' && this.props.blockType === 'training'){
-
-      console.log("Blue nonselectable")
-
-    }
-    else{
-      console.log("Blue selected")
-      clearTimeout(this.timeoutID);
-
-      var response = this.props.trialcontents[0].option1
-      var selectedOption= "option1"
-      
-
-      if (this.props.responseSelected){
-        console.log("alreadySelectedResponse")
-
-      }
-      else{ 
-
-        this.handleAnswerSelectedExperiment(response, selectedOption);
-        //this.props.keyHandler(keyPressed)
-
-      }
-
-      }
-
-    }
-    else if(this.state.paused == false && keyPressed === "89"){
-      console.log(this.props.teachingSignal2)
-      console.log(this.props.blockType)
-
-
-      if(this.props.teachingSignal2 === 'nonSelectable' && this.props.blockType === 'training'){
-
-      console.log("yellow nonselectable")
-
-    }
-    else{
-      console.log("yellow selected")
-      clearTimeout(this.timeoutID);
-
-      console.log("Yellow")
-      var response = this.props.trialcontents[0].option2
-      var selectedOption= "option2"
-
-      if (this.props.responseSelected){
-        console.log("alreadySelectedResponse")
-      }
-      else{ 
-
-        this.handleAnswerSelectedExperiment(response, selectedOption);
-        //this.props.keyHandler(keyPressed)
-
-        
-      }
-
-      }
-
-    }
-    else if(this.state.paused == false && keyPressed === "71"){
-      console.log(this.props.teachingSignal3)
-      console.log(this.props.blockType)
-
-      if(this.props.teachingSignal3 === 'nonSelectable' && this.props.blockType === 'training'){
-
-      console.log("Green nonselectable")
-
-    }
-    else{
-      console.log("green selected")
-      clearTimeout(this.timeoutID);
-
-      console.log("Green")
-      var response = this.props.trialcontents[0].option3
-      var selectedOption= "option3"
-
-      if (this.props.responseSelected){
-        console.log("alreadySelectedResponse")
-      }
-
-      else{ 
-
-        this.handleAnswerSelectedExperiment(response, selectedOption);
-        //this.props.keyHandler(keyPressed)
-
-        
-
-       
-      }
-
-      }
-    }
-
-    else if(this.state.paused == false && keyPressed === "84"){
-      console.log("Trigger")
-      this.props.keyHandler(keyPressed)
-      
-    }
-
-
-    
-  }
-
-
 
   handleAnswerSelectedExperiment(response, selectedOption) {
 
-    console.log("handle Answer Selected Experiment")
 
-    console.log(response)
-    console.log(selectedOption)
-   // console.log("Handle answer experiment level, selected for " + this.props.trialcontents[0].learningType + " trial.")
+    var selectionTime = Date.now()
+
+    console.log("Handle Answer Selected Experiment: "+ response + " " + selectedOption + " at " + selectionTime)
+    
+
+  
     if (this.props.responseSelected){
-      console.log("alreadySelectedResponse")
+      console.log("Already Selected Response")
     }
     else{ 
 
@@ -314,23 +226,21 @@ class ExperimentTrial extends Component {
       selectedResponse: true
     })
 
-    this.handleResponseAftermath(response,selectedOption);
+    this.handleResponseAftermath(response,selectedOption, selectionTime);
     }
   }
 
-  handleResponseAftermath(response,selectedOption){
+  handleResponseAftermath(response,selectedOption, selectionTime){
 
     var answerCorrect = response === this.props.trialTarget
     
-    console.log("handle Response aftermath")
-    console.log(response)
-    console.log(selectedOption)
-    console.log(this.props.trialcontents[0])
+    console.log("Handle Response Aftermath: " + response + " " + selectedOption + " at " + selectionTime)
+    
 
     if (this.props.blockType === "test" || this.props.blockType === "generalization"){
       //console.log("this is a test trial")
-
-      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption), 500);
+      this.showConfirmation(selectedOption);
+      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
     }
 
     else if (this.props.trialcontents[0].learningType === "reinforcement"){
@@ -338,12 +248,14 @@ class ExperimentTrial extends Component {
       this.showFeedback(answerCorrect,selectedOption);
       //console.log("this is a reinforcement training trial")
 
-      this.timeoutID = setTimeout(() => this.hideFeedbackAndProceed(response, selectedOption), 1500);
+      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response, selectedOption,selectionTime), 1500);
 
     }
     else{
+
+      this.showConfirmation(selectedOption);
       //console.log("this is a supervised training trial")
-      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption), 500);
+      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
     }
 
     
@@ -374,10 +286,10 @@ class ExperimentTrial extends Component {
       className="container"
       component="div"
       transitionName="fade"
-      transitionEnterTimeout={800}
-      transitionLeaveTimeout={500}
+      transitionEnterTimeout={0}
+      transitionLeaveTimeout={0}
       transitionAppear
-      transitionAppearTimeout={500}
+      transitionAppearTimeout={0}
     >
       <div className="experimentContainer" key={this.props.questionId}>
 
@@ -402,11 +314,17 @@ class ExperimentTrial extends Component {
         
       </div>
       <div className="answerContainer">
-      {this.state.selectedResponse ? <div className="answerBlockingScreen"></div> : <div/>}
-        <ResponseOption optionID = {"option1"} feedback={this.state.feedback1} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal1} whichOption="option1" content={this.props.trialcontents[0].option1} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
-        <ResponseOption optionID = {"option2"} feedback={this.state.feedback2} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal2} whichOption="option2" content={this.props.trialcontents[0].option2} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
-        <ResponseOption optionID = {"option3"} feedback={this.state.feedback3} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal3} whichOption="option3" content={this.props.trialcontents[0].option3} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
-      
+        {this.state.selectedResponse ?
+         <div>
+        <ResponseOption optionID = {"option1"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback1} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={"nonSelectable"} whichOption="option1" content={this.props.trialcontents[0].option1} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        <ResponseOption optionID = {"option2"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback2} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={"nonSelectable"} whichOption="option2" content={this.props.trialcontents[0].option2} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        <ResponseOption optionID = {"option3"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback3} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={"nonSelectable"} whichOption="option3" content={this.props.trialcontents[0].option3} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        </div> : <div>
+        <ResponseOption optionID = {"option1"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback1} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal1} whichOption="option1" content={this.props.trialcontents[0].option1} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        <ResponseOption optionID = {"option2"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback2} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal2} whichOption="option2" content={this.props.trialcontents[0].option2} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        <ResponseOption optionID = {"option3"} responseSelected = {this.state.selectedResponse} feedback={this.state.feedback3} blockType={this.props.blockType} trialTarget={this.props.trialTarget} learningType={this.props.trialcontents[0].learningType} teachingSignal={this.props.teachingSignal3} whichOption="option3" content={this.props.trialcontents[0].option3} response={this.props.response} handleAnswerSelectedExperiment={this.handleAnswerSelectedExperiment} />
+        </div>
+      }
       
       </div>
     </ReactCSSTransitionGroup>

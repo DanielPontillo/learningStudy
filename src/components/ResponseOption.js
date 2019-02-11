@@ -29,52 +29,83 @@ class ResponseOption extends Component {
 
   }
 
-  componentWillMount() {
-    
+  componentWillReceiveProps(){
 
   }
 
+
   handleBlue(event){
-    console.log("handle Blue")
-    console.log("option1")
-    console.log(this.props.content)
+    
+
+
+   // if (this.props.responseSelected == false){
+
     
     if (this.props.optionID == "option1"){
+      console.log("response received response level")
+      console.log(Date.now())
+    
       var response = this.props.content
       var selectedOption = "option1"
         this.props.handleAnswerSelectedExperiment(response, selectedOption)
     }
 
+    this.setState({
+      responseSelected: true
+    })
 
+  //}
+  // else{
+  //  console.log("already selected")
+//    }
   }
 
   handleYellow(event){
-    console.log(event)
-    console.log("handle Yellow")
-    console.log("option2")
-    console.log(this.props.content)
     
+    //if (this.props.responseSelected == false){
+
     
     if (this.props.optionID == "option2"){
+      console.log("response received response level")
+      console.log(Date.now())
+    
       var response = this.props.content
       var selectedOption = "option2"
         this.props.handleAnswerSelectedExperiment(response, selectedOption)
     }
 
+    this.setState({
+      responseSelected: true
+    })
 
-  }
+
+  //}else{
+   // console.log("already selected")
+  //  }
+}
 
   handleGreen(event){
-    console.log(event.id)
-    console.log("handle Green")
-    console.log("option3")
-    console.log(this.props.content)
+    
+
+
+    //if (this.props.responseSelected == false){
 
     if (this.props.optionID == "option3"){
+      console.log("response received response level")
+      console.log(Date.now())
+    
       var response = this.props.content
       var selectedOption = "option3"
         this.props.handleAnswerSelectedExperiment(response, selectedOption)
     }
+
+    this.setState({
+      responseSelected: true
+    })
+
+   // } else{
+   // console.log("already selected")
+  // }
 
     
   }
@@ -92,6 +123,7 @@ class ResponseOption extends Component {
   
 
   handleAnswerSelectedLocal(event) {
+    console.log("handleAnswerSelectedLocal")
 
     var response = event.currentTarget.id
     var selectedOption = event.currentTarget.value
@@ -100,13 +132,15 @@ class ResponseOption extends Component {
     this.props.handleAnswerSelectedExperiment(response, selectedOption)
 
     
+
+    
   }
    render() {
   return (
  
   <div className="answerOption">
 
-    {this.props.teachingSignal === 'nonSelectable' && this.props.blockType === 'training' ? 
+    {this.props.teachingSignal === 'nonSelectable' ? 
 
     
 
@@ -126,7 +160,7 @@ class ResponseOption extends Component {
         <br/>
         {this.props.content} 
 
-        <div id={this.props.teachingSignal} style={imgDivStyle}></div>
+        <div id={this.props.teachingSignal} style={imgDivStyle}><div id={this.props.feedback} style={imgDivStyle}></div></div>
       </label>
       </div>
       : 

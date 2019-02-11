@@ -7,6 +7,9 @@ import DemographicsSurvey from './components/DemographicsSurvey';
 import ExperimentEndSurvey from './components/ExperimentEndSurvey';
 import ExperimentEndScreen from './components/ExperimentEndScreen';
 import Blockstart from './components/Blockstart';
+import MiniBlockstart from './components/MiniBlockstart';
+import TestBlockstart from './components/TestBlockstart';
+import FixationScreen from './components/FixationScreen';
 import TriggerWaitScreen from './components/TriggerWaitScreen';
 import { Button} from 'react-bootstrap';
 import 'whatwg-fetch';
@@ -102,7 +105,10 @@ class App extends Component {
       instructionsNotComplete: true,
       experimentStarted: false,
       showBlockstartScreen: false,
+      showMiniBlockstartScreen: false,
+      showTestBlockstartScreen: false,
       showTriggerWaitScreen: false,
+      showFixationScreen: false,
       receivedResponse: false,
       showParamErrorMessage: false,
       showExperimentEndSurvey: false,
@@ -319,12 +325,14 @@ handleTrigger(event){
 
         this.handleTriggerWaitScreen(null)
         
+
+        this.setState({
+         triggerEvents: this.state.triggerEvents.concat(Date.now())
+        });
   }
 
   
-  this.setState({
-    triggerEvents: this.state.triggerEvents.concat(Date.now())
-  });
+  
   
 
   
@@ -339,7 +347,9 @@ handleTrigger(event){
 
     var keyPressed = event.key;
 
-    if (keyPressed === "b" || keyPressed === "y" || keyPressed === "g" ){
+    //if (keyPressed === "b" || keyPressed === "y" || keyPressed === "g" ){
+
+    if (keyPressed === "w"){
 
       if (this.state.showBlockstartScreen ){
 
@@ -371,7 +381,7 @@ handleTrigger(event){
         })
 
       if (this.state.trialnum < this.state.totalNumTrials) {
-         setTimeout(() => this.setNextTrial(), 0);
+         setTimeout(() => this.setFixationScreen(), 0);
         } else {
          setTimeout(() => this.endTrials(), 0);
         }
@@ -385,6 +395,7 @@ handleTrigger(event){
 
   responseTimedOut(){
       console.log("response timed out, go to next trial")
+      console.log(Date.now() - this.state.currentTrialStartTime)
 
       if (this.state.paused === true){
         console.log("experiment is paused, restart trial")
@@ -397,7 +408,7 @@ handleTrigger(event){
         this.checkResponseAndUpdate("timeout",responseTime);
 
        if (this.state.trialnum < this.state.totalNumTrials) {
-         setTimeout(() => this.setNextTrial(), 0);
+         setTimeout(() => this.setFixationScreen(), 0);
         } else {
          setTimeout(() => this.endTrials(), 0);
         }
@@ -408,23 +419,21 @@ handleTrigger(event){
     }
   
 
-  handleAnswerSelected(selected_id, selected_option) {
-
-    console.log("handle Answer Selected")
-    console.log(selected_id)
-    console.log(selected_option)
-    clearTimeout(this.timeoutID);
+  handleAnswerSelected(selected_id, selected_option, selectionTime) {
 
     
 
-      console.log("Handle answer selected in main app")
+      console.log("Handle answer selected in main app: "+ response + " " + selectedOption + " at " + selectionTime) 
+      console.log("Time of call: " + Date.now() + "  lag = " + String(Date.now() - Number(selectionTime)))
       
-      var responseTime = Number(Date.now()) - Number(this.state.currentTrialStartTime)
+      var responseTime = Number(selectionTime) - Number(this.state.currentTrialStartTime)
       //console.log("Response Time: " + responseTime )
 
       console.log("response time: " + String(responseTime))
 
-      if (responseTime > 500){
+      //if (responseTime > 500){
+
+        clearTimeout(this.timeoutID);
 
         var response = selected_id
         var selectedOption = selected_option
@@ -438,14 +447,24 @@ handleTrigger(event){
 
         //Set Next Question
         if (this.state.trialnum < this.state.totalNumTrials) {
-           setTimeout(() => this.setNextTrial(), 0);
+           setTimeout(() => this.setFixationScreen(), 0);
         } else {
             setTimeout(() => this.endTrials(), 0);
         }
-      }
-      else{
-        console.log("Response Too Fast")
-      }
+
+        this.setState({
+      teachingSignal1: "nonSelectable",
+      teachingSignal2: "nonSelectable",
+      teachingSignal3: "nonSelectable",
+      });
+
+
+      //}
+      //else{
+      //  console.log("Response Too Fast")
+      //}
+
+      
 
   
 }
@@ -577,17 +596,68 @@ handleExperimentEndScreen(event) {
   handleBlockstartScreen(event) {
     console.log("Blockstart Screen Complete")
     this.arrangeExperimentTrial(this.state.counter);
+
+    if(this.state.block > 0){
+
+
     this.setState({
       showBlockstartScreen: false,
       showTriggerWaitScreen: true
+    })
+
+  }
+  else{
+
+    console.log("Trigger Wait Screen Complete")
+    this.arrangeExperimentTrial(this.state.counter);
+    console.log(Date.now())
+
+    this.setState({
+      showBlockstartScreen: false,
+      experimentStarted: true,
+      currentTrialStartTime: Date.now()
+    })
+
+    if (this.state.paused === false){
+      this.timeoutID = setTimeout(() => this.responseTimedOut(),10000);
+    }
+
+
+
+  }
+
+    
+  }
+
+  handleTestBlockstartScreen(event) {
+    console.log("Blockstart Screen Complete")
+    this.arrangeExperimentTrial(this.state.counter);
+    this.setState({
+      showTestBlockstartScreen: false,
+      experimentStarted: true,
+      currentTrialStartTime: Date.now()
+    })
+    
+  }
+
+  handleMiniBlockstartScreen(event) {
+    console.log("Blockstart Screen Complete")
+
+    this.arrangeExperimentTrial(this.state.counter);
+    this.setState({
+      showMiniMiniBlockstartScreen: false,
+      experimentStarted: true,
+      currentTrialStartTime: Date.now()
     })
 
     
   }
 
   handleTriggerWaitScreen(event) {
-    //console.log("Trigger Wait Screen Complete")
+    console.log("Trigger Wait Screen Complete")
     this.arrangeExperimentTrial(this.state.counter);
+    console.log(Date.now())
+
     this.setState({
       showTriggerWaitScreen: false,
       experimentStarted: true,
@@ -725,8 +795,23 @@ handleExperimentEndScreen(event) {
 
   }
 
+  setFixationScreen(){
+
+    var duration = 500 + Math.round(Math.random() * 500)
+
+    console.log("Fixation Screen Durationg: " + duration)
+
+    this.setState({
+      showFixationScreen: true
+    });
+
+    this.timeoutID = setTimeout(() => this.setNextTrial(), duration);
+
+  }
 
   setNextTrial() {
+
+    console.log("set next trial called: " + Date.now())
     
     //increment trial counter
     const counter = this.state.counter + 1;
@@ -736,6 +821,8 @@ handleExperimentEndScreen(event) {
     var numShown = 0;
     var curTarg = '';
     var blockstartBoolean = false;
+    var testBlockstartBoolean = false;
+    var miniBlockstartBoolean = false;
 
     //get current block-level performance values
     var lastReinforcementBlockPerformance = this.state.lastReinforcementBlockPerformance;
@@ -755,11 +842,20 @@ handleExperimentEndScreen(event) {
     //  reset the testblock responses array
     //  flag the blockstart screen
     //  update last test block performance
-    if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "training") {
-      console.log("Begin New Miniblock")
+
+    if (this.state.block < this.state.experimentContents[counter].block){
+
+      console.log("Begin New Block")
       lastTestBlockPerformance = this.state.currentTestBlockPerformance
       currentTestBlockResponsesCorrect = []
       blockstartBoolean = true
+      this.sendUpdatePutRequestToServer()
+    }
+    else if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "training") {
+      console.log("Begin New Miniblock")
+      lastTestBlockPerformance = this.state.currentTestBlockPerformance
+      currentTestBlockResponsesCorrect = []
+      miniBlockstartBoolean = true
 
       this.sendUpdatePutRequestToServer()
     }
@@ -768,13 +864,14 @@ handleExperimentEndScreen(event) {
     //  reset the reinforcement responses array
     //  flag the blockstart screen
     //  update last reinforcement block performance
+
     if (this.state.blockType === "training" && this.state.experimentContents[counter].blockType === "test") {
       console.log("Test Block Start")
       if (this.state.block > 0){
         lastReinforcementBlockPerformance = this.state.currentReinforcementBlockPerformance;
         currentReinforcementBlockResponsesCorrect = [];
       }
-      blockstartBoolean = true;
+      testBlockstartBoolean = true;
     }
 
     if (this.state.blockType === "test" && this.state.experimentContents[counter].blockType === "generalization") {
@@ -808,6 +905,9 @@ handleExperimentEndScreen(event) {
         blockType: this.state.experimentContents[counter].blockType,
         showcell: showcell,
         showBlockstartScreen: blockstartBoolean,
+        showTestBlockstartScreen: testBlockstartBoolean,
+        showMiniBlockstartScreen: miniBlockstartBoolean,
+        showFixationScreen: false,
 
         // new empty arrays for the previous blocks
         currentTestBlockResponsesCorrect: currentTestBlockResponsesCorrect,
@@ -912,12 +1012,7 @@ handleExperimentEndScreen(event) {
 
     console.log("ArrangeExperimentTrial: " + String(counter))
     console.log(this.state.experimentContents[counter])
-    console.log(this.state.experimentContents[counter].contents[0])
-    console.log(this.state.experimentContents[counter].contents[0].learningType)
-    console.log(teachingSignal3)
-    console.log(teachingSignal2)
-    console.log(teachingSignal1)
-
+    
   }
 
   renderExperimentEndSurvey() {
@@ -979,10 +1074,30 @@ renderDemographicsSurvey() {
 renderBlockstart() {
 
     return (
-      <Blockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} fmriMode = {this.state.fmriMode} fmriTestBlockButtonLabel = "Appuyez sur un bouton pour démarrer le bloc de test" fmriTrainingBlockButtonLabel = "Appuyez sur un bouton pour démarrer le bloc d'apprentissage" testBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc de test." trainingBlockButtonLabel="Appuyez sur le bouton pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Lorsque vous êtes prêt, appuyez sur le bouton pour démarrer l'entraînement." 
+      <Blockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} blockType={this.state.blockType} blockstartMessage="Bon Travail!" cumulativeTestPerformanceMessage="Performance cumulative du test: " cumulativeTestPerformance={Number(this.state.cumulativeTestPerformance).toFixed(2)} lastTestBlockPerformanceMessage="Performance du dernier bloc de test: " lastTestBlockPerformance={Number(this.state.lastTestBlockPerformance).toFixed(2)} fmriMode = {this.state.fmriMode} fmriTestBlockButtonLabel = "Attente pour démarrer le bloc de test" fmriTrainingBlockButtonLabel = "Attente pour démarrer le bloc d'apprentissage" testBlockButtonLabel="Attente pour démarrer le bloc de test." trainingBlockButtonLabel="Attente pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Attente pour démarrer l'entraînement." 
      handleBlockstartScreen={this.state.showBlockstartScreen,this.handleBlockstartScreen}/>
     );
   }
+
+renderMiniBlockstart() {
+
+    this.timeoutID = setTimeout(() => this.handleMiniBlockstartScreen(),5000);
+
+    return (
+      <MiniBlockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock} fmriTestBlockButtonLabel = "Attente pour démarrer le bloc de test" fmriTrainingBlockButtonLabel = "Attente pour démarrer le bloc d'apprentissage" testBlockButtonLabel="Attente pour démarrer le bloc de test." trainingBlockButtonLabel="Attente pour démarrer le bloc d'apprentissage." firstPracticeBlockButtonLabel="Attente pour démarrer l'entraînement." 
+     handleBlockstartScreen={this.state.showBlockstartScreen,this.handleMiniBlockstartScreen}/>
+    );
+  }
+
+renderTestBlockstart() {
+
+    this.timeoutID = setTimeout(() => this.handleTestBlockstartScreen(),5000);
+
+    return (
+      <TestBlockstart blockType={this.state.blockType} currentBlock={this.state.block} currentMiniblock={this.state.miniblock}  testBlockStartText = "Attente pour démarrer le bloc de test" />
+    );
+  }
+
 
 
 renderTriggerWaitScreen() {
@@ -991,6 +1106,16 @@ renderTriggerWaitScreen() {
       <TriggerWaitScreen triggerWaitScreenMessage="Bon Travail!" handleTriggerWaitScreen={this.state.showTriggerWaitScreen,this.handleTriggerWaitScreen}/>
     );
   }
+
+
+renderFixationScreen() {
+  //console.log("Fixation Screen start: " + Date.now())
+
+    return (
+      <FixationScreen/>
+    );
+  }
+
 
   jumpToEnd() {
     console.log("Jump to End of Experiment")
@@ -1021,7 +1146,7 @@ renderTriggerWaitScreen() {
     var bodyContents = {experimentName: currentExperimentName, condition: currentCondition, conditionListID: currentConditionListID, platformType: currentPlatformType, demographicsInfo: demographicsInfo, participantID: participantID}
     
 
-    fetch('http://5.135.154.233:8080/start_new_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233/start_new_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -1056,7 +1181,7 @@ renderTriggerWaitScreen() {
     var bodyContents = {experimentName: experimentName, participantID: participantID,responsesCorrect: responsesCorrect, responses: responses, responseTimes: responseTimes, trialStartTimes: trialStartTimes, triggerEvents: triggerEvents, escapeEvents: escapeEvents}
     //console.log(queryString.stringify(bodyContents))
 
-    fetch('http://5.135.154.233:8080/update_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233/update_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -1103,7 +1228,7 @@ renderTriggerWaitScreen() {
 
     console.log(this.state.cumulativeTestPerformance)
 
-    fetch('http://5.135.154.233:8080/complete_participant_session',{mode:"cors",
+    fetch('http://5.135.154.233/complete_participant_session',{mode:"cors",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -1111,7 +1236,7 @@ renderTriggerWaitScreen() {
     body: queryString.stringify(bodyContentsLocal)})
       .then(resp => console.log("response received"));
       // .then(resp => {
-      //   const currentTime = resp.dateString;
+      //   const currentTime = resp.dfateString;
       //   this.setState({currentTime})
       // })
 
@@ -1205,26 +1330,17 @@ renderTriggerWaitScreen() {
 
       <KeyHandler
           keyEventName={KEYPRESS}
-          keyValue="Escape"
+          keyValue="escape"
           onKeyHandle={this.handleEsc}
         />
 
         <KeyHandler
           keyEventName={KEYPRESS}
-          keyValue="b"
+          keyValue="w"
           onKeyHandle={this.myKeyHandler}
         />
 
-      <KeyHandler
-          keyEventName={KEYPRESS}
-          keyValue="g"
-          onKeyHandle={this.myKeyHandler}
-        />
-        <KeyHandler
-          keyEventName={KEYPRESS}
-          keyValue="r"
-          onKeyHandle={this.myKeyHandler}
-        />
+     
 
 
 
@@ -1268,7 +1384,10 @@ renderTriggerWaitScreen() {
  this.state.nodemographics ? this.renderDemographicsSurvey() : 
  this.state.instructionsNotComplete ? this.renderInstructions() : 
  this.state.showBlockstartScreen ? this.renderBlockstart(): 
- this.state.showTriggerWaitScreen ? this.renderTriggerWaitScreen(): 
+ this.state.showMiniBlockstartScreen ? this.renderMiniBlockstart(): 
+ this.state.showTestBlockstartScreen ? this.renderTestBlockstart(): 
+ this.state.showTriggerWaitScreen ? this.renderTriggerWaitScreen():
+ this.state.showFixationScreen ? this.renderFixationScreen():  
  this.state.experimentStarted ? <ExperimentTrial
         
         trialTarget={this.state.currentTarget}
