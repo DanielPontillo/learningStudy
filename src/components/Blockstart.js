@@ -30,6 +30,7 @@ function Blockstart(props) {
         </center>
 
         {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? <div>Ce bloc est terminé.<br/><br/></div>  : null}
+        
         {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? props.lastTestBlockPerformanceMessage + props.lastTestBlockPerformance : null}<br/>
         {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? props.cumulativeTestPerformanceMessage + props.cumulativeTestPerformance : null}
         
@@ -40,9 +41,7 @@ function Blockstart(props) {
       <div className="buttonContainer">
       
       <label>{props.fmriMode && props.blockType === "training" ? props.fmriTrainingBlockButtonLabel : props.fmriMode && props.blockType === "test" ? props.fmriTestBlockButtonLabel : props.blockType === "training" ? props.trainingBlockButtonLabel : props.testBlockButtonLabel }</label><br/>
-      <Button className="button" onClick={props.handleBlockstartScreen.bind(this)}>
-      Démarrer
-      </Button>
+      
 
       
       </div>

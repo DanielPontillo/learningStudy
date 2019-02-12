@@ -31,6 +31,11 @@ class ExperimentTrial extends Component {
   this.handleAnswerSelectedExperiment = this.handleAnswerSelectedExperiment.bind(this);
 
   this.handleResume = this.handleResume.bind(this);
+  this.handleResume1 = this.handleResume1.bind(this);
+  this.handleResume2 = this.handleResume2.bind(this);
+  this.handleResume3 = this.handleResume3.bind(this);
+  this.handleResume4 = this.handleResume4.bind(this);
+  this.handleResume5 = this.handleResume5.bind(this);
 
   this.handlePause = this.handlePause.bind(this);
 
@@ -38,8 +43,6 @@ class ExperimentTrial extends Component {
   }
 
   componentWillMount(){
-    console.log("component will mount")
-    console.log(this.props.trialContents)
 
     this.setState({blockType:this.props.blockType,
       trialcontents: this.props.trialContents})
@@ -162,7 +165,7 @@ componentWillReceiveProps(){
   passResponseAndProceed(response,selectedOption,selectionTime){
 
     console.log("pass response and proceed, hide feedback, call parent class")
-
+   
     this.setState({
       selectedResponse: false,
       feedback1: 'no_signal',
@@ -200,12 +203,71 @@ componentWillReceiveProps(){
       this.setState({
          paused: false
         })
-      this.props.keyHandlerAppLevel("r")
-      
+      this.props.keyHandlerAppLevel("r")  
     }
-
-
   }
+
+  handleResume1(event){
+    console.log("handleResume")
+
+    if(this.state.paused === true){
+      clearTimeout(this.timeoutID);
+      
+      this.setState({
+         paused: false
+        })
+      this.props.keyHandlerAppLevel("1")   
+    }
+  }
+  handleResume2(event){
+    console.log("handleResume")
+
+    if(this.state.paused === true){
+      clearTimeout(this.timeoutID);
+      
+      this.setState({
+         paused: false
+        })
+      this.props.keyHandlerAppLevel("2")   
+    }
+  }
+  handleResume3(event){
+    console.log("handleResume")
+
+    if(this.state.paused === true){
+      clearTimeout(this.timeoutID);
+      
+      this.setState({
+         paused: false
+        })
+      this.props.keyHandlerAppLevel("3")   
+    }
+  }
+  handleResume4(event){
+    console.log("handleResume4")
+
+    if(this.state.paused === true){
+      clearTimeout(this.timeoutID);
+      
+      this.setState({
+         paused: false
+        })
+      this.props.keyHandlerAppLevel("4")   
+    }
+  }
+  handleResume5(event){
+    console.log("handleResume4")
+
+    if(this.state.paused === true){
+      clearTimeout(this.timeoutID);
+      
+      this.setState({
+         paused: false
+        })
+      this.props.keyHandlerAppLevel("5")   
+    }
+  }
+
 
 
   handleAnswerSelectedExperiment(response, selectedOption) {
@@ -240,7 +302,7 @@ componentWillReceiveProps(){
     if (this.props.blockType === "test" || this.props.blockType === "generalization"){
       //console.log("this is a test trial")
       this.showConfirmation(selectedOption);
-      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
+      setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
     }
 
     else if (this.props.trialcontents[0].learningType === "reinforcement"){
@@ -248,14 +310,14 @@ componentWillReceiveProps(){
       this.showFeedback(answerCorrect,selectedOption);
       //console.log("this is a reinforcement training trial")
 
-      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response, selectedOption,selectionTime), 1500);
+      setTimeout(() => this.passResponseAndProceed(response, selectedOption,selectionTime), 1500);
 
     }
     else{
 
       this.showConfirmation(selectedOption);
       //console.log("this is a supervised training trial")
-      this.timeoutID = setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
+      setTimeout(() => this.passResponseAndProceed(response,selectedOption,selectionTime), 1500);
     }
 
     
@@ -281,7 +343,34 @@ componentWillReceiveProps(){
           onKeyHandle={this.handleResume}
         />
 
-    {this.state.paused ? <center><h1> EXPÉRIENCE PAUSÉE</h1><br/><br/><h3>appuyez sur 'r' pour reprendre</h3></center> :
+      <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="1"
+          onKeyHandle={this.handleResume1}
+        />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="2"
+          onKeyHandle={this.handleResume2}
+        />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="3"
+          onKeyHandle={this.handleResume3}
+        />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="4"
+          onKeyHandle={this.handleResume4}
+        />
+         <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="5"
+          onKeyHandle={this.handleResume5}
+        />
+
+    {this.state.paused ? <center><h1> EXPÉRIENCE PAUSÉE</h1><br/><br/><h3>appuyez sur 'r' pour reprendre au début de ce bloc<br/><br/>appuyez sur le numéro du bloc où aller</h3></center> :
+
     <ReactCSSTransitionGroup
       className="container"
       component="div"

@@ -238,6 +238,10 @@ Experiment Screen Styles
 }
 
 
+.fixationContainer{
+  width: 80%;
+  height: 500px;
+}
 
 /* Question Component */
 
@@ -245,7 +249,7 @@ Experiment Screen Styles
   text-align: center;
   align-items: center;
   justify-content: center;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
 }
 
 .answerBlockingScreen {
@@ -429,6 +433,15 @@ Experiment Screen Styles
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+.singular_empty{
+    width: 40%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
     
 }
 .singular{

@@ -9,12 +9,16 @@ import { Button} from 'react-bootstrap';
 //
 function FixationScreen(props) {
 
+const imgDivStyle = {
+    display: 'block',
+    height: 60
+  };
 
   return (
+    <div>
     
-
     <ReactCSSTransitionGroup
-      className="container result"
+      className="container"
       component="div"
       transitionName="fade"
       transitionEnterTimeout={0}
@@ -22,16 +26,28 @@ function FixationScreen(props) {
       transitionAppear
       transitionAppearTimeout={0}
     >
-      <div>
-        <center>
-        <h1>+</h1>
-        </center>
+    <div className="experimentContainer" >
 
-        <br/>
-        <br/>
+     <div className="fullTrialContent">
+     <br/>
+     
+    <div className="singular_empty">
+      
+    
+      <div  style={imgDivStyle}></div>
+  
+     </div>
+
+     <center><h1>+</h1></center>
+
+    <div className="question">
       </div>
+  </div>
+  </div>
       
     </ReactCSSTransitionGroup>
+
+    </div>
   );
 
 }

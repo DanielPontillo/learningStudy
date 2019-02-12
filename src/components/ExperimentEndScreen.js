@@ -48,7 +48,7 @@ class ExperimentEndScreen extends Component{
 
       <div>
       <text>
-        <div id={"logo_img"}></div>
+        
        
       Merci pour votre participation!<br/><br/>
     <br/>
@@ -61,10 +61,10 @@ class ExperimentEndScreen extends Component{
 
      <div>
       <text>
-        <div id={"logo_img"}></div>
+        
        
-      Merci pour votre participation! S'il vous plaît informer l'expérimentateur et <b>ne fermez pas </b> la fenêtre du navigateur.<br/><br/>
-    <br/>
+      Merci pour votre participation! 
+      <br/>
     <br/>
         
         

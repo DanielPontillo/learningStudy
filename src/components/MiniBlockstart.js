@@ -29,7 +29,7 @@ function MiniBlockstart(props) {
         {props.blockType === "training" && props.currentBlock === 1 && props.currentMiniblock === 1 ? <div>Nous allons maintenant commencons le premier bloc.</div>  : null}
         </center>
 
-        {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? <div>Ce bloc est terminé.<br/><br/></div>  : null}
+        {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? <div>Ce bloc est terminé. En attente du prochain bloc d'apprentissage. <br/><br/></div>  : null}
         {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? props.lastTestBlockPerformanceMessage + props.lastTestBlockPerformance : null}<br/>
         {(props.blockType === "training" || props.blockType === "generalization") && ((props.currentBlock === 1 && props.currentMiniblock > 1) || (props.currentBlock > 1))  ? props.cumulativeTestPerformanceMessage + props.cumulativeTestPerformance : null}
         

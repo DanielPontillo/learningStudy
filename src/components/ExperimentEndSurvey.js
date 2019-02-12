@@ -52,28 +52,23 @@ class ExperimentEndSurvey extends Component{
       transitionAppear
       transitionAppearTimeout={500}
     >
-      <div>
-      <text>
-        <div id={"logo_img"}></div>
       
-      <div className="completionSurvey">
-      <br/>
-      Le test est presque terminé. Enfin, nous aimerions connaître votre opinion.
-      <br/>
-      Si vous avez des commentaires, écrivez-les dans la case ci-dessous:
-      <br/>
-      <br/>
-      <textarea onChange={this.handleChange} className="participantCommentBox" name="comments"></textarea>
+        
+      
+       <div>
+      <text>
+        
        
-    
-
-    </div>
+      Merci pour votre participation!<br/><br/>
     <br/>
     <br/>
         
         
         </text>
          </div>
+    <br/>
+    <br/>
+        
        
 
       <div className="buttonContainer">
