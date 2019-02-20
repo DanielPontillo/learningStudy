@@ -11,7 +11,7 @@ function PluralTrialContent(props) {
   };
   const imgDivStyleHidden = {
     display: 'block', backgroundSize: 60,
-    background: 'white',
+    background: '#eee',
     height: 60
   };
   
@@ -23,7 +23,7 @@ function PluralTrialContent(props) {
   return (
     <div className="experimentContentPlural">
       
-    <h2 className="rootword"> ? </h2>
+    {props.isFixation ? <div></div> : <h2 className="rootword"> ? </h2>}
 
     <div className="pluralgrid">
         { props.showcell[0] === 1 ? <div id={"image_" + imgNum.toString()} style={imgDivStyle} ></div> : <div id={"image_" + imgNum.toString()} style={imgDivStyleHidden} className="leftright"></div> }

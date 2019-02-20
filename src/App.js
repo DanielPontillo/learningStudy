@@ -218,6 +218,14 @@ class App extends Component {
     //get number of blocks
     //get number of trials per block
   
+    var emptytrialcontents = [{grammarType: "size", image: "",learningType: "supervised",
+option1: "",
+option1type: "",
+option2: "",
+option2type: "",
+option3: "",
+option3type: "",
+rootWord: ""}];
 
     if (urlParamStruct.participantID == 0){
       this.setState({
@@ -227,6 +235,7 @@ class App extends Component {
    else{
 
     this.setState({
+
       experimentContents: learningStudy,
       assignmentId: urlParamStruct.assignmentId,
       participantID: urlParamStruct.participantID,
@@ -241,6 +250,7 @@ class App extends Component {
       currentTarget: curTarg,
       trialnum: learningStudy[0].trialnum,
       trialcontents: learningStudy[0].contents,
+      emptytrialcontents: emptytrialcontents,
       block: learningStudy[0].block,
       blockType: learningStudy[0].blockType,
       miniblock: learningStudy[0].block,
@@ -368,7 +378,7 @@ handleTrigger(event){
 
     if(this.state.paused === false && keyPressed === "p"){
       console.log("Pause")
-      clearTimeout(this.timeoutID);
+      clearTimeout("TimeoutID: " + this.timeoutID);
       this.setState({
          paused: true
         })
@@ -418,9 +428,10 @@ handleTrigger(event){
 
   responseTimedOut(){
       console.log("response timed out, go to next trial")
+      console.log(Date.now())
       console.log(Date.now() - this.state.currentTrialStartTime)
       clearTimeout(this.timeoutID)
-      console.log(this.timeoutID)
+      console.log("TimeoutID: " + this.timeoutID)
 
       if (this.state.paused === true){
         console.log("experiment is paused, restart trial")
@@ -447,11 +458,11 @@ handleTrigger(event){
   handleAnswerSelected(response, selectedOption, selectionTime) {
 
       clearTimeout(this.timeoutID);
-    
-
+      
       console.log("Handle answer selected in main app: "+ String(response) + " " + String(selectedOption) + " at " + selectionTime) 
       console.log("Time of call: " + Date.now() + "  lag = " + String(Date.now() - Number(selectionTime)))
-      
+      console.log("TimeoutID: " + this.timeoutID)
+
       var responseTime = Number(selectionTime) - Number(this.state.currentTrialStartTime)
       //console.log("Response Time: " + responseTime )
 
@@ -531,10 +542,7 @@ handleTrigger(event){
     // if this is a real trial
     var currentTestBlockPerformance = newCurrentTestBlockResponsesCorrect.reduce((a, b) => a + b, 0) / newCurrentTestBlockResponsesCorrect.length
     var cumulativeTestPerformance = newTestResponsesCorrect.reduce((a, b) => a + b, 0) / newTestResponsesCorrect.length
-    console.log("performance")
     
-    console.log(currentTestBlockPerformance)
-    console.log(cumulativeTestPerformance)
 
 
     //calculate the current reinforcement block performance (not necessary)
@@ -714,19 +722,22 @@ handleExperimentEndScreen(event) {
 
 
   handleFixationScreen(event){
-
+    console.log("handle fixation screen called")
     this.arrangeExperimentTrial(this.state.counter)
+    var startTime = Date.now();
 
     this.setState({
       showFixationScreen: false,
       experimentStarted: true,
-      currentTrialStartTime: Date.now()
+      currentTrialStartTime: startTime
 
     })
+    console.log("Trial start time: " + startTime)
 
     //if (this.state.paused === false){
     //  this.timeoutID = setTimeout(() => this.responseTimedOut(),10000);
     //}
+    //console.log(this.timeoutID)
 
   }
 
@@ -1477,9 +1488,27 @@ renderFixationScreen() {
  this.state.showMiniBlockstartScreen ? this.renderMiniBlockstart(): 
  this.state.showTestBlockstartScreen ? this.renderTestBlockstart(): 
  this.state.showTriggerWaitScreen ? this.renderTriggerWaitScreen():
- this.state.showFixationScreen ? this.renderFixationScreen():  
- this.state.experimentStarted ? <ExperimentTrial
-        
+ this.state.showFixationScreen ? <ExperimentTrial
+        isFixation={true}
+        trialTarget={""}
+
+        trialcontents={this.state.emptytrialcontents}
+        numTrialsPerBlock={""}
+        trialnum={""}
+        block={""}
+        totalNumBlocks={""}
+        miniblock={""}
+        blockType={""}
+        showcell={""}
+        teachingSignal1={""}
+        teachingSignal2={""}
+        teachingSignal3={""}
+
+        keyHandlerAppLevel = {""}
+        responseSelected={""}
+        onAnswerSelected={""}/>:  
+        this.state.experimentStarted ? <ExperimentTrial
+        isFixation={false}
         trialTarget={this.state.currentTarget}
 
         trialcontents={this.state.trialcontents}

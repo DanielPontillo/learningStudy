@@ -120,7 +120,7 @@ componentWillReceiveProps(){
 
   showConfirmation(selectedOption){
 
-    console.log("show confirmation")
+    
     
     
     if (selectedOption === "option1"){
@@ -382,7 +382,7 @@ componentWillReceiveProps(){
     >
       <div className="experimentContainer" key={this.props.questionId}>
 
-      
+        {this.props.isFixation ? <div className="fixationCross"><h1>&nbsp;</h1></div> : <div ></div> }
 
         {/*<QuestionCount
           counter={this.props.trialnum}
@@ -397,7 +397,7 @@ componentWillReceiveProps(){
         : null}
       />*/}
       
-        <TrialQuestionContent showcell={this.props.showcell} content={this.props.trialcontents} />
+        <TrialQuestionContent isFixation = {this.props.isFixation} showcell={this.props.showcell} content={this.props.trialcontents} />
         
         
         

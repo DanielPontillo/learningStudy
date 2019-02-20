@@ -25,9 +25,19 @@ body {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  background: #fff;
+  background: #eee;
   border-radius: 3px;
 }
+
+.fixation_container {
+  position: relative;
+  max-width: 800px;
+  
+  margin: 0 auto;
+  background: #eee;
+  border-radius: 3px;
+}
+
 
 
 .appDebugText {
@@ -240,7 +250,7 @@ Experiment Screen Styles
 
 .fixationContainer{
   width: 80%;
-  height: 500px;
+  height: 600px;
 }
 
 /* Question Component */
@@ -250,6 +260,16 @@ Experiment Screen Styles
   align-items: center;
   justify-content: center;
   border: 2px solid #eee;
+}
+
+.fixationCross {
+  position: absolute;
+  width: 16%;
+  top: 20%;
+  left: 42%;
+  z-index:5;
+  
+  border-bottom: 1px solid #aaa;
 }
 
 .answerBlockingScreen {
@@ -284,7 +304,7 @@ Experiment Screen Styles
   display: inline-block;
   width: 30%;
   height: 70px;
-  border: 1px solid #000;
+  
   background: #eee;
   z-index:5;
 }
@@ -438,9 +458,11 @@ Experiment Screen Styles
 
 .singular_empty{
     width: 40%;
+
     text-align: center;
     align-items: center;
     justify-content: center;
+    border-right: 1px solid #aaa;
    
     
 }

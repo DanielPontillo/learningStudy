@@ -13,7 +13,7 @@ function SizeTrialContent(props) {
   return (
   	<div className="experimentContentSize">
   		
-    	<h2 className="rootword"> ? </h2>
+    	{props.isFixation ? <div></div> : <h2 className="rootword"> ? </h2>}
 		<div className="sizegrid">
 		<div id={"image_" + imgNum.toString()} style={imgDivStyle}></div>
   		</div>

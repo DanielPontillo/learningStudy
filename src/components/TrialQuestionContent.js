@@ -25,7 +25,7 @@ function TrialQuestionContent(props) {
 	   </div>
 
     <div className="question">
-      {props.content[0].grammarType === "size" ? <SizeTrialContent image={props.content[0].image}/> : <PluralTrialContent showcell={props.showcell} image={props.content[0].image}/>}
+      {props.content[0].grammarType === "size" ? <SizeTrialContent isFixation = {props.isFixation} image={props.content[0].image}/> : <PluralTrialContent isFixation = {props.isFixation} showcell={props.showcell} image={props.content[0].image}/>}
     </div>
   </div>
   );
