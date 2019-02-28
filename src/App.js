@@ -219,11 +219,11 @@ class App extends Component {
     //get number of trials per block
   
     var emptytrialcontents = [{grammarType: "size", image: "",learningType: "supervised",
-option1: "",
+option1: " ",
 option1type: "",
-option2: "",
+option2: " ",
 option2type: "",
-option3: "",
+option3: " ",
 option3type: "",
 rootWord: ""}];
 
@@ -1500,9 +1500,9 @@ renderFixationScreen() {
         miniblock={""}
         blockType={""}
         showcell={""}
-        teachingSignal1={""}
-        teachingSignal2={""}
-        teachingSignal3={""}
+        teachingSignal1={"nonSelectable"}
+        teachingSignal2={"nonSelectable"}
+        teachingSignal3={"nonSelectable"}
 
         keyHandlerAppLevel = {""}
         responseSelected={""}
