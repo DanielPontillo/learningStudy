@@ -95,7 +95,7 @@ class App extends Component {
       totalNumTrials: 200,
       numTrialsPerBlock: 16,
       totalNumBlocks: 16,
-      numGeneralizationTrials: 20,
+      numGeneralizationTrials: 60,
       currentTarget: '',
 
       //flags for controlling screen
